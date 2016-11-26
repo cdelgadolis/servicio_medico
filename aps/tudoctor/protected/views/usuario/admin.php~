@@ -1,0 +1,105 @@
+<?php
+$this->breadcrumbs=array(
+	'Usuarios'=>array('admin'),
+	//'Manage',
+);
+
+$this->menu=array(
+array('label'=>'List Usuario','url'=>array('index')),
+array('label'=>'Create Usuario','url'=>array('create')),
+);
+
+Yii::app()->clientScript->registerScript('search', "
+$('.search-button').click(function(){
+$('.search-form').toggle();
+return false;
+});
+$('.search-form form').submit(function(){
+$.fn.yiiGridView.update('usuario-grid', {
+data: $(this).serialize()
+});
+return false;
+});
+");
+?>
+
+<h1 class="titulo">Usuarios</h1>
+<!--
+<p>
+	You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>
+		&lt;&gt;</b>
+	or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+</p>
+-->
+<?php echo CHtml::link('Búsqueda Avanzada','#',array('class'=>'search-button btn')); ?>
+<div class="search-form" style="display:none">
+	<?php $this->renderPartial('_search',array(
+	'model'=>$model,
+)); ?>
+</div><!-- search-form -->
+
+<?php $this->widget('booster.widgets.TbGridView',array(
+'id'=>'usuario-grid',
+'type' => 'striped bordered condensed',
+'dataProvider'=>$model->search(),
+'filter'=>$model,
+'columns'=>array(
+		'id_usuario' => array(
+			'header' => 'N°',
+			'name' => 'id_usuario',
+			'value' => '$data->id_usuario',
+			'htmlOptions' => array('width' => '80', 'style' => 'text-align: center;'),
+			),
+		'usuario' => array(
+			'header' => 'RIF',
+			'name' => 'usuario',
+			'value' => '$data->usuario',
+			'htmlOptions' => array('width' => '90', 'style' => 'text-align: center;'),
+			),
+		'nombre_razon' => array(
+			'header' => 'Nombre / Razón Social',
+			'name' => 'nombre_razon',
+			'value' => '$data->nombre_razon',
+			'htmlOptions' => array('style' => 'text-align: left;'),
+			),
+		'fk_estado' => array(
+			'header' => 'Estado',
+			'name' => 'fk_estado',
+			'value' => '$data->fkEstado->nombre',
+			'filter' =>  CHtml::listData(Estado::model()->findAll(), 'id_estado', 'nombre'),
+			'htmlOptions' => array('style' => 'text-align: center;'),
+			),
+		'perfil' => array(
+			'header' => 'Perfil',
+			'name' => 'perfil',
+			'value' => '$data->perfil',
+			'htmlOptions' => array('width' => '90', 'style' => 'text-align: center;'),
+			),
+		'fecha_creacion' => array(
+			'header' => 'Fecha de Registro',
+			'name' => 'fecha_creacion',
+			//'value' => '$data->id_materia',
+			'value' => 'Yii::app()->dateFormatter->format("dd/MM/yyyy", strtotime($data->fecha_creacion))' ,
+			'htmlOptions' => array('width' => '100', 'style' => 'text-align: center;'),
+			),
+		/*
+		'clave',
+		'direccion',
+		'telefono_fijo',
+		'telefono_celular',
+		'fax',
+		'correo_ppal',
+		'correo_sec',
+		'estatus',
+		'perfil',
+		'fecha_creacion',
+		'fecha_actualizacion',
+		'fk_usuario_creacion',
+		'fk_usuario_actualizacion',
+		'tipo_pers',
+		*/
+array(
+'class'=>'booster.widgets.TbButtonColumn',
+),
+),
+)); ?>

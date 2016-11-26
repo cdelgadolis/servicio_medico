@@ -1,0 +1,184 @@
+<?php
+/* @var $this UsuarioController */
+/* @var $model Usuario */
+/* @var $form CActiveForm */
+/**
+ * This is the model class for table "usuario".
+ *
+ * The followings are the available columns in table 'usuario':
+ * @property integer $id_usuario
+ * @property string $usuario
+ * @property string $clave
+ * @property string $nombre_razon
+ * @property integer $fk_estado
+ * @property string $direccion
+ * @property string $telefono_fijo
+ * @property string $telefono_celular
+ * @property string $fax
+ * @property string $correo_ppal
+ * @property string $correo_sec
+ * @property boolean $estatus
+ * @property string $perfil
+ * @property string $fecha_creacion
+ * @property string $fecha_actualizacion
+ * @property integer $fk_usuario_creacion
+ * @property integer $fk_usuario_actualizacion
+ * @property string $tipo_pers
+ *
+ * The followings are the available model relations:
+ * @property Obra[] $obras
+ * @property Obra[] $obras1
+ * @property Estado $fkEstado
+ */
+class Usuario extends CActiveRecord
+{
+	public $verifyCode;
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
+	{
+		return 'usuario';
+	}
+
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules()
+	{
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			//array('usuario, clave, nombre_razon, clave, fk_estado, telefono_celular, correo_ppal, tipo_pers, direccion', 'required'),
+			array('tipo_pers, usuario, nombre_razon, clave, fk_estado, telefono_celular, correo_ppal, direccion', 'required'),
+			array('fk_estado, usuario, fk_usuario_creacion, fk_usuario_actualizacion', 'numerical', 'integerOnly'=>true),
+			array('usuario', 'length', 'min'=>6),
+			//array('clave', 'length', 'max'=>80),
+			array('clave', 'length', 'min'=>8, 'max'=>80),
+			//,'message'=>"La contraseña debe tener como mínimo 8 letras"
+			array('nombre_razon, direccion', 'length','min'=>3, 'max'=>255),
+			//Telefonos
+			array('telefono_fijo, telefono_celular, fax', 'length', 'max'=>15),
+			array('telefono_fijo, telefono_celular, fax', 'numerical', 'integerOnly'=>true),
+			//Correos
+			array('correo_ppal, correo_sec', 'email', 'message'=>"La dirección de Correo Electrónico es incorrecta"),
+			array('correo_ppal, correo_sec', 'length','max'=>50),
+			array('usuario, correo_ppal, correo_sec', 'unique'),
+			//array('perfil', 'length', 'max'=>20),
+			array('tipo_pers', 'length', 'max'=>1),
+
+			// verifyCode needs to be entered correctly
+			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
+			array('estatus, fecha_creacion, fecha_actualizacion', 'safe'),
+			// The following rule is used by search().
+			// @todo Please remove those attributes that should not be searched.
+			array('id_usuario, usuario, clave, nombre_razon, fk_estado, direccion, telefono_fijo, telefono_celular, fax, correo_ppal, correo_sec, estatus, perfil, fecha_creacion, fecha_actualizacion, fk_usuario_creacion, fk_usuario_actualizacion, tipo_pers', 'safe', 'on'=>'search'),
+		);
+	}
+
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+			'obras' => array(self::HAS_MANY, 'Obra', 'fk_usuario_creacion'),
+			'obras1' => array(self::HAS_MANY, 'Obra', 'fk_usuario_actualizacion'),
+			'fkEstado' => array(self::BELONGS_TO, 'Estado', 'fk_estado'),
+			'fkUsuarioCreacion' => array(self::BELONGS_TO, 'Usuario', 'fk_usuario_creacion'),
+			'fkUsuarioActualizacion' => array(self::BELONGS_TO, 'Usuario', 'fk_usuario_actualizacion'),
+		);
+	}
+
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'id_usuario' => 'ID',
+			'usuario' => 'RIF',
+			'clave' => 'Clave',
+			'nombre_razon' => 'Nombre / Razón Social',
+			'fk_estado' => 'Estado',
+			'direccion' => 'Dirección',
+			'telefono_fijo' => 'Teléfono Fijo',
+			'telefono_celular' => 'Teléfono Celular',
+			'fax' => 'Fax',
+			'correo_ppal' => 'Correo Principal',
+			'correo_sec' => 'Correo Alternativo',
+			'estatus' => 'Estatus',
+			'perfil' => 'Perfil',
+			'fecha_creacion' => 'Fecha de Creación',
+			'fecha_actualizacion' => 'Fecha de Actualización',
+			'fk_usuario_creacion' => 'Usuario de Creación',
+			'fk_usuario_actualizacion' => 'Usuario de Actualización',
+			'tipo_pers' => 'Tipo de Persona',
+			'verifyCode'=>'Código de Verificación',
+		);
+	}
+
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 *
+	 * Typical usecase:
+	 * - Initialize the model fields with values from filter form.
+	 * - Execute this method to get CActiveDataProvider instance which will filter
+	 * models according to data in model fields.
+	 * - Pass data provider to CGridView, CListView or any similar widget.
+	 *
+	 * @return CActiveDataProvider the data provider that can return the models
+	 * based on the search/filter conditions.
+	 */
+	public function search()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+		$criteria->order = 'id_usuario DESC';
+
+		$criteria->compare('id_usuario',$this->id_usuario);
+		$criteria->compare('usuario',$this->usuario,true);
+		$criteria->compare('clave',$this->clave,true);
+		$criteria->compare('nombre_razon',$this->nombre_razon,true);
+		$criteria->compare('fk_estado',$this->fk_estado);
+		$criteria->compare('direccion',$this->direccion,true);
+		$criteria->compare('telefono_fijo',$this->telefono_fijo,true);
+		$criteria->compare('telefono_celular',$this->telefono_celular,true);
+		$criteria->compare('fax',$this->fax,true);
+		$criteria->compare('correo_ppal',$this->correo_ppal,true);
+		$criteria->compare('correo_sec',$this->correo_sec,true);
+		$criteria->compare('estatus',$this->estatus);
+		$criteria->compare('perfil',$this->perfil,true);
+		$criteria->compare('fecha_creacion',$this->fecha_creacion,true);
+		$criteria->compare('fecha_actualizacion',$this->fecha_actualizacion,true);
+		$criteria->compare('fk_usuario_creacion',$this->fk_usuario_creacion);
+		$criteria->compare('fk_usuario_actualizacion',$this->fk_usuario_actualizacion);
+		$criteria->compare('tipo_pers',$this->tipo_pers,true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
+	/**
+	 * Returns the static model of the specified AR class.
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * @param string $className active record class name.
+	 * @return Usuario the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+	
+	public function validatePassword($password){
+	return $this->hashPassword($password)===$this->clave;
+}
+ 
+	public function hashPassword($password){
+	return md5($password);
+}
+}

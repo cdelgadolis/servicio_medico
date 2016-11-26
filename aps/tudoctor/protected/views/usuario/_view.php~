@@ -1,0 +1,83 @@
+<div class="view">
+
+		<b><?php echo CHtml::encode($data->getAttributeLabel('id_usuario')); ?>:</b>
+	<?php echo CHtml::link(CHtml::encode($data->id_usuario),array('view','id'=>$data->id_usuario)); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('usuario')); ?>:</b>
+	<?php echo CHtml::encode($data->usuario); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('clave')); ?>:</b>
+	<?php echo CHtml::encode($data->clave); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('nombre_razon')); ?>:</b>
+	<?php echo CHtml::encode($data->nombre_razon); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('fk_estado')); ?>:</b>
+	<?php echo CHtml::encode($data->fk_estado); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('direccion')); ?>:</b>
+	<?php echo CHtml::encode($data->direccion); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('telefono_fijo')); ?>:</b>
+	<?php echo CHtml::encode($data->telefono_fijo); ?>
+	<br />
+	
+	<?php
+	// ...
+	echo $this->renderPartial('_form', array('model'=>$model));
+	?>
+	
+	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('telefono_celular')); ?>:</b>
+	<?php echo CHtml::encode($data->telefono_celular); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('fax')); ?>:</b>
+	<?php echo CHtml::encode($data->fax); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('correo_ppal')); ?>:</b>
+	<?php echo CHtml::encode($data->correo_ppal); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('correo_sec')); ?>:</b>
+	<?php echo CHtml::encode($data->correo_sec); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('estatus')); ?>:</b>
+	<?php echo CHtml::encode($data->estatus); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('perfil')); ?>:</b>
+	<?php echo CHtml::encode($data->perfil); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_creacion')); ?>:</b>
+	<?php echo CHtml::encode($data->fecha_creacion); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_actualizacion')); ?>:</b>
+	<?php echo CHtml::encode($data->fecha_actualizacion); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('fk_usuario_creacion')); ?>:</b>
+	<?php echo CHtml::encode($data->fk_usuario_creacion); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('fk_usuario_actualizacion')); ?>:</b>
+	<?php echo CHtml::encode($data->fk_usuario_actualizacion); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('tipo_pers')); ?>:</b>
+	<?php echo CHtml::encode($data->tipo_pers); ?>
+	<br />
+
+	*/ ?>
+
+</div>

@@ -1,0 +1,196 @@
+<?php
+
+/**
+ * This is the model class for table "obra".
+ *
+ * The followings are the available columns in table 'obra':
+ * @property integer $id_obra
+ * @property string $titulo
+ * @property string $fecha_edicion
+ * @property integer $fk_formatopub
+ * @property integer $fk_tipomaterial
+ * @property string $num_paginas
+ * @property string $nro_edicion
+ * @property string $nrodptolegal
+ * @property string $tiraje
+ * @property string $id_pub
+ * @property string $tema
+ * @property string $fecha_creacion
+ * @property string $fecha_actualizacion
+ * @property integer $fk_usuario_creacion
+ * @property integer $fk_usuario_actualizacion
+ * @property boolean $estatus
+ * @property integer $fk_editor
+ * @property integer $idioma
+ * @property integer $materia1
+ * @property integer $materia2
+ * @property integer $materia3
+ * @property string $autor1
+ * @property string $autor2
+ * @property string $autor3
+ * @property string $tipo_autor
+ *
+ * The followings are the available model relations:
+ * @property Formatopub $fkFormatopub
+ * @property Tipomaterial $fkTipomaterial
+ * @property Usuario $fkUsuarioCreacion
+ * @property Usuario $fkUsuarioActualizacion
+ * @property Materia $materia10
+ * @property Materia $materia20
+ * @property Materia $materia30
+ */
+class Obra extends CActiveRecord
+{
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
+	{
+		return 'obra';
+	}
+
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules()
+	{
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			array('fk_tipomaterial, fk_formatopub, titulo, tipo_autor, fecha_edicion, tiraje, materia1, autor1', 'required'),
+			array('fk_formatopub, fk_tipomaterial, fk_editor, tiraje, materia1, materia2, materia3, idioma, tipo_autor, fk_tipo_autor', 'numerical', 'integerOnly'=>true),
+			array('titulo', 'length', 'max'=>150),
+			array('num_paginas', 'length', 'max'=>5),
+			array('nro_edicion, tiraje', 'length', 'max'=>20),
+			array('nrodptolegal', 'length', 'max'=>12),
+			array('id_pub', 'length', 'max'=>2),
+			array('tema', 'length', 'max'=>50),
+			array('autor1, autor2, autor3', 'length', 'max'=>100),
+			//array('fecha_edicion, fecha_creacion, fecha_actualizacion, estatus', 'safe'),
+			//array('fecha_edicion',  'type',  'type'=>'date',  'dateFormat'=>'yyyy-MM-dd'), 
+			array('fecha_edicion', 'safe'),
+			// The following rule is used by search().
+			// @todo Please remove those attributes that should not be searched.
+			array('id_obra, titulo, fecha_edicion, fk_formatopub, fk_tipomaterial, num_paginas, nro_edicion, nrodptolegal, tiraje, id_pub, tema, fecha_creacion, fecha_actualizacion, fk_usuario_creacion, fk_usuario_actualizacion, estatus, fk_editor, idioma, materia1, materia2, materia3, autor1, autor2, autor3, tipo_autor', 'safe', 'on'=>'search'),
+		);
+	}
+
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+			'fkIdioma' => array(self::BELONGS_TO, 'Idioma', 'fk_idioma'),
+			'fkTipoAutor' => array(self::BELONGS_TO, 'Autor', 'fk_tipo_autor'),
+			'fkFormatopub' => array(self::BELONGS_TO, 'Formatopub', 'fk_formatopub'),
+			'fkTipomaterial' => array(self::BELONGS_TO, 'Tipomaterial', 'fk_tipomaterial'),
+			'fkUsuarioCreacion' => array(self::BELONGS_TO, 'Usuario', 'fk_usuario_creacion'),
+			'fkUsuarioActualizacion' => array(self::BELONGS_TO, 'Usuario', 'fk_usuario_actualizacion'),
+			'materia10' => array(self::BELONGS_TO, 'Materia', 'materia1'),
+			'materia20' => array(self::BELONGS_TO, 'Materia', 'materia2'),
+			'materia30' => array(self::BELONGS_TO, 'Materia', 'materia3'),			
+		);
+	}
+
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'id_obra' => 'N°',
+			'titulo' => 'Título',
+			'fecha_edicion' => 'Fecha de Edición',
+			'fk_formatopub' => 'Formato de la Publicación',
+			'fk_tipomaterial' => 'Tipo de Material',
+			'num_paginas' => 'Nro. de Páginas',
+			'nro_edicion' => 'Nro. Edición',
+			'nrodptolegal' => 'Nrodptolegal',
+			'tiraje' => 'Tiraje',
+			'id_pub' => 'ID Pub',
+			'tema' => 'Tema',
+			'fecha_creacion' => 'Fecha de Creación',
+			'fecha_actualizacion' => 'Fecha de Actualización',
+			'fk_usuario_creacion' => 'Usuario de Creación',
+			'fk_usuario_actualizacion' => 'Usuario de Actualización',
+			'estatus' => 'Estatus',
+			'fk_editor' => 'Editor',
+			'idioma' => 'Idioma',
+			'materia1' => 'Materia 1',
+			'materia2' => 'Materia 2',
+			'materia3' => 'Materia 3',
+			'autor1' => 'Autor 1',
+			'autor2' => 'Autor 2',
+			'autor3' => 'Autor 3',
+			'tipo_autor' => 'Tipo de Autor',
+		);
+	}
+
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 *
+	 * Typical usecase:
+	 * - Initialize the model fields with values from filter form.
+	 * - Execute this method to get CActiveDataProvider instance which will filter
+	 * models according to data in model fields.
+	 * - Pass data provider to CGridView, CListView or any similar widget.
+	 *
+	 * @return CActiveDataProvider the data provider that can return the models
+	 * based on the search/filter conditions.
+	 */
+	public function search()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+		$criteria->order = 'id_obra DESC';
+ 
+ 
+		$criteria->compare('id_obra',$this->id_obra);
+		$criteria->compare( 'LOWER(titulo)',  strtolower($this->titulo) ,true);
+		$criteria->compare('fecha_edicion',$this->fecha_edicion,true);
+		$criteria->compare('fk_formatopub',$this->fk_formatopub);
+		$criteria->compare('fk_tipomaterial',$this->fk_tipomaterial);
+		$criteria->compare('num_paginas',$this->num_paginas,true);
+		$criteria->compare('nro_edicion',$this->nro_edicion,true);
+		$criteria->compare('nrodptolegal',$this->nrodptolegal,true);
+		$criteria->compare('tiraje',$this->tiraje,true);
+		$criteria->compare('id_pub',$this->id_pub,true);
+		$criteria->compare('tema',$this->tema,true);
+		$criteria->compare('fecha_creacion',$this->fecha_creacion,true);
+		$criteria->compare('fecha_actualizacion',$this->fecha_actualizacion,true);
+		$criteria->compare('fk_usuario_creacion',$this->fk_usuario_creacion);
+		$criteria->compare('fk_usuario_actualizacion',$this->fk_usuario_actualizacion);
+		$criteria->compare('estatus',$this->estatus);
+		$criteria->compare('fk_editor',$this->fk_editor);
+		$criteria->compare('idioma',$this->idioma,true);
+		$criteria->compare('materia1',$this->materia1);
+		$criteria->compare('materia2',$this->materia2);
+		$criteria->compare('materia3',$this->materia3);
+		$criteria->compare('autor1',$this->autor1,true);
+		$criteria->compare('autor2',$this->autor2,true);
+		$criteria->compare('autor3',$this->autor3,true);
+		$criteria->compare('tipo_autor',$this->tipo_autor,true);
+
+		$criteria->addCondition('fk_usuario_creacion ='.Yii::app()->user->id.'');
+		//$criteria->addCondition('fk_usuario_creacion = 14 ');
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
+	/**
+	 * Returns the static model of the specified AR class.
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * @param string $className active record class name.
+	 * @return Obra the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+}

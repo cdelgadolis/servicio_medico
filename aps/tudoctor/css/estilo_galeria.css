@@ -1,0 +1,12 @@
+#galeria:hover{
+color:#d81a5c;
+-webkit-box-shadow:0 1px 5px 0 #a29ad3;
+-moz-box-shadow:0 1px 5px 0 #a29ad3;
+box-shadow:0 1px 5px 0 #a29ad3;
+}
+div:hover #galeria:not(:hover){
+opacity:.35;
+-webkit-box-shadow:0 1px 1px 0 #000;
+-moz-box-shadow:0 1px 1px 0 #000;
+box-shadow:0 1px 1px 0 #000;
+}

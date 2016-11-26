@@ -1,0 +1,152 @@
+<?php /* @var $this Controller */ ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="language" content="es">
+
+	<!-- blueprint CSS framework -->
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection">
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print">
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection">
+	<![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
+
+	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+</head>
+
+<body>
+
+<div class="container" id="page">
+
+	<div id="header">
+	<br/>
+	<div id="banner" style="width:940px; height:110px;">
+	 <img src="images/banner.jpg" alt="Biblioteca Nacional de Venezuela / Depósito Legal" width="940px" height="110px"> 
+	 <br/>
+	</div>
+<?php
+
+    $admin = (isset(Yii::app()->user->perfil) and Yii::app()->user->perfil == 'Admin') ? true : false ;
+    $this->widget('booster.widgets.TbNavbar',
+    array(
+    'type' => '',
+   //'brand' => CHtml::encode(Yii::app()->name),
+   // 'brand' => 'Inicio', 
+    'brand'=>CHtml::image(Yii::app()->getBaseUrl().'/images/inic.jpg'),
+    'brandUrl' => array('/site/index'),
+    'collapse' => true, // requires bootstrap-responsive.css
+    'fixed' => false,
+    'fluid' => true,
+    'items' => array(
+    array(
+    'class' => 'booster.widgets.TbMenu',
+    'type' => 'navbar',
+     'items' => array(
+    //array('label' => 'Home', 'url' => '#', 'active' => true),
+   // array('label' => 'Contacto', 'url' => array('/site/contact')),
+    array('label'=>'Login', 'url'=>array('/site/login')),
+    //array('label' => 'Usuarios', 'url' => array('/usuario/admin'),'visible' => $admin),
+    //array('label' => 'Materia', 'url' => array('/materia/index'),'visible' => $admin),
+    //array('label' => 'Formato de publicacion', 'url' => array('/formatopub/index'),'visible' => $admin),
+    //array('label' => 'Tipo de publicacion', 'url' => array('/tipomaterial/index'),'visible' => $admin),
+   
+    array(
+'label' => 'Solicitud',
+'url' => '#',
+'items' => array(
+array('label' => 'Generar Solicitud', 'url' => array('/obra/create')),
+'---',
+//array('label' => 'NAV HEADER'),
+array('label' => 'Consultar', 'url' => array('/obra/admin')),
+//array('label' => 'Consultar TODO','url' =>array('/obra/view'),'visible' => $admin),
+)
+),
+    
+    array(
+    'label' => 'Opciones', 
+    'icon' =>'glyphicon glyphicon-cog',
+    'url' => '#',
+    'items' => array(
+    array('label' => 'Materia', 'url' => array('/materia/admin'),'visible' => $admin),
+    array('label' => 'Tipo de material', 'url' => array('/tipomaterial/admin'),'visible' => $admin),
+    array('label' => 'Formato de publicacion', 'url' => array('/formatopub/admin'),'visible' => $admin),
+    array('label' => 'Tipo de Autor', 'url' => array('/autor/admin'),'visible' => $admin),
+    array('label' => 'Idioma', 'url' => array('/idioma/admin'),'visible' => $admin),
+    '---',
+    array('label' => 'Usuarios', 'url' => array('/usuario/admin'),'visible' => $admin),
+    array('label' => 'Estadisticas', 'url' => array('/estadisticas/index'),'visible' => $admin),
+    /*array(
+    'label' => 'One more separated link',
+    'url' => '#'
+    ),*/
+    ),'visible' => $admin
+    ),
+     array('label'=>' Preguntas Frecuentes', 'icon' =>'glyphicon glyphicon-info-sign', 'url'=>array('/site/casa')),
+     array('label' => 'Contáctenos', 'icon' =>'glyphicon glyphicon-envelope', 'url' => array('/site/contact')),
+    ),
+    ),
+  //  '<form class="navbar-form navbar-left" action=""><div class="form-group"><input type="text" class="form-control" placeholder="Buscar..."></div></form>',
+    array(
+    'class' => 'booster.widgets.TbMenu',
+    'type' => 'navbar',
+    'htmlOptions' => array('class' => 'pull-right'),
+    'items' => array(
+    //array('label' => 'Link', 'url' => '#','visible' => $admin),
+    '---',
+    array(
+    'label' => Yii::app()->user->name,
+    'url' => '#',
+    'items' => array(
+    array(
+    'label' => 'Detalle de Usuario', 'url' =>array('usuario/view&id='.Yii::app()->user->id.'')),
+    array('label' => 'Modificar Datos', 'url' =>array('usuario/update&id='.Yii::app()->user->id.'')),
+    array('label' => 'Modificar Clave', 'url' => '#'),
+    '---',
+    array('label' => 'Salir', 'url' => array('/site/logout')),
+    ), //'visible'=>Yii::app()->user->isGuest
+    ),
+    ),
+    ),
+    ),
+    )
+    );
+?>
+	
+	<div id="mainmenu">
+		<?php /*$this->widget('zii.widgets.CMenu',array(
+			'items'=>array(
+				array('label'=>'Inicio', 'url'=>array('/site/index')),
+				array('label'=>'Usuarios', 'url'=>array('/usuario/admin')),
+				array('label'=>'Materia', 'url'=>array('/materia/admin')),
+				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
+				array('label'=>'Contact', 'url'=>array('/site/contact')),
+				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+			),
+		)); */
+		?>
+	</div><!-- mainmenu -->
+	<?php if(isset($this->breadcrumbs)):?>
+		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+			'links'=>$this->breadcrumbs,
+		)); ?><!-- breadcrumbs -->
+	<?php endif?>
+
+	<?php echo $content; ?>
+
+	<div class="clear"></div>
+
+	<div id="footer">
+	Instituto Aut&oacute;nomo Biblioteca Nacional de Venezuela y de Servicios de Bibliotecas &copy; <?php echo date('Y'); ?> <br/>
+	Dirección: Final avenida Panteón, edificio Sede Administrativa Biblioteca Nacional, Complejo Cultural Foro Libertador. Parroquia Altagracia. Distrito Capital, Caracas, Venezuela. Código Postal: 1010 RIF. G-20000076-7 Teléfono: +58-212-5059124.<br/>
+		<?php //echo Yii::powered(); ?>
+	</div><!-- footer -->
+
+</div><!-- page -->
+
+</body>
+</html>

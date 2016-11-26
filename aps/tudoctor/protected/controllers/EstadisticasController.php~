@@ -1,0 +1,273 @@
+<?php
+
+class EstadisticasController extends Controller {
+
+     //public $layout = '//layouts/admintui';
+
+    /**
+     * @return array action filters
+     */
+    public function filters() {
+        return array(
+            'accessControl', // perform access control for CRUD operations
+            'postOnly + delete', // we only allow deletion via POST request
+        );
+    }
+
+    public function accessRules() {
+        return array(
+            array('allow', // allow all users to perform 'index' and 'view' actions
+                'actions' => array('index', 'usuariosUbicacionGeografica', 'obrasFormatoPublicacion', 'obrasTipoFormatoPublicacion','obrasmateriapublicacion','obrasusuario','obrasusuariotipo','obrasestados'),
+                'users' => array('@'),
+            ),
+            array('deny', // deny all users
+                'users' => array('*'),
+            ),
+        );
+    }
+
+
+    public function actionIndex() {
+
+      $this->render('index' );
+
+
+    }
+
+
+
+public function actionUsuariosUbicacionGeografica() {
+
+  $titulo = "Usuarios Registrados";
+  $subtitulo = "Fecha ".date("d/m/Y");
+
+$consulta = Yii::app()->db->createCommand('SELECT sec.id_estado, sec.nombre,
+(SELECT COUNT(des.id_usuario)
+  FROM usuario des
+  JOIN estado sec1 ON sec1.id_estado = des.fk_estado
+  WHERE sec.id_estado = sec1.id_estado) AS cantidad
+  FROM estado sec
+  GROUP BY sec.id_estado, sec.nombre
+  ORDER BY sec.nombre')->queryAll();
+  $total="0";
+foreach ( $consulta as $id => $estado ){
+      $categorias[$id] = $estado["nombre"];
+     // $url = Yii::app()->createAbsoluteUrl( "estadisticas/desarrollosUbicacionMunicipios/", array("id"=>$estado["id_estado"]) );
+      $series[$id] = array( 'y' => $estado["cantidad"] /*, 'url' => $url*/ );
+      $total = $total + $estado["cantidad"];
+  }//fin foreach resultados consulta
+
+	$this->render('ubicacionGeografica' , array( 'titulo' => $titulo, 'subtitulo' => $subtitulo,
+                'categorias' => $categorias, 'series' => $series, 'total' => $total ));
+
+}
+
+public function actionObrasFormatoPublicacion() {
+
+//  $CantFuentesFinanciamientos = FuenteFinanciamiento::model()->count();
+//  $CantDesarrollos = Desarrollo::model()->count();
+
+  $CantFuentesFinanciamientos ="Algo";
+  $CantDesarrollos = "Algo 2";
+
+
+  $titulo = "Cantidad de Obras por Formato de Publicación. Fecha ";
+
+  $subtitulo = "Total Desarrollos Habitacionales: ".$CantDesarrollos." Total Fuentes Financiamiento: ".$CantFuentesFinanciamientos;
+
+  $tituloSerie = 'Fuentes de Financiamietos';
+
+  $sql = "SELECT fpub.id_formatopub, fpub.des_formap,
+(SELECT COUNT(des.id_obra) FROM obra des JOIN formatopub sec1 ON sec1.id_formatopub = des.fk_formatopub
+  WHERE fpub.id_formatopub = sec1.id_formatopub) AS cantidad
+  FROM formatopub fpub
+  GROUP BY fpub.id_formatopub, fpub.des_formap
+  ORDER BY fpub.des_formap";
+
+  $consulta = Yii::app()->db->createCommand($sql);
+  foreach ( $consulta->queryAll() as $registro ){
+    $data[] = array('name'=> $registro["des_formap"], 'y' => $registro["cantidad"], );
+  }
+
+	$this->render('graficoTorta' , array( 'titulo' => $titulo, 'subtitulo' => $subtitulo,
+    'tituloSerie' => $tituloSerie, 'data' => $data  ));
+
+}
+
+public function actionObrasTipoFormatoPublicacion() {
+
+//  $CantFuentesFinanciamientos = FuenteFinanciamiento::model()->count();
+//  $CantDesarrollos = Desarrollo::model()->count();
+
+  $CantFuentesFinanciamientos ="Algo";
+  $CantDesarrollos = "Algo 2";
+
+
+  $titulo = "Cantidad de Tipos de Publicaciones Por Obras";
+
+  $subtitulo = "Total Desarrollos Habitacionales: ".$CantDesarrollos." Total Fuentes Financiamiento: ".$CantFuentesFinanciamientos;
+ $subtitulo = "Fecha ".date("d/m/Y");
+  $tituloSerie = 'Fuentes de Financiamietos';
+
+  $sql = "SELECT tmat.id_tipomaterial as codigo, tmat.des_material as nombre,
+(SELECT COUNT(des.id_obra) FROM obra des JOIN tipomaterial sec1 ON sec1.id_tipomaterial = des.fk_tipomaterial
+  WHERE tmat.id_tipomaterial = sec1.id_tipomaterial) AS cantidad
+  FROM tipomaterial tmat
+  GROUP BY tmat.id_tipomaterial, tmat.des_material
+  ORDER BY tmat.des_material";
+
+  $consulta = Yii::app()->db->createCommand($sql);
+  foreach ( $consulta->queryAll() as $registro ){
+    $data[] = array('name'=> $registro["nombre"], 'y' => $registro["cantidad"], );
+  }
+
+	$this->render('tipomaterial' , array( 'titulo' => $titulo, 'subtitulo' => $subtitulo,
+    'tituloSerie' => $tituloSerie, 'data' => $data  ));
+
+}
+
+
+public function actionObrasMateriaPublicacion() {
+
+//  $CantFuentesFinanciamientos = FuenteFinanciamiento::model()->count();
+//  $CantDesarrollos = Desarrollo::model()->count();
+
+  $CantFuentesFinanciamientos ="Algo";
+  $CantDesarrollos = "Algo 2";
+
+
+  $titulo = "Cantidad de Obras Por Materia";
+
+  $subtitulo = "Total Desarrollos Habitacionales: ".$CantDesarrollos." Total Fuentes Financiamiento: ".$CantFuentesFinanciamientos;
+ $subtitulo = "Fecha ".date("d/m/Y");
+  $tituloSerie = 'Fuentes de Financiamietos';
+
+  $sql = "SELECT tabla1.id_materia as codigo,tabla1.materia as nombre,
+(SELECT COUNT(des.id_obra) FROM obra des JOIN materia sec1 ON sec1.id_materia = des.materia1
+  WHERE tabla1.id_materia = sec1.id_materia) AS cantidad
+FROM materia tabla1
+GROUP BY tabla1.id_materia,tabla1.materia
+ORDER BY tabla1.materia";
+
+  $consulta = Yii::app()->db->createCommand($sql);
+  foreach ( $consulta->queryAll() as $registro ){
+    $data[] = array('name'=> $registro["nombre"], 'y' => $registro["cantidad"], );
+  }
+/*
+foreach ( $consulta as $id => $estado ){
+      $categorias[$id] = $estado["nombre"];
+     // $url = Yii::app()->createAbsoluteUrl( "estadisticas/desarrollosUbicacionMunicipios/", array("id"=>$estado["id_estado"]) );
+      $series[$id] = array( 'y' => $estado["cantidad"] /*, 'url' => $url*/ );
+      $total = $total + $estado["cantidad"];
+//  }//fin foreach resultados consulta
+//
+//$this->render('materiaobras2' , array( 'titulo' => $titulo, 'subtitulo' => $subtitulo,
+               // 'categorias' => $categorias, 'series' => $series, 'total' => $total ));
+           
+	$this->render('materiaobras' , array( 'titulo' => $titulo, 'subtitulo' => $subtitulo,
+    'tituloSerie' => $tituloSerie, 'data' => $data  ));
+
+}
+
+public function actionObrasUsuario() {
+$titulo = "Obras Por Usuario";
+  $subtitulo = "Fecha ".date("d/m/Y");
+
+$consulta = Yii::app()->db->createCommand('SELECT tabla1.id_usuario as codigo,tabla1.nombre_razon as nombre,
+(SELECT COUNT(des.id_obra) FROM obra des JOIN usuario sec1 ON sec1.id_usuario = des.fk_usuario_creacion
+  WHERE tabla1.id_usuario = sec1.id_usuario) AS cantidad
+FROM usuario tabla1
+GROUP BY tabla1.id_usuario,tabla1.nombre_razon
+ORDER BY tabla1.nombre_razon')->queryAll();
+  $total="0";
+foreach ( $consulta as $id => $estado ){
+      $categorias[$id] = $estado["nombre"];
+     // $url = Yii::app()->createAbsoluteUrl( "estadisticas/desarrollosUbicacionMunicipios/", array("id"=>$estado["id_estado"]) );
+      $series[$id] = array( 'y' => $estado["cantidad"] /*, 'url' => $url*/ );
+      $total = $total + $estado["cantidad"];
+  }//fin foreach resultados consulta
+
+	$this->render('obrausuario' , array( 'titulo' => $titulo, 'subtitulo' => $subtitulo,
+                'categorias' => $categorias, 'series' => $series, 'total' => $total ));
+
+
+}
+
+public function actionObrasUsuarioTipo() {
+$titulo = "Obras Por Tipo De Usuario";
+  $subtitulo = "Fecha ".date("d/m/Y");
+  $total="0";
+$consulta = Yii::app()->db->createCommand('SELECT COUNT(id_obra)as cantidad,sec1.tipo_pers as nombre FROM obra des ,usuario sec1
+where sec1.id_usuario = des.fk_usuario_creacion 
+GROUP BY sec1.tipo_pers
+ORDER BY sec1.tipo_pers')->queryAll();
+
+foreach ($consulta as $id => $estado ){
+      $categorias[$id] = $estado["nombre"];
+      if($categorias[$id]==2)
+       {
+        $categorias[$id]="Venezolano";
+       }
+       if($categorias[$id]==1)
+       {
+        $categorias[$id]="Juridico";
+       }
+        if($categorias[$id]==3)
+       {
+        $categorias[$id]="Extranjero";
+       }
+     // $url = Yii::app()->createAbsoluteUrl( "estadisticas/desarrollosUbicacionMunicipios/", array("id"=>$estado["id_estado"]) );
+      $series[$id] = array( 'y' => $estado["cantidad"] /*, 'url' => $url*/ );
+      $total = $total + $estado["cantidad"];
+  }//fin foreach resultados consulta
+
+//
+	$this->render('obrausuariotipo' , array( 'titulo' => $titulo, 'subtitulo' => $subtitulo,
+                'categorias' => $categorias, 'series' => $series, 'total' => $total ));
+
+
+}
+
+
+public function actionObrasestados() {
+$titulo = "Obras Por Estados";
+  $subtitulo = "Fecha ".date("d/m/Y");
+  $total="0";
+ $tituloSerie = 'Fuentes de Financiamietos';
+$consulta = Yii::app()->db->createCommand('SELECT COUNT(id_obra)as cantidad,est.nombre as nombre FROM obra des,usuario sec1, estado est
+where sec1.id_usuario = des.fk_usuario_creacion and sec1.fk_estado=est.id_estado 
+GROUP BY sec1.fk_estado,est.nombre
+ORDER BY est.nombre
+')->queryAll();
+
+foreach ( $consulta as $id => $estado ){
+      $categorias[$id] = $estado["nombre"];
+     
+     // $url = Yii::app()->createAbsoluteUrl( "estadisticas/desarrollosUbicacionMunicipios/", array("id"=>$estado["id_estado"]) );
+      $series[$id] = array( 'y' => $estado["cantidad"] /*, 'url' => $url*/ );
+      $total = $total + $estado["cantidad"];
+  }//fin foreach resultados consulta
+
+//
+	$this->render('obrasestados' , array( 'titulo' => $titulo, 'subtitulo' => $subtitulo,
+                'categorias' => $categorias, 'series' => $series, 'total' => $total ));
+
+
+}
+
+
+
+
+    /**
+     * This is the action to handle external exceptions.
+     */
+    public function actionError() {
+        if ($error = Yii::app()->errorHandler->error) {
+            if (Yii::app()->request->isAjaxRequest)
+                echo $error['message'];
+            else
+                $this->render('error', $error);
+        }
+    }
+
+}

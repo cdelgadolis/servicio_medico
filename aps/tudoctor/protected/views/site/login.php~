@@ -1,0 +1,80 @@
+<?php
+/* @var $this SiteController */
+/* @var $model LoginForm */
+/* @var $form CActiveForm  */
+/* @var $this Controller */
+
+$this->pageTitle=Yii::app()->name . ' - Iniciar Sesión';
+$this->breadcrumbs=array(
+	'Login',
+);
+?>
+
+<div class="form">
+<?php /*$form=$this->beginWidget('CActiveForm', array(
+	'id'=>'login-form',
+	'enableClientValidation'=>true,
+	'clientOptions'=>array(
+		'validateOnSubmit'=>true,
+	),
+)); */
+
+
+$form = $this->beginWidget(
+'booster.widgets.TbActiveForm',
+array(
+'id' => 'login-form',
+'htmlOptions' => array('class' => 'well'), // for inset effect
+)
+);
+ 
+echo $form->textFieldGroup($model, 'username');
+echo $form->passwordFieldGroup($model, 'password');
+//echo $form->checkboxGroup($model, 'checkbox');
+$this->widget(
+'booster.widgets.TbButton', array(
+'buttonType' => 'submit', 
+ 'size' => 'large',
+ 'context' => 'success',
+'label' => 'Entrar' )
+ );
+ ?>
+ 
+ <?php
+/*
+$this->endWidget();
+unset($form);
+*/
+/*
+ $this->widget(
+'booster.widgets.TbButton',
+array(
+ 'size' => 'large',
+'label' => 'Registrarse',
+'buttonType' => 'submit', 
+'url' => '/usuario/create',
+'context' => 'primary',
+)
+);*/
+	 ?>
+
+<!--<?php echo CHtml::imageButton('Registrarse', array('submit' => array('/usuario/create'))); ?>-->
+<div class="izquierda2">
+<?php $this->widget(
+'booster.widgets.TbButton', array(
+'buttonType' => 'link', 
+'size' => 'large',
+'icon' =>'glyphicon glyphicon-user',
+'context' => 'info',
+'url'=>Yii::app()->createUrl('usuario/create'),
+// 'url' => '#',
+'label' => 'Registrarse' )
+ );
+ 
+
+ $this->endWidget();
+unset($form);
+ ?>
+ </div><br/>
+<!--<?php echo CHtml::imageButton(Yii::app()->baseUrl.'/images/registrarse.jpeg' ,array('submit' => array('/usuario/create')));?>-->
+</div><!-- form -->
