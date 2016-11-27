@@ -15,10 +15,13 @@
  * @property string $fecha_creacion
  * @property integer $usuario_creacion
  * @property boolean $es_activo
+ * @property integer $fk_medico
  *
  * The followings are the available model relations:
  * @property Paciente $fkPaciente
  * @property Sede $fkSede
+ * @property Medicos $fkMedico
+ * @property Especialidad $fkEspecialidad
  */
 class Solicitud extends CActiveRecord
 {
@@ -38,14 +41,14 @@ class Solicitud extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('fk_paciente, fk_especialidad, fecha_solicitud', 'required'),
-			array('fk_paciente, fk_sede, fk_especialidad, usuario_creacion', 'numerical', 'integerOnly'=>true),
+			array('fk_paciente, fk_sede, fk_especialidad, fecha_solicitud, fk_medico', 'required'),
+			array('fk_paciente, fk_sede, fk_especialidad, usuario_creacion, fk_medico', 'numerical', 'integerOnly'=>true),
 			array('motivo_consulta', 'length', 'max'=>300),
 			array('medico_referido', 'length', 'max'=>200),
 			array('hora, fecha_creacion, es_activo', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_solicitud, fk_paciente, fk_sede, fk_especialidad, fecha_solicitud, hora, motivo_consulta, medico_referido, fecha_creacion, usuario_creacion, es_activo', 'safe', 'on'=>'search'),
+			array('id_solicitud, fk_paciente, fk_sede, fk_especialidad, fecha_solicitud, hora, motivo_consulta, medico_referido, fecha_creacion, usuario_creacion, es_activo, fk_medico', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,6 +62,8 @@ class Solicitud extends CActiveRecord
 		return array(
 			'fkPaciente' => array(self::BELONGS_TO, 'Paciente', 'fk_paciente'),
 			'fkSede' => array(self::BELONGS_TO, 'Sede', 'fk_sede'),
+			'fkMedico' => array(self::BELONGS_TO, 'Medicos', 'fk_medico'),
+			'fkEspecialidad' => array(self::BELONGS_TO, 'Especialidad', 'fk_especialidad'),
 		);
 	}
 
@@ -68,17 +73,18 @@ class Solicitud extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_solicitud' => 'Id Solicitud',
+			'id_solicitud' => 'N°',
 			'fk_paciente' => 'Paciente',
 			'fk_sede' => 'Sede',
 			'fk_especialidad' => 'Especialidad',
-			'fecha_solicitud' => 'Fecha Solicitud',
+			'fecha_solicitud' => 'Cita',
 			'hora' => 'Hora',
 			'motivo_consulta' => 'Motivo Consulta',
 			'medico_referido' => 'Medico Referido',
-			'fecha_creacion' => 'Fecha Creacion',
-			'usuario_creacion' => 'Usuario Creacion',
-			'es_activo' => 'Es Activo',
+			'fecha_creacion' => 'Fecha de Solicitud',
+			'usuario_creacion' => 'Usuario Solicitante',
+			'es_activo' => 'Activo',
+			'fk_medico' => 'Medico',
 		);
 	}
 
@@ -111,6 +117,7 @@ class Solicitud extends CActiveRecord
 		$criteria->compare('fecha_creacion',$this->fecha_creacion,true);
 		$criteria->compare('usuario_creacion',$this->usuario_creacion);
 		$criteria->compare('es_activo',$this->es_activo);
+		$criteria->compare('fk_medico',$this->fk_medico);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

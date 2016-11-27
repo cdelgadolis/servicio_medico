@@ -97,5 +97,17 @@ $this->breadcrumbs=array(
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
-
+<div class="izquierda2">
+<?php
+$this->widget(
+		'booster.widgets.TbButton', array(
+		'buttonType' => 'link', 
+		'size' => 'btn-lg',
+		'icon' =>'glyphicon glyphicon-chevron-left',
+		'context' => 'danger',
+		'url'=>Yii::app()->createUrl('site/index'),
+		'label' => '  Regresar' )
+		);
+?>
+</div>
 <?php endif; ?>

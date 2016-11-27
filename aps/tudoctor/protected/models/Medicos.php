@@ -30,6 +30,13 @@
  */
 class Medicos extends CActiveRecord
 {
+	
+	public function getConcate()
+{
+return $this->nombres." ".$this->apellidos;
+
+} 
+
 	/**
 	 * @return string the associated database table name
 	 */

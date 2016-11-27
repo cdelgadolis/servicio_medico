@@ -27,7 +27,7 @@ public function accessRules()
 {
 return array(
 array('allow',  // allow all users to perform 'index' and 'view' actions
-'actions'=>array('index','view'),
+'actions'=>array('index','view','casa_artista','sm_pedrotorres', 'ft_teresacarreno', 'simon_bolivar'),
 'users'=>array('*'),
 ),
 array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -164,6 +164,25 @@ throw new CHttpException(404,'The requested page does not exist.');
 return $model;
 }
 
+public function actionCasa_Artista()
+{
+	$this->render('casa_artista');
+	}
+
+public function actionSm_Pedrotorres()
+{
+	$this->render('sm_pedrotorres');
+	}
+
+public function actionFt_Teresacarreno()
+{
+	$this->render('ft_teresacarreno');
+	}
+
+public function actionSimon_Bolivar()
+{
+	$this->render('simon_bolivar');
+	}
 /**
 * Performs the AJAX validation.
 * @param CModel the model to be validated

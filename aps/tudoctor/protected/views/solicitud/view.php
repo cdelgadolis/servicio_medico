@@ -29,5 +29,6 @@ array('label'=>'Manage Solicitud','url'=>array('admin')),
 		'fecha_creacion',
 		'usuario_creacion',
 		'es_activo',
+		'fk_medico',
 ),
 )); ?>

@@ -1,8 +1,8 @@
 <div class = "row">
    
-   <div class = "col-xs-6 col-md-4">
+   <div class = "col-xs-6">
       <div class = "thumbnail">
-		 <img src="<?= Yii::app()->getBaseUrl(true) . '/images/sedes/' . $data->foto_sede ?>" alt="" width="304" height="236">
+		<img src="<?= Yii::app()->getBaseUrl(true) . '/images/sedes/' . $data->foto_sede ?>" alt="" width="304" height="200">
       </div>
       
       <div class = "caption">
@@ -49,6 +49,65 @@
         <div class="text-justify">Puede visitar nuestras instalaciones en un horario comprendido:<br>Lunes a Viernes de <b><?= $data->horario_entrada; ?> -- <?= $data->horario_salida ?></b></div>
       </div>
       <div class="modal-footer">
+		<?php
+		if($data->id_sede==1)
+		{
+		$this->widget(
+		'booster.widgets.TbButton', array(
+		'buttonType' => 'link', 
+		'size' => 'default',
+		'icon' =>'glyphicon glyphicon-picture',
+		'context' => 'warning',
+		'url'=>Yii::app()->createUrl('sede/sm_pedrotorres'),
+		'htmlOptions' => array('target'=>'_blank'),
+		// 'url' => '#',
+		'label' => '  Ver Galería de Imágenes' )
+		);
+	}
+
+		if($data->id_sede==2)
+		{
+		$this->widget(
+		'booster.widgets.TbButton', array(
+		'buttonType' => 'link', 
+		'size' => 'default',
+		'icon' =>'glyphicon glyphicon-picture',
+		'context' => 'warning',
+		'url'=>Yii::app()->createUrl('sede/simon_bolivar'),
+		'htmlOptions' => array('target'=>'_blank'),
+		// 'url' => '#',
+		'label' => '  Ver Galería de Imágenes' )
+		);
+	}
+	if($data->id_sede==3)
+		{
+		$this->widget(
+		'booster.widgets.TbButton', array(
+		'buttonType' => 'link', 
+		'size' => 'default',
+		'icon' =>'glyphicon glyphicon-picture',
+		'context' => 'warning',
+		'url'=>Yii::app()->createUrl('sede/casa_artista'),
+		'htmlOptions' => array('target'=>'_blank'),
+		// 'url' => '#',
+		'label' => '  Ver Galería de Imágenes' )
+		);
+	}
+	if($data->id_sede==4)
+		{
+		$this->widget(
+		'booster.widgets.TbButton', array(
+		'buttonType' => 'link', 
+		'size' => 'default',
+		'icon' =>'glyphicon glyphicon-picture',
+		'context' => 'warning',
+		'url'=>Yii::app()->createUrl('sede/ft_teresacarreno'),
+		'htmlOptions' => array('target'=>'_blank'),
+		// 'url' => '#',
+		'label' => '  Ver Galería de Imágenes' )
+		);
+	}
+		?>
         <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
       </div>
     </div>

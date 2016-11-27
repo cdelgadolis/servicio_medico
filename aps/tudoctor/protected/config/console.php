@@ -15,8 +15,8 @@ return array(
 	'components'=>array(
 
 		// database settings are configured in database.php
-		'db'=>require(dirname(__FILE__).'/database.php'),
-
+		//'db'=>require(dirname(__FILE__).'/database.php'),
+		
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(

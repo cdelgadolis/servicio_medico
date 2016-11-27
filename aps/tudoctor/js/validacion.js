@@ -30,24 +30,24 @@ function buscarPersonaSaime(nacionalidad, cedula) {
             if (!datos) {
                 bootbox.alert('Debe Completar el campo Cédula');
                 $('.limpiar').val('');
-                $('#Beneficiario_genero').val('');
+                //$('#Beneficiario_genero').val('');
             } else {
                 if (datos['intcedula'] == null) {
                     bootbox.alert('El número de Cédula no existe');
                     //$('#Beneficiario_genero').val('');
                     //$('.limpiar').val('');
-                    $('#Visitantes_nombre').attr('readonly', false);
-                    $('#Visitantes_apellido').attr('readonly', false);
-                    $('#Visitantes_fecha_nacimiento').attr('readonly', false);
+                    $('#Paciente_nombre').attr('readonly', false);
+                    $('#Paciente_apellido').attr('readonly', false);
+                    $('#Paciente_fecha_nacimiento').attr('readonly', false);
                 } else {
-                    $('#Visitantes_nombre').val(datos['strnombre_primer']+ ' '+datos['strnombre_segundo']);
-                    $('#Visitantes_apellido').val(datos['strapellido_primer']+ ' '+datos['strapellido_segundo']);
+                    $('#Paciente_nombre').val(datos['strnombre_primer']+ ' '+datos['strnombre_segundo']);
+                    $('#Paciente_apellido').val(datos['strapellido_primer']+ ' '+datos['strapellido_segundo']);
                     
-                    $('#Visitantes_fecha_nacimiento').val(datos['dtmnacimiento']);
+                    $('#Paciente_fecha_nacimiento').val(datos['dtmnacimiento']);
                     if (datos['strgenero'] == 'F') {
-                        $('#Visitantes_sexo').val('F');
+                        $('#Paciente_sexo').val('F');
                     } else {
-                        $('#Visitantes_sexo').val('M');
+                        $('#Paciente_sexo').val('M');
                     }
 
                 }

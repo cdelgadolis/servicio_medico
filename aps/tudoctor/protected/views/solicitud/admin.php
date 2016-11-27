@@ -22,9 +22,23 @@ return false;
 ");
 ?>
 
-<h1 class="titulo">Solicitud de Citas</h1>
+<h1 class="titulo">Solicitud de Citas Medicas</h1>
 
-
+<div class="izquierda2">
+<?php $this->widget(
+'booster.widgets.TbButton', array(
+'buttonType' => 'link', 
+'size' => 'default',
+'icon' =>'glyphicon glyphicon-plus',
+'context' => 'primary',
+'url'=>Yii::app()->createUrl('solicitud/create'),
+// 'url' => '#',
+'label' => '  Solicitar Cita Médica' )
+ );
+ ?>
+ </div>
+ <br/>
+ 
 <?php $this->widget('booster.widgets.TbGridView',array(
 'id'=>'solicitud-grid',
 'type' => 'striped bordered condensed',
@@ -43,6 +57,7 @@ return false;
 		'fecha_creacion',
 		'usuario_creacion',
 		'es_activo',
+		'fk_medico',
 		*/
 array(
 'class'=>'booster.widgets.TbButtonColumn',

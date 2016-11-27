@@ -8,7 +8,7 @@ $today=date('Y-m-d');
 $form=$this->beginWidget('booster.widgets.TbActiveForm',array(
 	'id'=>'paciente-form',
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),	
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); 
 ?>
 
@@ -16,6 +16,27 @@ $form=$this->beginWidget('booster.widgets.TbActiveForm',array(
 <?php 
 $baseUrl = Yii::app()->baseUrl;
 $numeros = Yii::app()->getClientScript()->registerScriptFile($baseUrl . '/js/jquery.numeric.js');
+$numeros = Yii::app()->getClientScript()->registerScriptFile($baseUrl . '/js/validacion.js');
+Yii::app()->clientScript->registerScript('camara',"
+
+    $('#Paciente_cedula').focusout(function(){
+        var cedula = $('#Paciente_cedula').val();
+         $.ajax({
+            url: '" . Yii::app()->createUrl('ValidacionJs/Session') . "',
+            async: true,
+            type: 'POST',
+            data: 'cedula=' + cedula ,
+            dataType: 'json',
+            success: function(data) {
+
+            },
+            error: function(data) {
+                bootbox.alert('Ok:Ocurrio un error');
+            }
+        });
+
+    });
+");
 
 ?>
 <script type="text/javascript">
@@ -37,7 +58,6 @@ $(document).ready(function(){
    });
 });
 
-	
 	</script>
 
 
@@ -83,14 +103,14 @@ $(document).ready(function(){
 </div>	
 
 <div class='col-xs-6 col-md-4'>
-	 <?php echo $form->textFieldGroup($model,'cedula',array('widgetOptions'=>array('htmlOptions'=>array('style' => 'width: 150px; ','class'=>'span5','maxlength'=>15)))); ?>	
+	 <?php echo $form->textFieldGroup($model,'cedula',array('widgetOptions'=>array('htmlOptions'=>array('style' => 'width: 150px; ','class'=>'span5','maxlength'=>15, 'onblur' => "buscarPersonaSaime($('#Paciente_nacionalidad').children(':selected').text(),$(this).val())")))); ?>	
 </div>
 </div>
   
 <div class="row">
 
 <div class='col-md-4'>
-	<?php echo $form->textFieldGroup($model,'nombre',array('widgetOptions'=>array('htmlOptions'=>array('style' => 'width: 250px; ','class'=>'span5','maxlength'=>70)))); ?>
+	<?php echo $form->textFieldGroup($model,'nombre',array('widgetOptions'=>array('htmlOptions'=>array('style' => 'width: 250px; ','class'=>'span5','maxlength'=>70, 'readonly' => 'true')))); ?>
 </div>
 <div class='col-md-4'>
 	<?php echo $form->textFieldGroup($model,'apellido',array('widgetOptions'=>array('htmlOptions'=>array('style' => 'width: 250px; ','class'=>'span5','maxlength'=>70)))); ?>
@@ -261,12 +281,15 @@ $this->widget('CMaskedTextField', array(
 	  
 <div class="row">
 
-<div class='col-md-4'>
-   <?php echo $form->textFieldGroup($model,'cedula_representante',array('widgetOptions'=>array('htmlOptions'=>array('style' => 'width: 150px; ','class'=>'span5','maxlength'=>15)))); ?>	
+<div id="cedula_representante" class='col-md-4'>
+   <?php echo $form->textFieldGroup($model,'cedula_representante',array('widgetOptions'=>array('htmlOptions'=>array('style' => 'width: 150px; ','class'=>'span5','maxlength'=>15))
+               )); ?>	
 </div>	
 	
 <div class='col-xs-6 col-md-4'>	
-	<?php echo $form->textFieldGroup($model,'nombre_representante',array('widgetOptions'=>array('htmlOptions'=>array(/*'readonly'=>'true',*/'style' => 'width: 350px; ','class'=>'span5','maxlength'=>70)))); ?>		
+	<div id="nombrediv">
+	<?php echo $form->textFieldGroup($model,'nombre_representante',array('widgetOptions'=>array('htmlOptions'=>array('readonly'=>'true','style' => 'width: 350px; ','class'=>'span5','maxlength'=>70)))); ?>		
+	</div>
 </div>	
 
 <div class='col-xs-6 col-md-4'>

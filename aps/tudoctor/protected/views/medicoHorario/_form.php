@@ -14,7 +14,7 @@
 		'class' => 'col-sm-5',
 		),
 		'widgetOptions' => array(
-		'data' => CHtml::listData(Medicos::model()->findAll(array('condition'=>'status=TRUE', 'order'=>'nombres')), 'id_medico', 'nombres'),
+		'data' => CHtml::listData(Medicos::model()->findAll(array('condition'=>'status=TRUE', 'order'=>'nombres')), 'id_medico', 'concate'),
 		'htmlOptions' => array('empty' => 'Seleccione...', 'style' => 'width: 200px; ',),
 		)
 		)

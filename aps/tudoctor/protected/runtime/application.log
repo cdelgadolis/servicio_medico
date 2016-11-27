@@ -2282,3 +2282,1004 @@ Stack trace:
 REQUEST_URI=/tudoctor/index.php?r=medicos/admin
 HTTP_REFERER=http://localhost/tudoctor/index.php?r=especialidad/admin
 ---
+2016/11/04 21:44:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  password authentication failed for user "postgres"
+FATAL:  password authentication failed for user "postgres"' in /var/www/html/yii/framework/db/CDbConnection.php:399
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbConnection.php(347): CDbConnection->open()
+#1 /var/www/html/yii/framework/db/CDbConnection.php(325): CDbConnection->setActive(true)
+#2 /var/www/html/yii/framework/base/CModule.php(394): CDbConnection->init()
+#3 /var/www/html/yii/framework/base/CApplication.php(458): CModule->getComponent('db')
+#4 /var/www/html/yii/framework/db/ar/CActiveRecord.php(637): CApplication->getDb()
+#5 /var/www/html/yii/framework/db/ar/CActiveRecord.php(2384): CActiveRecord->getDbConnection()
+#6 /var/www/html/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Home))
+#7 /var/www/html/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#8 /var/www/html/tudoctor/protected/controllers/PacienteController.php(178): CActiveRecord->__construct()
+#9 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): PacienteController->actionHome()
+#10 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('home')
+#19 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#20 /var/www/html/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#21 /var/www/html/tudoctor/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/tudoctor/
+---
+2016/11/05 21:24:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "casa_artista" solicitada.' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('casa_artista')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('casa_artista')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('sede/casa_artis...')
+#3 /var/www/html/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/tudoctor/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/tudoctor/index.php?r=sede/casa_artista
+---
+2016/11/05 21:25:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "casa_artista" solicitada.' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('casa_artista')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('casa_artista')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('sede/casa_artis...')
+#3 /var/www/html/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/tudoctor/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/tudoctor/index.php?r=sede/casa_artista
+---
+2016/11/05 21:25:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "casa_artista" solicitada.' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('casa_artista')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('casa_artista')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('sede/casa_artis...')
+#3 /var/www/html/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/tudoctor/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/tudoctor/index.php?r=sede/casa_artista
+---
+2016/11/05 21:35:29 [error] [php] Undefined variable: model (/var/www/html/tudoctor/protected/views/sede/casa_artista.php:57)
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(869): SedeController->renderFile()
+#1 /var/www/html/yii/framework/web/CController.php(782): SedeController->renderPartial()
+#2 /var/www/html/tudoctor/protected/controllers/SedeController.php(169): SedeController->render()
+#3 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): SedeController->actionCasa_artista()
+#4 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): SedeController->runAction()
+#6 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): SedeController->filterAccessControl()
+#9 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/yii/framework/web/CController.php(265): SedeController->runActionWithFilters()
+#12 /var/www/html/yii/framework/web/CWebApplication.php(282): SedeController->run()
+#13 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/html/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/html/tudoctor/index.php(13): CWebApplication->run()
+REQUEST_URI=/tudoctor/index.php?r=sede/casa_artista
+in /var/www/html/tudoctor/protected/views/sede/casa_artista.php (57)
+in /var/www/html/tudoctor/protected/controllers/SedeController.php (169)
+in /var/www/html/tudoctor/index.php (13)
+2016/11/05 21:35:53 [error] [exception.CException] exception 'CException' with message 'SedeController no ha podido encontrar la vista "sede/casa_artista" solicitada.' in /var/www/html/yii/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('sede/casa_artis...', NULL, true)
+#1 /var/www/html/tudoctor/protected/controllers/SedeController.php(169): CController->render('sede/casa_artis...')
+#2 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): SedeController->actionCasa_artista()
+#3 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('casa_artista')
+#12 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('sede/casa_artis...')
+#13 /var/www/html/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /var/www/html/tudoctor/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/tudoctor/index.php?r=sede/casa_artista
+---
+2016/11/05 21:36:55 [error] [php] Undefined variable: model (/var/www/html/tudoctor/protected/views/sede/casa_artista.php:57)
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(869): SedeController->renderFile()
+#1 /var/www/html/yii/framework/web/CController.php(782): SedeController->renderPartial()
+#2 /var/www/html/tudoctor/protected/controllers/SedeController.php(169): SedeController->render()
+#3 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): SedeController->actionCasa_Artista()
+#4 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): SedeController->runAction()
+#6 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): SedeController->filterAccessControl()
+#9 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/yii/framework/web/CController.php(265): SedeController->runActionWithFilters()
+#12 /var/www/html/yii/framework/web/CWebApplication.php(282): SedeController->run()
+#13 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/html/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/html/tudoctor/index.php(13): CWebApplication->run()
+REQUEST_URI=/tudoctor/index.php?r=sede/casa_artista
+in /var/www/html/tudoctor/protected/views/sede/casa_artista.php (57)
+in /var/www/html/tudoctor/protected/controllers/SedeController.php (169)
+in /var/www/html/tudoctor/index.php (13)
+2016/11/05 21:37:24 [error] [php] Undefined variable: model (/var/www/html/tudoctor/protected/views/sede/casa_artista.php:57)
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(869): SedeController->renderFile()
+#1 /var/www/html/yii/framework/web/CController.php(782): SedeController->renderPartial()
+#2 /var/www/html/tudoctor/protected/controllers/SedeController.php(169): SedeController->render()
+#3 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): SedeController->actionCasa_Artista()
+#4 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): SedeController->runAction()
+#6 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): SedeController->filterAccessControl()
+#9 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/yii/framework/web/CController.php(265): SedeController->runActionWithFilters()
+#12 /var/www/html/yii/framework/web/CWebApplication.php(282): SedeController->run()
+#13 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/html/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/html/tudoctor/index.php(13): CWebApplication->run()
+REQUEST_URI=/tudoctor/index.php?r=sede/casa_artista
+in /var/www/html/tudoctor/protected/views/sede/casa_artista.php (57)
+in /var/www/html/tudoctor/protected/controllers/SedeController.php (169)
+in /var/www/html/tudoctor/index.php (13)
+2016/11/06 18:25:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "simon_bolivar" solicitada.' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('simon_bolivar')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('simon_bolivar')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('sede/simon_boli...')
+#3 /var/www/html/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/tudoctor/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/tudoctor/index.php?r=sede/simon_bolivar
+---
+2016/11/06 18:26:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('simon_bolivar')
+#8 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('sede/simon_boli...')
+#9 /var/www/html/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/html/tudoctor/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/tudoctor/index.php?r=sede/simon_bolivar
+HTTP_REFERER=http://localhost/tudoctor/index.php?r=site/login
+---
+2016/11/06 19:08:40 [error] [exception.CException] exception 'CException' with message 'La propiedad "TbButton"."target" no se encuentra definida.' in /var/www/html/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWidgetFactory.php(161): CComponent->__set('target', '_blank')
+#1 /var/www/html/yii/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(SedeController), 'booster.widgets...', Array)
+#2 /var/www/html/yii/framework/web/CBaseController.php(180): CBaseController->createWidget('booster.widgets...', Array)
+#3 /var/www/html/tudoctor/protected/views/sede/_view.php(65): CBaseController->widget('booster.widgets...', Array)
+#4 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#5 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#6 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#7 /var/www/html/tudoctor/protected/extensions/booster/widgets/TbThumbnails.php(41): CController->renderPartial('_view', Array)
+#8 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(181): TbThumbnails->renderItems()
+#9 [internal function]: CBaseListView->renderSection(Array)
+#10 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback('/{(\w+)}/', Array, '{items}?{pager}')
+#11 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(149): CBaseListView->renderContent()
+#12 /var/www/html/yii/framework/web/CBaseController.php(181): CBaseListView->run()
+#13 /var/www/html/tudoctor/protected/views/sede/index.php(23): CBaseController->widget('booster.widgets...', Array)
+#14 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#15 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#16 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#17 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#18 /var/www/html/tudoctor/protected/controllers/SedeController.php(136): CController->render('index', Array)
+#19 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): SedeController->actionIndex()
+#20 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#21 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#22 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#23 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#24 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#25 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#26 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#27 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#29 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('sede/index')
+#30 /var/www/html/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#31 /var/www/html/tudoctor/index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/tudoctor/index.php?r=sede/index
+HTTP_REFERER=http://localhost/tudoctor/index.php?r=site/index
+---
+2016/11/06 19:10:02 [error] [exception.CException] exception 'CException' with message 'La propiedad "TbButton"."target" no se encuentra definida.' in /var/www/html/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWidgetFactory.php(161): CComponent->__set('target', '_blank')
+#1 /var/www/html/yii/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(SedeController), 'booster.widgets...', Array)
+#2 /var/www/html/yii/framework/web/CBaseController.php(180): CBaseController->createWidget('booster.widgets...', Array)
+#3 /var/www/html/tudoctor/protected/views/sede/_view.php(65): CBaseController->widget('booster.widgets...', Array)
+#4 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#5 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#6 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#7 /var/www/html/tudoctor/protected/extensions/booster/widgets/TbThumbnails.php(41): CController->renderPartial('_view', Array)
+#8 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(181): TbThumbnails->renderItems()
+#9 [internal function]: CBaseListView->renderSection(Array)
+#10 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback('/{(\w+)}/', Array, '{items}?{pager}')
+#11 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(149): CBaseListView->renderContent()
+#12 /var/www/html/yii/framework/web/CBaseController.php(181): CBaseListView->run()
+#13 /var/www/html/tudoctor/protected/views/sede/index.php(23): CBaseController->widget('booster.widgets...', Array)
+#14 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#15 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#16 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#17 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#18 /var/www/html/tudoctor/protected/controllers/SedeController.php(136): CController->render('index', Array)
+#19 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): SedeController->actionIndex()
+#20 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#21 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#22 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#23 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#24 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#25 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#26 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#27 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#29 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('sede/index')
+#30 /var/www/html/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#31 /var/www/html/tudoctor/index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/tudoctor/index.php?r=sede/index
+HTTP_REFERER=http://localhost/tudoctor/index.php?r=site/index
+---
+2016/11/06 19:29:45 [error] [exception.CException] exception 'CException' with message 'La propiedad "TbButton"."options" no se encuentra definida.' in /var/www/html/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWidgetFactory.php(161): CComponent->__set('options', Array)
+#1 /var/www/html/yii/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(SedeController), 'booster.widgets...', Array)
+#2 /var/www/html/yii/framework/web/CBaseController.php(180): CBaseController->createWidget('booster.widgets...', Array)
+#3 /var/www/html/tudoctor/protected/views/sede/_view.php(65): CBaseController->widget('booster.widgets...', Array)
+#4 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#5 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#6 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#7 /var/www/html/tudoctor/protected/extensions/booster/widgets/TbThumbnails.php(41): CController->renderPartial('_view', Array)
+#8 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(181): TbThumbnails->renderItems()
+#9 [internal function]: CBaseListView->renderSection(Array)
+#10 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback('/{(\w+)}/', Array, '{items}?{pager}')
+#11 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(149): CBaseListView->renderContent()
+#12 /var/www/html/yii/framework/web/CBaseController.php(181): CBaseListView->run()
+#13 /var/www/html/tudoctor/protected/views/sede/index.php(23): CBaseController->widget('booster.widgets...', Array)
+#14 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#15 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#16 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#17 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#18 /var/www/html/tudoctor/protected/controllers/SedeController.php(136): CController->render('index', Array)
+#19 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): SedeController->actionIndex()
+#20 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#21 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#22 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#23 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#24 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#25 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#26 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#27 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#29 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('sede/index')
+#30 /var/www/html/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#31 /var/www/html/tudoctor/index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/tudoctor/index.php?r=sede/index
+HTTP_REFERER=http://localhost/tudoctor/index.php?r=site/index
+---
+2016/11/06 19:30:03 [error] [exception.CException] exception 'CException' with message 'La propiedad "TbButton"."htmloptions" no se encuentra definida.' in /var/www/html/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWidgetFactory.php(161): CComponent->__set('htmloptions', Array)
+#1 /var/www/html/yii/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(SedeController), 'booster.widgets...', Array)
+#2 /var/www/html/yii/framework/web/CBaseController.php(180): CBaseController->createWidget('booster.widgets...', Array)
+#3 /var/www/html/tudoctor/protected/views/sede/_view.php(65): CBaseController->widget('booster.widgets...', Array)
+#4 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#5 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#6 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#7 /var/www/html/tudoctor/protected/extensions/booster/widgets/TbThumbnails.php(41): CController->renderPartial('_view', Array)
+#8 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(181): TbThumbnails->renderItems()
+#9 [internal function]: CBaseListView->renderSection(Array)
+#10 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback('/{(\w+)}/', Array, '{items}?{pager}')
+#11 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(149): CBaseListView->renderContent()
+#12 /var/www/html/yii/framework/web/CBaseController.php(181): CBaseListView->run()
+#13 /var/www/html/tudoctor/protected/views/sede/index.php(23): CBaseController->widget('booster.widgets...', Array)
+#14 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#15 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#16 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#17 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#18 /var/www/html/tudoctor/protected/controllers/SedeController.php(136): CController->render('index', Array)
+#19 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): SedeController->actionIndex()
+#20 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#21 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#22 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#23 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#24 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#25 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#26 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#27 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#29 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('sede/index')
+#30 /var/www/html/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#31 /var/www/html/tudoctor/index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/tudoctor/index.php?r=sede/index
+HTTP_REFERER=http://localhost/tudoctor/index.php?r=site/index
+---
+2016/11/08 10:43:03 [error] [exception.CException] exception 'CException' with message 'La propiedad "CDbConnection"."db" no se encuentra definida.' in /home/liseth/www/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/liseth/www/yii/framework/YiiBase.php(220): CComponent->__set('db', Array)
+#1 /home/liseth/www/yii/framework/base/CModule.php(393): YiiBase::createComponent(Array)
+#2 /home/liseth/www/yii/framework/base/CApplication.php(458): CModule->getComponent('db')
+#3 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(637): CApplication->getDb()
+#4 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(2384): CActiveRecord->getDbConnection()
+#5 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Home))
+#6 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#7 /home/liseth/www/tudoctor/protected/controllers/PacienteController.php(183): CActiveRecord->__construct()
+#8 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): PacienteController->actionHome()
+#9 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('home')
+#18 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#20 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/tudoctor/index.php
+HTTP_REFERER=http://localhost/tudoctor/index.php
+---
+2016/11/08 10:50:52 [error] [exception.CException] exception 'CException' with message 'La propiedad "CDbConnection"."db" no se encuentra definida.' in /home/liseth/www/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/liseth/www/yii/framework/YiiBase.php(220): CComponent->__set('db', Array)
+#1 /home/liseth/www/yii/framework/base/CModule.php(393): YiiBase::createComponent(Array)
+#2 /home/liseth/www/yii/framework/base/CApplication.php(458): CModule->getComponent('db')
+#3 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(637): CApplication->getDb()
+#4 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(2384): CActiveRecord->getDbConnection()
+#5 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Home))
+#6 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#7 /home/liseth/www/tudoctor/protected/controllers/PacienteController.php(183): CActiveRecord->__construct()
+#8 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): PacienteController->actionHome()
+#9 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('home')
+#18 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#20 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/tudoctor/index.php
+HTTP_REFERER=http://localhost/tudoctor/index.php
+---
+2016/11/08 10:53:46 [error] [exception.CException] exception 'CException' with message 'La propiedad "CDbConnection"."db" no se encuentra definida.' in /home/liseth/www/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/liseth/www/yii/framework/YiiBase.php(220): CComponent->__set('db', Array)
+#1 /home/liseth/www/yii/framework/base/CModule.php(393): YiiBase::createComponent(Array)
+#2 /home/liseth/www/yii/framework/base/CApplication.php(458): CModule->getComponent('db')
+#3 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(637): CApplication->getDb()
+#4 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(2384): CActiveRecord->getDbConnection()
+#5 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Home))
+#6 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#7 /home/liseth/www/tudoctor/protected/controllers/PacienteController.php(183): CActiveRecord->__construct()
+#8 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): PacienteController->actionHome()
+#9 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('home')
+#18 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#20 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/tudoctor/index.php
+HTTP_REFERER=http://localhost/tudoctor/index.php
+---
+2016/11/08 10:53:48 [error] [exception.CException] exception 'CException' with message 'La propiedad "CDbConnection"."db" no se encuentra definida.' in /home/liseth/www/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/liseth/www/yii/framework/YiiBase.php(220): CComponent->__set('db', Array)
+#1 /home/liseth/www/yii/framework/base/CModule.php(393): YiiBase::createComponent(Array)
+#2 /home/liseth/www/yii/framework/base/CApplication.php(458): CModule->getComponent('db')
+#3 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(637): CApplication->getDb()
+#4 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(2384): CActiveRecord->getDbConnection()
+#5 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Home))
+#6 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#7 /home/liseth/www/tudoctor/protected/controllers/PacienteController.php(183): CActiveRecord->__construct()
+#8 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): PacienteController->actionHome()
+#9 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('home')
+#18 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#20 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/tudoctor/index.php
+HTTP_REFERER=http://localhost/tudoctor/index.php
+---
+2016/11/08 10:53:48 [error] [exception.CException] exception 'CException' with message 'La propiedad "CDbConnection"."db" no se encuentra definida.' in /home/liseth/www/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/liseth/www/yii/framework/YiiBase.php(220): CComponent->__set('db', Array)
+#1 /home/liseth/www/yii/framework/base/CModule.php(393): YiiBase::createComponent(Array)
+#2 /home/liseth/www/yii/framework/base/CApplication.php(458): CModule->getComponent('db')
+#3 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(637): CApplication->getDb()
+#4 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(2384): CActiveRecord->getDbConnection()
+#5 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Home))
+#6 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#7 /home/liseth/www/tudoctor/protected/controllers/PacienteController.php(183): CActiveRecord->__construct()
+#8 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): PacienteController->actionHome()
+#9 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('home')
+#18 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#20 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/tudoctor/index.php
+HTTP_REFERER=http://localhost/tudoctor/index.php
+---
+2016/11/08 10:53:48 [error] [exception.CException] exception 'CException' with message 'La propiedad "CDbConnection"."db" no se encuentra definida.' in /home/liseth/www/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/liseth/www/yii/framework/YiiBase.php(220): CComponent->__set('db', Array)
+#1 /home/liseth/www/yii/framework/base/CModule.php(393): YiiBase::createComponent(Array)
+#2 /home/liseth/www/yii/framework/base/CApplication.php(458): CModule->getComponent('db')
+#3 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(637): CApplication->getDb()
+#4 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(2384): CActiveRecord->getDbConnection()
+#5 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Home))
+#6 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#7 /home/liseth/www/tudoctor/protected/controllers/PacienteController.php(183): CActiveRecord->__construct()
+#8 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): PacienteController->actionHome()
+#9 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('home')
+#18 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#20 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/tudoctor/index.php
+HTTP_REFERER=http://localhost/tudoctor/index.php
+---
+2016/11/08 10:53:49 [error] [exception.CException] exception 'CException' with message 'La propiedad "CDbConnection"."db" no se encuentra definida.' in /home/liseth/www/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/liseth/www/yii/framework/YiiBase.php(220): CComponent->__set('db', Array)
+#1 /home/liseth/www/yii/framework/base/CModule.php(393): YiiBase::createComponent(Array)
+#2 /home/liseth/www/yii/framework/base/CApplication.php(458): CModule->getComponent('db')
+#3 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(637): CApplication->getDb()
+#4 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(2384): CActiveRecord->getDbConnection()
+#5 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Home))
+#6 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#7 /home/liseth/www/tudoctor/protected/controllers/PacienteController.php(183): CActiveRecord->__construct()
+#8 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): PacienteController->actionHome()
+#9 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('home')
+#18 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#20 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/tudoctor/index.php
+HTTP_REFERER=http://localhost/tudoctor/index.php
+---
+2016/11/08 10:53:49 [error] [exception.CException] exception 'CException' with message 'La propiedad "CDbConnection"."db" no se encuentra definida.' in /home/liseth/www/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/liseth/www/yii/framework/YiiBase.php(220): CComponent->__set('db', Array)
+#1 /home/liseth/www/yii/framework/base/CModule.php(393): YiiBase::createComponent(Array)
+#2 /home/liseth/www/yii/framework/base/CApplication.php(458): CModule->getComponent('db')
+#3 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(637): CApplication->getDb()
+#4 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(2384): CActiveRecord->getDbConnection()
+#5 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Home))
+#6 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#7 /home/liseth/www/tudoctor/protected/controllers/PacienteController.php(183): CActiveRecord->__construct()
+#8 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): PacienteController->actionHome()
+#9 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('home')
+#18 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#20 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/tudoctor/index.php
+HTTP_REFERER=http://localhost/tudoctor/index.php
+---
+2016/11/09 07:01:42 [error] [exception.CException] exception 'CException' with message 'La propiedad "CWebApplication"."db1" no se encuentra definida.' in /home/liseth/www/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/liseth/www/yii/framework/base/CModule.php(105): CComponent->__get('db1')
+#1 /home/liseth/www/tudoctor/protected/controllers/PacienteController.php(195): CModule->__get('db1')
+#2 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): PacienteController->actionHome()
+#3 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('home')
+#12 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#13 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/tudoctor/index.php
+HTTP_REFERER=http://localhost/tudoctor/index.php
+---
+2016/11/09 11:22:08 [error] [php] Missing argument 2 for CClientScript::registerScript(), called in /home/liseth/www/tudoctor/protected/views/paciente/_form.php on line 39 and defined (/home/liseth/www/yii/framework/web/CClientScript.php:682)
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/CBaseController.php(95): PacienteController->renderInternal()
+#1 /home/liseth/www/yii/framework/web/CController.php(869): PacienteController->renderFile()
+#2 /home/liseth/www/tudoctor/protected/views/paciente/create.php(10): PacienteController->renderPartial()
+#3 /home/liseth/www/yii/framework/web/CBaseController.php(126): require()
+#4 /home/liseth/www/yii/framework/web/CBaseController.php(95): PacienteController->renderInternal()
+#5 /home/liseth/www/yii/framework/web/CController.php(869): PacienteController->renderFile()
+#6 /home/liseth/www/yii/framework/web/CController.php(782): PacienteController->renderPartial()
+#7 /home/liseth/www/tudoctor/protected/controllers/PacienteController.php(88): PacienteController->render()
+#8 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): PacienteController->actionCreate()
+#9 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#10 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): PacienteController->runAction()
+#11 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/liseth/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#13 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): PacienteController->filterAccessControl()
+#14 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#15 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/liseth/www/yii/framework/web/CController.php(265): PacienteController->runActionWithFilters()
+#17 /home/liseth/www/yii/framework/web/CWebApplication.php(282): PacienteController->run()
+#18 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#19 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#20 /home/liseth/www/tudoctor/index.php(13): CWebApplication->run()
+REQUEST_URI=/tudoctor/index.php?r=paciente/create&param1=10548190
+in /home/liseth/www/tudoctor/protected/views/paciente/_form.php (39)
+in /home/liseth/www/tudoctor/protected/views/paciente/create.php (10)
+in /home/liseth/www/tudoctor/protected/controllers/PacienteController.php (88)
+2016/11/09 11:36:20 [error] [php] Undefined variable: baseUrl (/home/liseth/www/tudoctor/protected/views/paciente/_form.php:18)
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/CController.php(869): PacienteController->renderFile()
+#1 /home/liseth/www/tudoctor/protected/views/paciente/create.php(10): PacienteController->renderPartial()
+#2 /home/liseth/www/yii/framework/web/CBaseController.php(126): require()
+#3 /home/liseth/www/yii/framework/web/CBaseController.php(95): PacienteController->renderInternal()
+#4 /home/liseth/www/yii/framework/web/CController.php(869): PacienteController->renderFile()
+#5 /home/liseth/www/yii/framework/web/CController.php(782): PacienteController->renderPartial()
+#6 /home/liseth/www/tudoctor/protected/controllers/PacienteController.php(88): PacienteController->render()
+#7 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): PacienteController->actionCreate()
+#8 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): PacienteController->runAction()
+#10 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /home/liseth/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#12 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): PacienteController->filterAccessControl()
+#13 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#14 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#15 /home/liseth/www/yii/framework/web/CController.php(265): PacienteController->runActionWithFilters()
+#16 /home/liseth/www/yii/framework/web/CWebApplication.php(282): PacienteController->run()
+#17 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /home/liseth/www/tudoctor/index.php(13): CWebApplication->run()
+REQUEST_URI=/tudoctor/index.php?r=paciente/create&param1=10548190
+in /home/liseth/www/tudoctor/protected/views/paciente/_form.php (18)
+in /home/liseth/www/tudoctor/protected/views/paciente/create.php (10)
+in /home/liseth/www/tudoctor/protected/controllers/PacienteController.php (88)
+2016/11/14 06:55:11 [error] [exception.CDbException] exception 'CDbException' with message 'La tabla "paciente" definida en la clase active record "Paciente" no se ha podido encontrar en la base de datos.' in /home/liseth/www/yii/framework/db/ar/CActiveRecord.php:2385
+Stack trace:
+#0 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Paciente))
+#1 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 /home/liseth/www/tudoctor/protected/controllers/PacienteController.php(64): CActiveRecord->__construct()
+#3 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): PacienteController->actionCreate()
+#4 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('paciente/create')
+#14 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/tudoctor/index.php?r=paciente/create
+---
+2016/11/14 06:55:19 [error] [exception.CDbException] exception 'CDbException' with message 'La tabla "paciente" definida en la clase active record "Paciente" no se ha podido encontrar en la base de datos.' in /home/liseth/www/yii/framework/db/ar/CActiveRecord.php:2385
+Stack trace:
+#0 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Paciente))
+#1 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 /home/liseth/www/tudoctor/protected/controllers/PacienteController.php(64): CActiveRecord->__construct()
+#3 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): PacienteController->actionCreate()
+#4 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('paciente/create')
+#14 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/tudoctor/index.php?r=paciente/create&param1=10548190
+HTTP_REFERER=http://localhost/tudoctor/index.php
+---
+2016/11/14 06:55:23 [error] [exception.CDbException] exception 'CDbException' with message 'La tabla "paciente" definida en la clase active record "Home" no se ha podido encontrar en la base de datos.' in /home/liseth/www/yii/framework/db/ar/CActiveRecord.php:2385
+Stack trace:
+#0 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Home))
+#1 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 /home/liseth/www/tudoctor/protected/controllers/PacienteController.php(183): CActiveRecord->__construct()
+#3 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): PacienteController->actionHome()
+#4 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('home')
+#13 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#14 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/tudoctor/
+---
+2016/11/14 06:55:29 [error] [exception.CDbException] exception 'CDbException' with message 'La tabla "paciente" definida en la clase active record "Home" no se ha podido encontrar en la base de datos.' in /home/liseth/www/yii/framework/db/ar/CActiveRecord.php:2385
+Stack trace:
+#0 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Home))
+#1 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 /home/liseth/www/tudoctor/protected/controllers/PacienteController.php(183): CActiveRecord->__construct()
+#3 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): PacienteController->actionHome()
+#4 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('home')
+#13 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#14 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/tudoctor/
+---
+2016/11/14 06:55:30 [error] [exception.CDbException] exception 'CDbException' with message 'La tabla "paciente" definida en la clase active record "Home" no se ha podido encontrar en la base de datos.' in /home/liseth/www/yii/framework/db/ar/CActiveRecord.php:2385
+Stack trace:
+#0 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Home))
+#1 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 /home/liseth/www/tudoctor/protected/controllers/PacienteController.php(183): CActiveRecord->__construct()
+#3 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): PacienteController->actionHome()
+#4 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('home')
+#13 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#14 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/tudoctor/
+---
+2016/11/16 06:36:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "home" solicitada.' in /home/liseth/www/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/CController.php(270): CController->missingAction('home')
+#1 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('home')
+#2 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/home')
+#3 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/tudoctor/index.php?r=site/home
+---
+2016/11/17 11:46:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /home/liseth/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /home/liseth/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('cargarEspeciali...')
+#8 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/carga...')
+#9 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/tudoctor/index.php?r=solicitud/cargarEspecialidadPorSede
+HTTP_REFERER=http://localhost/tudoctor/index.php?r=solicitud/create
+---
+2016/11/17 11:46:23 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /home/liseth/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /home/liseth/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('cargarEspeciali...')
+#8 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/carga...')
+#9 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/tudoctor/index.php?r=solicitud/cargarEspecialidadPorSede
+HTTP_REFERER=http://localhost/tudoctor/index.php?r=solicitud/create
+---
+2016/11/17 11:46:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /home/liseth/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /home/liseth/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('cargarEspeciali...')
+#8 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/carga...')
+#9 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/tudoctor/index.php?r=solicitud/cargarEspecialidadPorSede
+HTTP_REFERER=http://localhost/tudoctor/index.php?r=solicitud/create
+---
+2016/11/17 11:47:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /home/liseth/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /home/liseth/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('cargarEspeciali...')
+#8 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/carga...')
+#9 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/tudoctor/index.php?r=solicitud/cargarEspecialidadPorSede
+HTTP_REFERER=http://localhost/tudoctor/index.php?r=solicitud/create
+---
+2016/11/18 04:19:54 [error] [php] Undefined index: sede (/home/liseth/www/tudoctor/protected/controllers/SolicitudController.php:49)
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): SolicitudController->runAction()
+#1 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /home/liseth/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): SolicitudController->filterAccessControl()
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(265): SolicitudController->runActionWithFilters()
+#7 /home/liseth/www/yii/framework/web/CWebApplication.php(282): SolicitudController->run()
+#8 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/liseth/www/tudoctor/index.php(13): CWebApplication->run()
+REQUEST_URI=/tudoctor/index.php?r=solicitud/cargarEspecialidadPorSede
+in /home/liseth/www/tudoctor/protected/controllers/SolicitudController.php (49)
+in /home/liseth/www/tudoctor/index.php (13)
+2016/11/18 04:20:05 [error] [php] Undefined index: sede (/home/liseth/www/tudoctor/protected/controllers/SolicitudController.php:49)
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): SolicitudController->runAction()
+#1 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /home/liseth/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): SolicitudController->filterAccessControl()
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(265): SolicitudController->runActionWithFilters()
+#7 /home/liseth/www/yii/framework/web/CWebApplication.php(282): SolicitudController->run()
+#8 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/liseth/www/tudoctor/index.php(13): CWebApplication->run()
+REQUEST_URI=/tudoctor/index.php?r=solicitud/cargarEspecialidadPorSede
+in /home/liseth/www/tudoctor/protected/controllers/SolicitudController.php (49)
+in /home/liseth/www/tudoctor/index.php (13)
+2016/11/18 04:20:48 [error] [php] Undefined index: sede (/home/liseth/www/tudoctor/protected/controllers/SolicitudController.php:49)
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): SolicitudController->runAction()
+#1 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /home/liseth/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): SolicitudController->filterAccessControl()
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(265): SolicitudController->runActionWithFilters()
+#7 /home/liseth/www/yii/framework/web/CWebApplication.php(282): SolicitudController->run()
+#8 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/liseth/www/tudoctor/index.php(13): CWebApplication->run()
+REQUEST_URI=/tudoctor/index.php?r=solicitud/cargarEspecialidadPorSede
+in /home/liseth/www/tudoctor/protected/controllers/SolicitudController.php (49)
+in /home/liseth/www/tudoctor/index.php (13)
+2016/11/18 04:21:16 [error] [php] Undefined index: sede (/home/liseth/www/tudoctor/protected/controllers/SolicitudController.php:49)
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): SolicitudController->runAction()
+#1 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /home/liseth/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): SolicitudController->filterAccessControl()
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(265): SolicitudController->runActionWithFilters()
+#7 /home/liseth/www/yii/framework/web/CWebApplication.php(282): SolicitudController->run()
+#8 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/liseth/www/tudoctor/index.php(13): CWebApplication->run()
+REQUEST_URI=/tudoctor/index.php?r=solicitud/cargarEspecialidadPorSede
+in /home/liseth/www/tudoctor/protected/controllers/SolicitudController.php (49)
+in /home/liseth/www/tudoctor/index.php (13)
+2016/11/18 04:23:11 [error] [php] Undefined index: sede (/home/liseth/www/tudoctor/protected/controllers/SolicitudController.php:49)
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): SolicitudController->runAction()
+#1 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /home/liseth/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): SolicitudController->filterAccessControl()
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(265): SolicitudController->runActionWithFilters()
+#7 /home/liseth/www/yii/framework/web/CWebApplication.php(282): SolicitudController->run()
+#8 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/liseth/www/tudoctor/index.php(13): CWebApplication->run()
+REQUEST_URI=/tudoctor/index.php?r=solicitud/cargarEspecialidadPorSede
+in /home/liseth/www/tudoctor/protected/controllers/SolicitudController.php (49)
+in /home/liseth/www/tudoctor/index.php (13)
+2016/11/18 04:23:26 [error] [php] Undefined index: sede (/home/liseth/www/tudoctor/protected/controllers/SolicitudController.php:49)
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): SolicitudController->runAction()
+#1 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /home/liseth/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): SolicitudController->filterAccessControl()
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(265): SolicitudController->runActionWithFilters()
+#7 /home/liseth/www/yii/framework/web/CWebApplication.php(282): SolicitudController->run()
+#8 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/liseth/www/tudoctor/index.php(13): CWebApplication->run()
+REQUEST_URI=/tudoctor/index.php?r=solicitud/cargarEspecialidadPorSede
+in /home/liseth/www/tudoctor/protected/controllers/SolicitudController.php (49)
+in /home/liseth/www/tudoctor/index.php (13)
+2016/11/21 07:16:10 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42703]: Undefined column: 7 ERROR:  no existe la columna «fk_sede»
+LINE 1: SELECT * FROM "especialidad" "t" WHERE fk_sede=1
+                                               ^. La sentencia SQL ejecutada fue: SELECT * FROM "especialidad" "t" WHERE fk_sede=:fk_sede.
+in /home/liseth/www/tudoctor/protected/controllers/SolicitudController.php (49)
+in /home/liseth/www/tudoctor/index.php (13)
+2016/11/21 07:16:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42703]: Undefined column: 7 ERROR:  no existe la columna «fk_sede»
+LINE 1: SELECT * FROM "especialidad" "t" WHERE fk_sede=1
+                                               ^. The SQL statement executed was: SELECT * FROM "especialidad" "t" WHERE fk_sede=:fk_sede' in /home/liseth/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/liseth/www/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(1356): CDbCommand->queryAll()
+#2 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(1475): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /home/liseth/www/tudoctor/protected/controllers/SolicitudController.php(49): CActiveRecord->findAll('fk_sede=:fk_sed...', Array)
+#4 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): SolicitudController->actionCargarEspecialidadPorSede()
+#5 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('cargarEspeciali...')
+#14 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/carga...')
+#15 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/tudoctor/index.php?r=solicitud/cargarEspecialidadPorSede
+HTTP_REFERER=http://localhost/tudoctor/index.php?r=solicitud/create
+---
+2016/11/21 07:17:01 [error] [php] Undefined index: sede (/home/liseth/www/tudoctor/protected/controllers/SolicitudController.php:49)
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): SolicitudController->runAction()
+#1 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /home/liseth/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): SolicitudController->filterAccessControl()
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(265): SolicitudController->runActionWithFilters()
+#7 /home/liseth/www/yii/framework/web/CWebApplication.php(282): SolicitudController->run()
+#8 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/liseth/www/tudoctor/index.php(13): CWebApplication->run()
+REQUEST_URI=/tudoctor/index.php?r=solicitud/cargarEspecialidadPorSede
+in /home/liseth/www/tudoctor/protected/controllers/SolicitudController.php (49)
+in /home/liseth/www/tudoctor/index.php (13)
+2016/11/21 07:17:13 [error] [php] Undefined index: sede (/home/liseth/www/tudoctor/protected/controllers/SolicitudController.php:49)
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): SolicitudController->runAction()
+#1 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /home/liseth/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): SolicitudController->filterAccessControl()
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(265): SolicitudController->runActionWithFilters()
+#7 /home/liseth/www/yii/framework/web/CWebApplication.php(282): SolicitudController->run()
+#8 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/liseth/www/tudoctor/index.php(13): CWebApplication->run()
+REQUEST_URI=/tudoctor/index.php?r=solicitud/cargarEspecialidadPorSede
+in /home/liseth/www/tudoctor/protected/controllers/SolicitudController.php (49)
+in /home/liseth/www/tudoctor/index.php (13)
+2016/11/21 10:37:36 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /home/liseth/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /home/liseth/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#8 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/index')
+#9 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/tudoctor/index.php?r=solicitud/index
+HTTP_REFERER=http://localhost/tudoctor/index.php?r=solicitud/admin
+---
+2016/11/21 10:38:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "paciente" solicitada.' in /home/liseth/www/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/CController.php(270): CController->missingAction('paciente')
+#1 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('paciente')
+#2 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/pacie...')
+#3 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/tudoctor/index.php?r=solicitud/paciente
+---
+2016/11/21 10:40:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "solictud/create"' in /home/liseth/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('solictud/create')
+#1 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/tudoctor/index.php?r=solictud/create
+---
+2016/11/21 10:45:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "cargarEspecialidadPorMedico" solicitada.' in /home/liseth/www/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/CController.php(270): CController->missingAction('cargarEspeciali...')
+#1 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('cargarEspeciali...')
+#2 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/carga...')
+#3 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/tudoctor/index.php?r=solicitud/cargarEspecialidadPorMedico
+HTTP_REFERER=http://localhost/tudoctor/index.php?r=solicitud/create
+---

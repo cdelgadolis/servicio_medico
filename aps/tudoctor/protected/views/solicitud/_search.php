@@ -25,6 +25,8 @@
 
 		<?php echo $form->checkBoxGroup($model,'es_activo'); ?>
 
+		<?php echo $form->textFieldGroup($model,'fk_medico',array('widgetOptions'=>array('htmlOptions'=>array('class'=>'span5')))); ?>
+
 	<div class="form-actions">
 		<?php $this->widget('booster.widgets.TbButton', array(
 			'buttonType' => 'submit',

@@ -27,7 +27,7 @@ public function accessRules()
 {
 return array(
 array('allow',  // allow all users to perform 'index' and 'view' actions
-'actions'=>array('create','update', 'home'),
+'actions'=>array('create','update', 'home','BuscarSaime', 'Session'),
 'users'=>array('*'),
 ),
 array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -86,6 +86,11 @@ $this->redirect(array('view','id'=>$model->id_paciente));
 $this->render('create',array(
 'model'=>$model,
 ));
+}
+
+public function actionbuscarCedulaR()
+        {
+			echo "<script>alert('message');</script>";
 }
 
 /**

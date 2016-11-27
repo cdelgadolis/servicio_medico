@@ -27,7 +27,7 @@ public function accessRules()
 {
 return array(
 array('allow',  // allow all users to perform 'index' and 'view' actions
-'actions'=>array('create','view'),
+'actions'=>array('create','view', 'cargarEspecialidadPorSede', 'cargarEspecialidadPorMedico'),
 'users'=>array('*'),
 ),
 array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -42,6 +42,30 @@ array('deny',  // deny all users
 'users'=>array('*'),
 ),
 );
+}
+
+public function actionCargarEspecialidadPorSede(){
+
+   $data = Especialidad::model()->findAll('sede=:sede', array(':sede'=>(int) $_POST['sede']));
+ 
+   $data = CHtml::listData($data, 'id_especialidad', 'descripcion' );
+ 
+   echo "<option value=''>Seleccione...</option>";
+   foreach($data as $value=>$city_name)
+   echo CHtml::tag('option', array('value'=>$value),CHtml::encode($city_name),true);
+
+}
+
+public function actioncargarEspecialidadPorMedico(){
+
+   $data = Medicos::model()->findAll('especialidad=:especialidad', array(':especialidad'=>(int) $_POST['especialidad']));
+ 
+   $data = CHtml::listData($data, 'id_medico', 'concate' );
+ 
+   echo "<option value=''>Seleccione...</option>";
+   foreach($data as $value=>$city_name)
+   echo CHtml::tag('option', array('value'=>$value),CHtml::encode($city_name),true);
+
 }
 
 /**

@@ -59,8 +59,20 @@ return array(
 		
 
 		// database settings are configured in database.php
-		'db'=>require(dirname(__FILE__).'/database.php'),
-
+		//'db'=>require(dirname(__FILE__).'/database.php'),
+		//'db1'=>require(dirname(__FILE__).'/database1.php'),
+		'db' => array(
+            	'connectionString' => 'pgsql:host=localhost;dbname=tudoctor',
+				'emulatePrepare' => true,
+				'username' => 'postgres',
+				 'password' => 'linux',
+        ),
+        'db1' => array(
+			'connectionString' => 'pgsql:host=172.16.34.50;dbname=saime',
+			'emulatePrepare' => true,
+			'username' => 'postgres',
+			'password' => 'linux',
+        ),
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',

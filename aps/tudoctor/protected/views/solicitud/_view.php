@@ -45,6 +45,10 @@
 	<?php echo CHtml::encode($data->es_activo); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('fk_medico')); ?>:</b>
+	<?php echo CHtml::encode($data->fk_medico); ?>
+	<br />
+
 	*/ ?>
 
 </div>

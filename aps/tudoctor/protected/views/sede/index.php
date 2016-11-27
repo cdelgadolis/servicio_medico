@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Sedes',
+	'Sedes'=>array('index'),
 );
 
 $this->menu=array(
@@ -23,3 +23,16 @@ $this->widget(
 );
 echo CHtml::closeTag('div')
 ?>
+<div class="izquierda2">
+<?php
+$this->widget(
+		'booster.widgets.TbButton', array(
+		'buttonType' => 'link', 
+		'size' => 'btn-lg',
+		'icon' =>'glyphicon glyphicon-chevron-left',
+		'context' => 'danger',
+		'url'=>Yii::app()->createUrl('site/index'),
+		'label' => '  Regresar' )
+		);
+?>
+</div>

@@ -13,16 +13,13 @@ $this->breadcrumbs=array(
     <div class="panel-heading" role="tab" id="heading1">
       <h5 class="panel-title">
         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
-          ¿Qué es el Depósito Legal?
+          Instructivo para la Tramitación de los Reposos Temporales Permanentes y Solicitud de Permiso
         </a>
       </h5>
     </div>
     <div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
       <div class="panel-body">
-        <p class="textooo">Es la normativa jurídica del Estado venezolano que se rige por la Ley de Depósito Legal y su Reglamento y tiene como misión asegurar el ingreso de todos aquellos materiales bibliográficos, no bibliográficos y audiovisuales producidos en el país y en el exterior con circulación en Venezuela, garantizando de esta forma,  la preservación, conservación de la memoria nacional y acceso universal a la información, consagrado en nuestra carta magna.
-       <br><br><b>Ley de Depósito Legal en el Instituto Autónomo Biblioteca Nacional</b><br> Publicada en Gaceta Extraordinaria Oficial N° 4.623 de fecha 03 de septiembre de 1993.<br><br>
-	<b>Reglamento de la Ley de Depósito Legal en el Instituto Autónomo Biblioteca Nacional</b><br> Publicado en Gaceta Extraordinaria Oficial N° 5.163 de fecha 13 de agosto de 1.997.
-        </p>
+        <p class="textooo"></p>
         <div class="izquierda2"><?php $this->widget(
 'booster.widgets.TbButton', array(
 'buttonType' => 'link',
@@ -30,10 +27,10 @@ $this->breadcrumbs=array(
 'icon' =>'glyphicon glyphicon-download-alt',
 'context' => 'info',
 'htmlOptions' => array('target'=>'_blank'),
-'url'=> Yii::app()->baseUrl.'/images/ley_deposito_legal.pdf',
+'url'=> Yii::app()->baseUrl.'/images/pdf/instructivo.pdf',
 //Yii::app()->createUrl('images/form.pdf'),
 // 'url' => '#',
-'label' => 'Ley Depósito Legal' )
+'label' => 'Descargar' )
  );
 ?></div>
       </div>
@@ -43,41 +40,54 @@ $this->breadcrumbs=array(
     <div class="panel-heading" role="tab" id="heading2">
       <h5 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
-          ¿Quién ejecuta la Ley?
+          ¿Cuál es el horario de las especialidades?
         </a>
       </h5>
     </div>
     <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
       <div class="panel-body">
-      <p class="textooo">La División de Depósito Legal, unidad administrativa del Instituto Autónomo Biblioteca Nacional y de Servicios de Bibliotecas.</p>
+      <p class="textooo"></p>
+      <div class="izquierda2"><?php $this->widget(
+'booster.widgets.TbButton', array(
+'buttonType' => 'link',
+'size' => 'large',
+'icon' =>'glyphicon glyphicon-download-alt',
+'context' => 'info',
+'htmlOptions' => array('target'=>'_blank'),
+'url'=> Yii::app()->baseUrl.'/images/pdf/APS_Horarios_de_medicos.pdf',
+//Yii::app()->createUrl('images/form.pdf'),
+// 'url' => '#',
+'label' => 'Descargar' )
+ );
+?></div>
       </div>
     </div>
   </div>
-   <div class="panel panel-info">
+<!--   <div class="panel panel-info">
     <div class="panel-heading" role="tab" id="heading3">
       <h5 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
-          ¿Quiénes deben cumplirla?
+          ¿Día en que se atiende por especialidad?
         </a>
       </h5>
     </div>
     <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
       <div class="panel-body">
-        <p class="textooo">Las personas naturales y jurídicas tanto del sector público como privado, responsables  de editar o producir materiales  bibliográficos, no bibliográficos y audiovisuales en Venezuela, en cualquier formato o  soporte, así como también los distribuidores exclusivos de materiales extranjeros que circulen en el país.</p>
+        <p class="textooo">Extraer respuesta del cuadro.</p>
       </div>
     </div>
-  </div>
+  </div>-->
    <div class="panel panel-info">
     <div class="panel-heading" role="tab" id="heading4">
       <h5 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
-          ¿Qué es el Número de Depósito Legal?
+          ¿Cuáles son los números telefónicos del Servicio Médico?
         </a>
       </h5>
     </div>
     <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
       <div class="panel-body">
-        <p class="textooo">Es un registro numérico nacional que identifica cada material y permite determinar la producción editorial del país. De acuerdo con la Ley de Depósito Legal y su Reglamento, es obligatoria su solicitud para los materiales editados o producidos en Venezuela en cualquier formato o soporte. Dicho número debe colocarse en un lugar visible del material.</p>
+        <p class="textooo"> <b>Servicio Médico "Lic. Pedro Torres"</b> <span class="glyphicon glyphicon-phone-alt"></span> (0212)505.93.44 / (0212)505.93.45<br/><br/></p>
       </div>
     </div>
   </div>
@@ -85,15 +95,13 @@ $this->breadcrumbs=array(
     <div class="panel-heading" role="tab" id="heading30">
       <h5 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse30" aria-expanded="false" aria-controls="collapse30">
-         Sistema de numeración del Depósito Legal
+         ¿Tenemos servicio de laboratorio?
         </a>
       </h5>
     </div>
     <div id="collapse30" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading30">
       <div class="panel-body">
-        <p class="textooo">El sistema automatizado del Depósito Legal genera un número compuesto por código del estado, donde se registra el editor, productor o distribuidor, año en curso y número correlativo.<br>
-
-Ejemplo:  <b>DC2016000001</b> corresponde a una obra cuyo editor se localiza en el Distrito Capital, año de publicación 2016 y número correlativo</p>
+        <p class="textooo"><b>Servicio Médico "Lic. Pedro Torres"</b> de <b>Lunes </b> a <b>Viernes </b> de <i>7:00 am</i>  a  <i>10:00 am</i>.</p>
       </div>
     </div>
   </div>
@@ -101,19 +109,13 @@ Ejemplo:  <b>DC2016000001</b> corresponde a una obra cuyo editor se localiza en 
     <div class="panel-heading" role="tab" id="heading5">
       <h5 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
-          ¿Qué Materiales están sujetos a dicha normativa jurídica?
+          ¿Tenemos servicio de Rx?
         </a>
       </h5>
     </div>
     <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
       <div class="panel-body">
-        <p class="textooo"><ul>
-  		<li>Producciones bibliográficas: Libros (a partir de 48 páginas); folletos (a partir de 8 páginas) impresos, audiolibros, libros  y folletos en versión digital y tesis de postgrado.</li>
-  		<li>Publicaciones seriadas: periódicos, revistas, boletines, informes, gacetas, memorias y cuenta, anuarios, guías y directorios (en cualquier formato o soporte).</li>
-  		<li>Producciones no bibliográficas impresas en papel o en cualquier formato o soporte: Carteles, catálogos (hasta 8 páginas), programas de mano, agendas, plegables, guías didácticas (hasta 8 páginas), calendarios y almanaques, tarjetas y postales, sellos postales, partituras, mapas y planos.</li>
-  		<li>Materiales fijados en soporte audiovisual: Producciones fonográficas (CD de música), cortometrajes, mediometrajes, largometrajes, documentales, micros, programas de radio y televisión.</li>
-	</ul>
-	</p>
+        <p class="textooo"><b>Próximamente.</b></p>
       </div>
     </div>
   </div>
@@ -121,21 +123,13 @@ Ejemplo:  <b>DC2016000001</b> corresponde a una obra cuyo editor se localiza en 
     <div class="panel-heading" role="tab" id="heading6">
       <h5 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
-         ¿Cuáles son los requisitos para obtener el número de Depósito Legal?
+         ¿Tenemos servicio de cardiología?
         </a>
       </h5>
     </div>
     <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
       <div class="panel-body">
-    <p class="textooo"><b>Requisitos previos:</b><br></p>
-   <ul>
-    <li>Debe de tener el Registro Único de Información Fiscal (RIF), en caso contrario deberá realizar el registro en el Servicio Nacional Integrado de Administración Aduanera y Tributaria (SENIAT).</li>
-    <li>Dos (2) cuentas de correo electrónico activos.</li>
-	</ul>
-	<!--<p class="textooo">Luego deberá ingresar en la página oficial de la Biblioteca Nacional (depositolegal.bnv.gob.ve) para realizar el registro de usuario como Editor/Productor.<br><br>-->
-	<br><b>¡IMPORTANTE!</b><br>
-	Si el Registro Único de Información Fiscal (RIF) es menor a nueve (9) dígitos complete con ceros (0) a la izquierda.
-    </p>
+    <p class="textooo"><b>Próximamente.</b></p>
       </div>
     </div>
   </div>
@@ -143,17 +137,13 @@ Ejemplo:  <b>DC2016000001</b> corresponde a una obra cuyo editor se localiza en 
     <div class="panel-heading" role="tab" id="heading20">
       <h5 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse20" aria-expanded="false" aria-controls="collapse20">
-         ¿Cómo hacer para obtener el Número de Depósito Legal?
+         ¿A qué hora me puedo anotar para ser atendido/a?
         </a>
       </h5>
     </div>
     <div id="collapse20" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading20">
       <div class="panel-body">
-      <p class="textooo">
-1.- Ingresar  al  link: <b>http://depositolegal.bnv.gob.ve</b> <br>
-2.- Registrarse como usuario(a) en el Sistema Automatizado de Depósito Legal (SADEL) con su número de RIF el cual le generará una clave de acceso que será enviada a su correo.<br>
-3.- Suministrar los datos que solicita el SADEL para el registro de la obra y seguir las instrucciones.<br><br>
-Una vez obtenido el número de registro del Depósito Legal, el sistema le permitirá modificar datos en casos de error, anular el código en caso de no ser utilizado, descargar la constancia de asignación del número obtenido si desea imprimirlo y descargar el formato de constancia de entrega de ejemplares para remitirlo adjunto con la obra a la División de Depósito Legal para su recepción  por parte de esta unidad.</p>
+      <p class="textooo">En la mañana a las <b>7:00 AM</b>, en la tarde a las <b>11:00 AM</b>.</p>
       </div>
     </div>
   </div>
@@ -161,14 +151,13 @@ Una vez obtenido el número de registro del Depósito Legal, el sistema le permi
     <div class="panel-heading" role="tab" id="heading22">
       <h5 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse22" aria-expanded="false" aria-controls="collapse22">
-         ¿Cómo iniciar sesión?
+         ¿Entregan medicinas?
         </a>
       </h5>
     </div>
     <div id="collapse22" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading22">
       <div class="panel-body">
-      <p class="textooo">
-Al ingresar la primera vez, deberá registrarse como usuario(a) con el número del RIF y colocar los demás datos que le solicita el sistema. A partir de la segunda vez que necesite ingresar al sistema sólo deberá colocar el número del RIF y la clave.</p>
+      <p class="textooo">Sólo la 1era dosis.</p>
       </div>
     </div>
   </div>
@@ -176,13 +165,13 @@ Al ingresar la primera vez, deberá registrarse como usuario(a) con el número d
     <div class="panel-heading" role="tab" id="heading14">
       <h5 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse14" aria-expanded="false" aria-controls="collapse14">
-		¿Qué vigencia tiene el número de Depósito Legal?
+		¿A qué hora puedo venir a hacer la cola para anotarme en la especialidad?
         </a>
       </h5>
     </div>
     <div id="collapse14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading14">
       <div class="panel-body">
-          <p class="textooo">El número de Depósito Legal sólo puede ser utilizado para el año en curso de su solicitud. En caso de no ser empleado en ese tiempo, debe ser anulado y notificado por escrito.</p>
+          <p class="textooo">En la mañana a partir de las <b>6:00 AM</b>, en la tarde a partir de las <b>11:00 AM</b>.</p>
       </div>
     </div>
   </div>
@@ -190,13 +179,13 @@ Al ingresar la primera vez, deberá registrarse como usuario(a) con el número d
     <div class="panel-heading" role="tab" id="heading15">
       <h5 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse15" aria-expanded="false" aria-controls="collapse15">
-		¿Las ediciones o producciones digitales llevan número de Depósito Legal?
+		¿A partir de qué hora se presta servicio en el Servicio Médico “Lic. Pedro Torres?
         </a>
       </h5>
     </div>
     <div id="collapse15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading15">
       <div class="panel-body">
-          <p class="textooo">Si, según lo establecido en la ley de Depósito Legal y su Reglamento, toda obra editada o producida en el territorio nacional debe llevar un número de Depósito Legal, independientemente de su formato o soporte.</p>
+          <p class="textooo">En la mañana desde las 7:00 AM hasta la 1:00 PM, en la tarde desde la 1:00 AM hasta las 5:00 PM.</p>
       </div>
     </div>
   </div>
@@ -204,20 +193,13 @@ Al ingresar la primera vez, deberá registrarse como usuario(a) con el número d
     <div class="panel-heading" role="tab" id="heading7">
       <h5 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
-          ¿Cuántos ejemplares deben entregarse?
+          ¿Cuál es el procedimiento para comprar en FarmaPatria?
         </a>
       </h5>
     </div>
     <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
       <div class="panel-body">
-        <p class="textooo">Según lo establecido en la Ley y su Reglamento, se deben remitir a la División de Depósito Legal:<br/>
-	<ul>
-		<li>Tres (03) ejemplares de materiales impresos en papel.</li>
-		<li>Tres (03) ejemplares de materiales editados en versión digital (deben entregarse en formato de CD).</li>
-		<li>Dos (02) ejemplares de materiales fonográficos (CD de música).</li>
-		<li>Un (01) ejemplar de materiales audiovisuales (cortometrajes, mediometrajes, largometrajes, documentales, micros, programas de radio y televisión) en soporte  de CD.</li>
-	</ul>
-		En caso de publicaciones editadas o producidas por entes de la Administración Pública Nacional Central y Descentralizada, debe entregarse hasta un 25% del tiraje de lo publicado, con el objeto de dotar tanto a las colecciones de la Biblioteca Nacional como a la Red Nacional de Bibliotecas Públicas del país.</p>
+        <p class="textooo">Con récipe médico de la institución.</p>
       </div>
     </div>
   </div>
@@ -225,16 +207,17 @@ Al ingresar la primera vez, deberá registrarse como usuario(a) con el número d
     <div class="panel-heading" role="tab" id="heading23">
       <h5 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse23" aria-expanded="false" aria-controls="collapse23">
-          ¿Dónde se puede contactar la División de Depósito Legal?
+          ¿Cómo obtengo informe médico y récipes para solicitar reembolso?
         </a>
       </h5>
     </div>
     <div id="collapse23" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading23">
       <div class="panel-body">
-        <p class="textooo">La División de Depósito Legal está ubicada en la siguiente dirección: Final de la Avenida Panteón, Biblioteca Nacional, Sede Administrativa, Nivel AP-0, Complejo Cultural Foro Libertador. Parroquia Altagracia. Caracas 1010, Venezuela. <b>Apartado Postal 6525 – Caracas, Venezuela.</b><br><br>Teléfonos: (0212) 505.91.75 - 505.91.76 – 505.91.77 – 505.91.83</p>
+        <p class="textooo">Con previa consulta médica.</p>
       </div>
     </div>
   </div>
+<!--
 <div class="panel panel-info">
     <div class="panel-heading" role="tab" id="heading24">
       <h5 class="panel-title">
@@ -292,7 +275,7 @@ Al ingresar la primera vez, deberá registrarse como usuario(a) con el número d
           <ul>
 		<li>Primera opción: Enviando un correo electrónico a la siguiente dirección: <a href="mailto:deposito.legalvenezuela@bnv.gob.ve">deposito.legalvenezuela@bnv.gob.ve</a></li>
 		<li>Segunda opción: Notificando a través de un oficio al Instituto Autónomo Biblioteca Nacional y de Servicios de Bibliotecas con Atención a la Dirección Desarrollo de Colecciones / División Depósito Legal.</li>
-		<li>Tercera opción: Ingresando al sistema con el usuario que realizó la solicitud del número de Depósito Legal, siguiendo la ruta:<br><b>Solicitud --> Consultar --> Hacer click en el icono <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span></b></li>
+		<li>Tercera opción: Ingresando al sistema con el usuario que realizó la solicitud del número de Depósito Legal, siguiendo la ruta:<br><b>Solicitud --> <!--Consultar --> <!--Hacer click en el icono <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span></b></li>
 	</ul>
           </p>
       </div>
@@ -501,7 +484,7 @@ Para descargar y llenar el formulario directamente en pantalla se recomienda hac
       </div>
     </div>
   </div>-->
-
+<!--
     <div class="panel panel-info">
     <div class="panel-heading" role="tab" id="heading19">
       <h5 class="panel-title">
@@ -556,8 +539,19 @@ Para descargar y llenar el formulario directamente en pantalla se recomienda hac
 	</ul>
 	</p>
       </div>
-    </div>
+    </div>-->
   </div>
-
-
+  <br>
+<div class="izquierda2">
+<?php
+$this->widget(
+		'booster.widgets.TbButton', array(
+		'buttonType' => 'link', 
+		'size' => 'btn-lg',
+		'icon' =>'glyphicon glyphicon-chevron-left',
+		'context' => 'danger',
+		'url'=>Yii::app()->createUrl('site/index'),
+		'label' => '  Regresar' )
+		);
+?>
 </div>
