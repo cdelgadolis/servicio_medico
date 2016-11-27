@@ -11,4 +11,4 @@ array('label'=>'Manage Solicitud','url'=>array('admin')),
 
 <h1 class="titulo">Solicitud de Cita Médica</h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'paciente' => $paciente, 'fechasagotadas' => $fechasagotadas)); ?>

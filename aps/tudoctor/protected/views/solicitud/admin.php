@@ -23,7 +23,7 @@ return false;
 ?>
 
 <h1 class="titulo">Solicitud de Citas Medicas</h1>
-
+<!--
 <div class="izquierda2">
 <?php $this->widget(
 'booster.widgets.TbButton', array(
@@ -36,7 +36,7 @@ return false;
 'label' => '  Solicitar Cita Médica' )
  );
  ?>
- </div>
+ </div>-->
  <br/>
  
 <?php $this->widget('booster.widgets.TbGridView',array(
@@ -45,19 +45,47 @@ return false;
 'dataProvider'=>$model->search(),
 'filter'=>$model,
 'columns'=>array(
-		'id_solicitud',
-		'fk_paciente',
-		'fk_sede',
-		'fk_especialidad',
+		'id_solicitud' => array(
+			'header' => 'N°',
+			'name' => 'id_solicitud',
+			'value' => '$data->id_solicitud',
+			'htmlOptions' => array('width' => '50', 'style' => 'text-align: center;'),
+			),
+		'fk_paciente' => array(
+			'header' => 'Paciente ',
+			'name' => 'fk_paciente',
+			'value' => '$data->fkPaciente->nombre." ". $data->fkPaciente->apellido',
+			'htmlOptions' => array('width' => '180', 'style' => 'text-align: center;'),
+			),
+		'fk_sede' => array(
+			'header' => 'Sede',
+			'name' => 'fk_sede',
+			'value' => '$data->fkSede->sede',
+			'filter' =>  CHtml::listData(Sede::model()->findAll(), 'id_sede', 'sede'),
+			'htmlOptions' => array('width' => '200', 'style' => 'text-align: center;'),
+			),
+		'fk_especialidad' => array(
+			'header' => 'Especialidad ',
+			'name' => 'fk_especialidad',
+			'value' => '$data->fkEspecialidad->descripcion',
+			//'filter' =>  CHtml::listData(Especialidad::model()->findAll(), 'id_especialidad', 'descripcion'),
+			'htmlOptions' => array('width' => '200', 'style' => 'text-align: center;'),
+			),
+		'fk_medico' => array(
+			'header' => 'Médico ',
+			'name' => 'fk_medico',
+			'value' => '$data->fkMedico->nombres." ". $data->fkMedico->apellidos',
+			'filter' =>  CHtml::listData(Medicos::model()->findAll(), 'id_medico', 'concate'),
+			'htmlOptions' => array('width' => '200', 'style' => 'text-align: center;'),
+			),
 		'fecha_solicitud',
-		'hora',
-		/*
+		'motivo_consulta',
+		/*'hora',
 		'motivo_consulta',
 		'medico_referido',
 		'fecha_creacion',
 		'usuario_creacion',
 		'es_activo',
-		'fk_medico',
 		*/
 array(
 'class'=>'booster.widgets.TbButtonColumn',

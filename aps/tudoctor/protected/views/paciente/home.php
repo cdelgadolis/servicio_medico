@@ -37,7 +37,7 @@ $this->breadcrumbs=array(
                     <br>
                          Bienvenido al centro de citas en línea. Por favor ingrese el número de cédula del titular o beneficiario, en caso de no estár registrado, usted será redireccionado(a) a uno de nuestros formularios donde podrá registrar su información.
                          <br><br>En caso de ser la cita para un menor de edad ingrese la cédula del titular.
-						 <br><div align="right"><a href="http://localhost/tudoctor/index.php?r=site/index" class="btn btn-success glyphicon glyphicon-new-window" role="button"><b>  ¡Ayuda! </b></a> </div>
+						 <br><div align="right"><a href="http://172.16.1.61/tudoctor/index.php?r=site/index" class="btn btn-success glyphicon glyphicon-new-window" role="button"><b>  ¡Ayuda! </b></a> </div>
                     </p>'
         );
         $type = 'info';
@@ -61,9 +61,7 @@ $this->breadcrumbs=array(
 			'icon' =>'glyphicon glyphicon-search',
 		)); ?></div></div>
 </div>
-
-       
+<div class="izquierda2"><?php echo CHtml::link('Administrador',array('site/login')); ?></div>       
 </div>
-
   <?php $this->endWidget(); ?>
 </div>

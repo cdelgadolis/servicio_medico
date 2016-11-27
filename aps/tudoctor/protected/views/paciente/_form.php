@@ -110,7 +110,7 @@ $(document).ready(function(){
 <div class="row">
 
 <div class='col-md-4'>
-	<?php echo $form->textFieldGroup($model,'nombre',array('widgetOptions'=>array('htmlOptions'=>array('style' => 'width: 250px; ','class'=>'span5','maxlength'=>70, 'readonly' => 'true')))); ?>
+	<?php echo $form->textFieldGroup($model,'nombre',array('widgetOptions'=>array('htmlOptions'=>array('style' => 'width: 250px; ','class'=>'span5','maxlength'=>70)))); ?>
 </div>
 <div class='col-md-4'>
 	<?php echo $form->textFieldGroup($model,'apellido',array('widgetOptions'=>array('htmlOptions'=>array('style' => 'width: 250px; ','class'=>'span5','maxlength'=>70)))); ?>

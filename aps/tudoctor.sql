@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.4.6
 -- Dumped by pg_dump version 9.4.6
--- Started on 2016-11-03 11:27:29 VET
+-- Started on 2016-11-22 13:06:49 VET
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -22,7 +22,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2402 (class 0 OID 0)
+-- TOC entry 2404 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
@@ -79,7 +79,7 @@ CREATE SEQUENCE actividad_id_actividad_seq
 ALTER TABLE actividad_id_actividad_seq OWNER TO postgres;
 
 --
--- TOC entry 2403 (class 0 OID 0)
+-- TOC entry 2405 (class 0 OID 0)
 -- Dependencies: 214
 -- Name: actividad_id_actividad_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -121,7 +121,7 @@ CREATE SEQUENCE dias_id_dia_seq
 ALTER TABLE dias_id_dia_seq OWNER TO postgres;
 
 --
--- TOC entry 2404 (class 0 OID 0)
+-- TOC entry 2406 (class 0 OID 0)
 -- Dependencies: 208
 -- Name: dias_id_dia_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -164,7 +164,7 @@ CREATE SEQUENCE especialidad_id_especialidad_seq
 ALTER TABLE especialidad_id_especialidad_seq OWNER TO postgres;
 
 --
--- TOC entry 2405 (class 0 OID 0)
+-- TOC entry 2407 (class 0 OID 0)
 -- Dependencies: 206
 -- Name: especialidad_id_especialidad_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -225,7 +225,7 @@ CREATE SEQUENCE estado_civil_id_edo_civil_seq
 ALTER TABLE estado_civil_id_edo_civil_seq OWNER TO postgres;
 
 --
--- TOC entry 2406 (class 0 OID 0)
+-- TOC entry 2408 (class 0 OID 0)
 -- Dependencies: 193
 -- Name: estado_civil_id_edo_civil_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -249,7 +249,7 @@ CREATE SEQUENCE estado_id_estado_seq
 ALTER TABLE estado_id_estado_seq OWNER TO postgres;
 
 --
--- TOC entry 2407 (class 0 OID 0)
+-- TOC entry 2409 (class 0 OID 0)
 -- Dependencies: 173
 -- Name: estado_id_estado_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -309,7 +309,7 @@ CREATE SEQUENCE evolucion_id_evaluacion_seq
 ALTER TABLE evolucion_id_evaluacion_seq OWNER TO postgres;
 
 --
--- TOC entry 2408 (class 0 OID 0)
+-- TOC entry 2410 (class 0 OID 0)
 -- Dependencies: 199
 -- Name: evolucion_id_evaluacion_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -405,7 +405,7 @@ CREATE SEQUENCE historia_clinica_id_historia_clinica_seq
 ALTER TABLE historia_clinica_id_historia_clinica_seq OWNER TO postgres;
 
 --
--- TOC entry 2409 (class 0 OID 0)
+-- TOC entry 2411 (class 0 OID 0)
 -- Dependencies: 195
 -- Name: historia_clinica_id_historia_clinica_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -429,7 +429,7 @@ CREATE SEQUENCE historia_clinica_maf_seq
 ALTER TABLE historia_clinica_maf_seq OWNER TO postgres;
 
 --
--- TOC entry 2410 (class 0 OID 0)
+-- TOC entry 2412 (class 0 OID 0)
 -- Dependencies: 201
 -- Name: historia_clinica_maf_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -501,7 +501,7 @@ CREATE SEQUENCE historia_clinica_psicologia_id_hc_psicologia_seq
 ALTER TABLE historia_clinica_psicologia_id_hc_psicologia_seq OWNER TO postgres;
 
 --
--- TOC entry 2411 (class 0 OID 0)
+-- TOC entry 2413 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: historia_clinica_psicologia_id_hc_psicologia_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -573,7 +573,7 @@ CREATE SEQUENCE historia_clinica_psiquiatrica_id_hc_psiquiatrica_seq
 ALTER TABLE historia_clinica_psiquiatrica_id_hc_psiquiatrica_seq OWNER TO postgres;
 
 --
--- TOC entry 2412 (class 0 OID 0)
+-- TOC entry 2414 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: historia_clinica_psiquiatrica_id_hc_psiquiatrica_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -619,7 +619,7 @@ CREATE SEQUENCE institucion_id_institucion_seq
 ALTER TABLE institucion_id_institucion_seq OWNER TO postgres;
 
 --
--- TOC entry 2413 (class 0 OID 0)
+-- TOC entry 2415 (class 0 OID 0)
 -- Dependencies: 181
 -- Name: institucion_id_institucion_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -664,7 +664,7 @@ CREATE SEQUENCE medico_horario_id_medico_horario_seq
 ALTER TABLE medico_horario_id_medico_horario_seq OWNER TO postgres;
 
 --
--- TOC entry 2414 (class 0 OID 0)
+-- TOC entry 2416 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: medico_horario_id_medico_horario_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -715,7 +715,7 @@ CREATE SEQUENCE medicos_id_medico_seq
 ALTER TABLE medicos_id_medico_seq OWNER TO postgres;
 
 --
--- TOC entry 2415 (class 0 OID 0)
+-- TOC entry 2417 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: medicos_id_medico_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -758,7 +758,7 @@ CREATE SEQUENCE municipio_id_municipio_seq
 ALTER TABLE municipio_id_municipio_seq OWNER TO postgres;
 
 --
--- TOC entry 2416 (class 0 OID 0)
+-- TOC entry 2418 (class 0 OID 0)
 -- Dependencies: 175
 -- Name: municipio_id_municipio_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -824,7 +824,7 @@ CREATE SEQUENCE paciente_id_paciente_seq
 ALTER TABLE paciente_id_paciente_seq OWNER TO postgres;
 
 --
--- TOC entry 2417 (class 0 OID 0)
+-- TOC entry 2419 (class 0 OID 0)
 -- Dependencies: 189
 -- Name: paciente_id_paciente_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -866,7 +866,7 @@ CREATE SEQUENCE parentesco_id_parentesco_seq
 ALTER TABLE parentesco_id_parentesco_seq OWNER TO postgres;
 
 --
--- TOC entry 2418 (class 0 OID 0)
+-- TOC entry 2420 (class 0 OID 0)
 -- Dependencies: 187
 -- Name: parentesco_id_parentesco_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -909,7 +909,7 @@ CREATE SEQUENCE parroquia_id_parroquia_seq
 ALTER TABLE parroquia_id_parroquia_seq OWNER TO postgres;
 
 --
--- TOC entry 2419 (class 0 OID 0)
+-- TOC entry 2421 (class 0 OID 0)
 -- Dependencies: 177
 -- Name: parroquia_id_parroquia_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -951,7 +951,7 @@ CREATE SEQUENCE patologias_id_tipo_patologia_seq
 ALTER TABLE patologias_id_tipo_patologia_seq OWNER TO postgres;
 
 --
--- TOC entry 2420 (class 0 OID 0)
+-- TOC entry 2422 (class 0 OID 0)
 -- Dependencies: 197
 -- Name: patologias_id_tipo_patologia_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -996,7 +996,7 @@ CREATE SEQUENCE reposo_id_reposo_seq
 ALTER TABLE reposo_id_reposo_seq OWNER TO postgres;
 
 --
--- TOC entry 2421 (class 0 OID 0)
+-- TOC entry 2423 (class 0 OID 0)
 -- Dependencies: 191
 -- Name: reposo_id_reposo_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -1070,7 +1070,7 @@ CREATE SEQUENCE sede_foto_id_sede_foto_seq
 ALTER TABLE sede_foto_id_sede_foto_seq OWNER TO postgres;
 
 --
--- TOC entry 2422 (class 0 OID 0)
+-- TOC entry 2424 (class 0 OID 0)
 -- Dependencies: 204
 -- Name: sede_foto_id_sede_foto_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -1094,7 +1094,7 @@ CREATE SEQUENCE sede_id_sede_seq
 ALTER TABLE sede_id_sede_seq OWNER TO postgres;
 
 --
--- TOC entry 2423 (class 0 OID 0)
+-- TOC entry 2425 (class 0 OID 0)
 -- Dependencies: 202
 -- Name: sede_id_sede_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -1118,7 +1118,8 @@ CREATE TABLE solicitud (
     medico_referido character varying(200),
     fecha_creacion date DEFAULT now(),
     usuario_creacion integer,
-    es_activo boolean DEFAULT true
+    es_activo boolean DEFAULT true,
+    fk_medico integer NOT NULL
 );
 
 
@@ -1140,7 +1141,7 @@ CREATE SEQUENCE solicitud_id_solicitud_seq
 ALTER TABLE solicitud_id_solicitud_seq OWNER TO postgres;
 
 --
--- TOC entry 2424 (class 0 OID 0)
+-- TOC entry 2426 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: solicitud_id_solicitud_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -1182,7 +1183,7 @@ CREATE SEQUENCE tipo_persona_id_tipo_persona_seq
 ALTER TABLE tipo_persona_id_tipo_persona_seq OWNER TO postgres;
 
 --
--- TOC entry 2425 (class 0 OID 0)
+-- TOC entry 2427 (class 0 OID 0)
 -- Dependencies: 183
 -- Name: tipo_persona_id_tipo_persona_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -1224,7 +1225,7 @@ CREATE SEQUENCE tipo_trabajador_id_tipo_trabajador_seq
 ALTER TABLE tipo_trabajador_id_tipo_trabajador_seq OWNER TO postgres;
 
 --
--- TOC entry 2426 (class 0 OID 0)
+-- TOC entry 2428 (class 0 OID 0)
 -- Dependencies: 185
 -- Name: tipo_trabajador_id_tipo_trabajador_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -1273,7 +1274,7 @@ CREATE SEQUENCE usuario_id_usuario_seq
 ALTER TABLE usuario_id_usuario_seq OWNER TO postgres;
 
 --
--- TOC entry 2427 (class 0 OID 0)
+-- TOC entry 2429 (class 0 OID 0)
 -- Dependencies: 179
 -- Name: usuario_id_usuario_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -1474,7 +1475,7 @@ ALTER TABLE ONLY usuario ALTER COLUMN id_usuario SET DEFAULT nextval('usuario_id
 
 
 --
--- TOC entry 2388 (class 0 OID 41601)
+-- TOC entry 2390 (class 0 OID 41601)
 -- Dependencies: 215
 -- Data for Name: actividad; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1489,7 +1490,7 @@ COPY actividad (id_actividad, actividad, lugar, responsable, hora_entrada, hora_
 
 
 --
--- TOC entry 2428 (class 0 OID 0)
+-- TOC entry 2430 (class 0 OID 0)
 -- Dependencies: 214
 -- Name: actividad_id_actividad_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1498,7 +1499,7 @@ SELECT pg_catalog.setval('actividad_id_actividad_seq', 5, true);
 
 
 --
--- TOC entry 2382 (class 0 OID 41494)
+-- TOC entry 2384 (class 0 OID 41494)
 -- Dependencies: 209
 -- Data for Name: dias; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1508,20 +1509,23 @@ COPY dias (id_dia, dia, status, fecha_creacion, usuario_creacion, fecha_actualiz
 1	Domingo	f	2016-09-13	1	2016-11-03	1
 3	Martes	t	2016-11-03	1	2016-11-03	1
 4	Miercoles	t	2016-11-03	1	2016-11-03	1
+5	Jueves	t	2016-11-22	1	2016-11-22	1
+6	Viernes	t	2016-11-22	1	2016-11-22	1
+7	Sabado	f	2016-11-22	1	2016-11-22	1
 \.
 
 
 --
--- TOC entry 2429 (class 0 OID 0)
+-- TOC entry 2431 (class 0 OID 0)
 -- Dependencies: 208
 -- Name: dias_id_dia_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('dias_id_dia_seq', 4, true);
+SELECT pg_catalog.setval('dias_id_dia_seq', 7, true);
 
 
 --
--- TOC entry 2380 (class 0 OID 41478)
+-- TOC entry 2382 (class 0 OID 41478)
 -- Dependencies: 207
 -- Data for Name: especialidad; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1530,21 +1534,36 @@ COPY especialidad (id_especialidad, descripcion, sede, es_activo, fecha_creacion
 1	Odontología	1	t	2016-09-13 09:53:30.304204	2016-09-13 09:53:30.304204	1	\N
 2	Medicina General	1	t	2016-09-14 04:08:52.79671	2016-09-14 04:08:52.79671	1	\N
 3	Psiquiatría	1	t	2016-09-14 04:12:18.920649	2016-09-14 04:12:18.920649	1	\N
-4	Medicina General	2	t	2016-09-14 04:13:42.105559	2016-09-14 04:13:42.105559	1	\N
+5	Gineco-Obtetricia	1	t	2016-11-22 11:52:26.624587	2016-11-22 11:52:26.624587	1	\N
+6	Rehabilitación Terapia Ocupacional	1	t	2016-11-22 11:52:55.26471	2016-11-22 11:52:55.26471	1	\N
+7	Oftamología	1	t	2016-11-22 11:53:13.674403	2016-11-22 11:53:13.674403	1	\N
+8	Pediatría	1	t	2016-11-22 11:54:09.67711	2016-11-22 11:54:09.67711	1	\N
+10	Médico Cirujano	1	t	2016-11-22 11:54:59.793755	2016-11-22 11:54:59.793755	1	\N
+11	Psicologia Clinica	1	t	2016-11-22 11:55:29.964314	2016-11-22 11:55:29.964314	1	\N
+12	Traumatologia	1	t	2016-11-22 11:55:50.322306	2016-11-22 11:55:50.322306	1	\N
+4	Médico Internista	2	t	2016-09-14 04:13:42.105559	2016-11-22 00:00:00	1	1
+9	Médico Integral	1	t	2016-11-22 11:54:43.323458	2016-11-22 00:00:00	1	1
+13	Medicina General	2	t	2016-11-22 12:01:09.99401	2016-11-22 12:01:09.99401	1	\N
+14	Medicina General	3	t	2016-11-22 12:01:42.958316	2016-11-22 12:01:42.958316	1	\N
+15	Nutricionista	3	t	2016-11-22 12:02:49.886859	2016-11-22 12:02:49.886859	1	\N
+16	Psicologia	3	t	2016-11-22 12:05:07.724226	2016-11-22 12:05:07.724226	1	\N
+17	Medicina General	4	t	2016-11-22 12:05:49.501609	2016-11-22 12:05:49.501609	1	\N
+18	Fisioterapia	4	t	2016-11-22 12:06:22.15408	2016-11-22 12:06:22.15408	1	\N
+19	Psicologia	4	t	2016-11-22 12:08:23.044942	2016-11-22 12:08:23.044942	1	\N
 \.
 
 
 --
--- TOC entry 2430 (class 0 OID 0)
+-- TOC entry 2432 (class 0 OID 0)
 -- Dependencies: 206
 -- Name: especialidad_id_especialidad_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('especialidad_id_especialidad_seq', 4, true);
+SELECT pg_catalog.setval('especialidad_id_especialidad_seq', 19, true);
 
 
 --
--- TOC entry 2347 (class 0 OID 32785)
+-- TOC entry 2349 (class 0 OID 32785)
 -- Dependencies: 174
 -- Data for Name: estado; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1578,7 +1597,7 @@ COPY estado (id_estado, nombre, siglas, estatus, fecha_creacion, fecha_actualiza
 
 
 --
--- TOC entry 2367 (class 0 OID 33003)
+-- TOC entry 2369 (class 0 OID 33003)
 -- Dependencies: 194
 -- Data for Name: estado_civil; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1591,7 +1610,7 @@ COPY estado_civil (id_edo_civil, edo_civil, fecha_creacion, usuario_actualizacio
 
 
 --
--- TOC entry 2431 (class 0 OID 0)
+-- TOC entry 2433 (class 0 OID 0)
 -- Dependencies: 193
 -- Name: estado_civil_id_edo_civil_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1600,7 +1619,7 @@ SELECT pg_catalog.setval('estado_civil_id_edo_civil_seq', 3, true);
 
 
 --
--- TOC entry 2432 (class 0 OID 0)
+-- TOC entry 2434 (class 0 OID 0)
 -- Dependencies: 173
 -- Name: estado_id_estado_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1609,7 +1628,7 @@ SELECT pg_catalog.setval('estado_id_estado_seq', 1, false);
 
 
 --
--- TOC entry 2373 (class 0 OID 41015)
+-- TOC entry 2375 (class 0 OID 41015)
 -- Dependencies: 200
 -- Data for Name: evolucion; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1619,7 +1638,7 @@ COPY evolucion (id_evaluacion, paciente, motivo_consulta, tension_alta, frecuenc
 
 
 --
--- TOC entry 2433 (class 0 OID 0)
+-- TOC entry 2435 (class 0 OID 0)
 -- Dependencies: 199
 -- Name: evolucion_id_evaluacion_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1628,7 +1647,7 @@ SELECT pg_catalog.setval('evolucion_id_evaluacion_seq', 1, true);
 
 
 --
--- TOC entry 2369 (class 0 OID 33038)
+-- TOC entry 2371 (class 0 OID 33038)
 -- Dependencies: 196
 -- Data for Name: historia_clinica; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1638,7 +1657,7 @@ COPY historia_clinica (id_historia_clinica, paciente, peso, talla, frecuencia_ca
 
 
 --
--- TOC entry 2434 (class 0 OID 0)
+-- TOC entry 2436 (class 0 OID 0)
 -- Dependencies: 195
 -- Name: historia_clinica_id_historia_clinica_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1647,7 +1666,7 @@ SELECT pg_catalog.setval('historia_clinica_id_historia_clinica_seq', 1, false);
 
 
 --
--- TOC entry 2435 (class 0 OID 0)
+-- TOC entry 2437 (class 0 OID 0)
 -- Dependencies: 201
 -- Name: historia_clinica_maf_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1656,7 +1675,7 @@ SELECT pg_catalog.setval('historia_clinica_maf_seq', 1, false);
 
 
 --
--- TOC entry 2394 (class 0 OID 49866)
+-- TOC entry 2396 (class 0 OID 49866)
 -- Dependencies: 221
 -- Data for Name: historia_clinica_psicologia; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1666,7 +1685,7 @@ COPY historia_clinica_psicologia (id_hc_psicologia, paciente, fecha_ingreso, hor
 
 
 --
--- TOC entry 2436 (class 0 OID 0)
+-- TOC entry 2438 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: historia_clinica_psicologia_id_hc_psicologia_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1675,7 +1694,7 @@ SELECT pg_catalog.setval('historia_clinica_psicologia_id_hc_psicologia_seq', 1, 
 
 
 --
--- TOC entry 2392 (class 0 OID 49846)
+-- TOC entry 2394 (class 0 OID 49846)
 -- Dependencies: 219
 -- Data for Name: historia_clinica_psiquiatrica; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1685,7 +1704,7 @@ COPY historia_clinica_psiquiatrica (id_hc_psiquiatrica, paciente, fecha_ingreso,
 
 
 --
--- TOC entry 2437 (class 0 OID 0)
+-- TOC entry 2439 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: historia_clinica_psiquiatrica_id_hc_psiquiatrica_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1694,7 +1713,7 @@ SELECT pg_catalog.setval('historia_clinica_psiquiatrica_id_hc_psiquiatrica_seq',
 
 
 --
--- TOC entry 2355 (class 0 OID 32856)
+-- TOC entry 2357 (class 0 OID 32856)
 -- Dependencies: 182
 -- Data for Name: institucion; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1707,7 +1726,7 @@ COPY institucion (id_institucion, nombre, rif, direccion, telefono, telefono2, f
 
 
 --
--- TOC entry 2438 (class 0 OID 0)
+-- TOC entry 2440 (class 0 OID 0)
 -- Dependencies: 181
 -- Name: institucion_id_institucion_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1716,7 +1735,7 @@ SELECT pg_catalog.setval('institucion_id_institucion_seq', 3, true);
 
 
 --
--- TOC entry 2386 (class 0 OID 41570)
+-- TOC entry 2388 (class 0 OID 41570)
 -- Dependencies: 213
 -- Data for Name: medico_horario; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1727,7 +1746,7 @@ COPY medico_horario (id_medico_horario, medico, dia, hora_entrada, hora_salida, 
 
 
 --
--- TOC entry 2439 (class 0 OID 0)
+-- TOC entry 2441 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: medico_horario_id_medico_horario_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1736,27 +1755,48 @@ SELECT pg_catalog.setval('medico_horario_id_medico_horario_seq', 1, true);
 
 
 --
--- TOC entry 2384 (class 0 OID 41514)
+-- TOC entry 2386 (class 0 OID 41514)
 -- Dependencies: 211
 -- Data for Name: medicos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY medicos (id_medico, nombres, apellidos, especialidad, telefono_oficina, telefono_celular, correo, status, nro_medico, cant_paciente_dia, foto, fecha_creacion, usuario_creacion, fecha_actualizacion, usuario_actualizacion, sede) FROM stdin;
-1	Blanca	Useche	2	(0212)-505-9345	(0414)-170-4970	blanca.useche@bnv.gob.ve	t		5		2016-11-03	1	2016-11-03	\N	1
+2	Pablo	Torres	2	(0212)-505-9435	(0416)-901-3443	pablo.torres@bnv.gob.ve	t		15		2016-11-22	1	2016-11-22	\N	1
+1	Blanca	Useche	2	(0212)-505-9345	(0414)-170-4970	blanca.useche@bnv.gob.ve	t		15		2016-11-03	1	2016-11-03	\N	1
+3	Aron	Blandin	2	(0212)-505-9345	(0000)-000-0000	aron.blandin@bnv.gob.ve	t		15		2016-11-22	1	2016-11-22	\N	1
+4	Manuel	Perez	2	(0212)-505-9345	(0000)-000-0000	manuel.perez@bnv.gob.ve	t		15		2016-11-22	1	2016-11-22	\N	1
+6	Marlene	Sanchez	1	(0212)-505-9345	(0412)-262-1987	marlene.sanchez@bnv.gob.ve	t		7		2016-11-22	1	2016-11-22	\N	1
+5	Imar	Mendez	5	(0212)-505-9345	(0000)-000-0000	imar.mendez@bnv.gob.ve	t		7		2016-11-22	1	2016-11-22	\N	1
+7	Ailyn	Pelayo	1	(0212)-505-9345	(0424)-116-2718	aylin.pelayo@bnv.gob.ve	t		7		2016-11-22	1	2016-11-22	\N	1
+8	Zaidith	Saavedra	6	(0212)-505-9345	(0426)-218-0900	zaidith.saavedra@bnv.gob.ve	t		12		2016-11-22	1	2016-11-22	\N	1
+9	Madeline	Palma	6	(0212)-505-9345	(0414)-263-8113	madeline.palma@bnv.gob.ve	t		12		2016-11-22	1	2016-11-22	\N	1
+10	Yulienys	González	7	(0212)-505-9345	(0000)-000-0000	info@info.com	t		7		2016-11-22	1	2016-11-22	\N	1
+11	Maria Nelia	Mendez	2	(0212)-505-9345	(0416)-837-6439	marianelia.mendez@bnv.gob.ve	t		15		2016-11-22	1	2016-11-22	\N	1
+12	Ingrid	González	9	(0212)-505-9345	(0000)-000-0000	ingrid.gonzalez@bnv.gob.ve	t		15		2016-11-22	1	2016-11-22	\N	1
+13	Orlando	Rodriguez	2	(0212)-505-9345	(0416)-707-4987	orlando.rodriguez@bnv.gob.ve	t		15		2016-11-22	1	2016-11-22	\N	1
+14	Tatania	Dávila	5	(0212)-505-9345	(0414)-325-6062	tatania.davila@bnv.gob.ve	t		7		2016-11-22	1	2016-11-22	\N	1
+15	Rosa	López	1	(0212)-505-9345	(0414)-922-4520	info@info.com	t		7		2016-11-22	1	2016-11-22	\N	1
+16	Susana	Bobay	1	(0212)-505-9345	(0412)-294-7444	susana.bobay@bnv.gob.ve	t		7		2016-11-22	1	2016-11-22	\N	1
+17	Lottis	Bohorquez	8	(0212)-505-9345	(0426)-520-1550	lottis.bohorquez@bnv.gob.ve	t		7		2016-11-22	1	2016-11-22	\N	1
+18	Cecilia	Dávila	3	(0212)-505-9345	(0426)-902-4288	cecilia.davila@bnv.gob.ve	t		7		2016-11-22	1	2016-11-22	\N	1
+19	Giosue	Saturno	10	(0212)-505-9345	(0000)-000-0000	giouse.saturno@bnv.gob.ve	t		7		2016-11-22	1	2016-11-22	\N	1
+20	Carmen	Marquez	11	(0212)-505-9345	(0000)-000-0000	carmen.marquez@bnv.gob.ve	t		7		2016-11-22	1	2016-11-22	\N	1
+21	Graciela	Angarita	12	(0212)-505-9345	(0000)-000-0000	graciela.angarita@bnv.gob.ve	t		7		2016-11-22	1	2016-11-22	\N	1
+22	Hector	Sosa	6	(0212)-505-9345	(0416)-411-3697	hector.sosa@bnv.gob.ve	t		12		2016-11-22	1	2016-11-22	\N	1
 \.
 
 
 --
--- TOC entry 2440 (class 0 OID 0)
+-- TOC entry 2442 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: medicos_id_medico_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('medicos_id_medico_seq', 1, true);
+SELECT pg_catalog.setval('medicos_id_medico_seq', 22, true);
 
 
 --
--- TOC entry 2349 (class 0 OID 32800)
+-- TOC entry 2351 (class 0 OID 32800)
 -- Dependencies: 176
 -- Data for Name: municipio; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1766,7 +1806,7 @@ COPY municipio (id_municipio, estado, nombre, estatus, fecha_creacion, fecha_act
 
 
 --
--- TOC entry 2441 (class 0 OID 0)
+-- TOC entry 2443 (class 0 OID 0)
 -- Dependencies: 175
 -- Name: municipio_id_municipio_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1775,7 +1815,7 @@ SELECT pg_catalog.setval('municipio_id_municipio_seq', 1, false);
 
 
 --
--- TOC entry 2363 (class 0 OID 32937)
+-- TOC entry 2365 (class 0 OID 32937)
 -- Dependencies: 190
 -- Data for Name: paciente; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1789,7 +1829,7 @@ COPY paciente (id_paciente, cedula, numero_historia, nombre, apellido, fecha_nac
 
 
 --
--- TOC entry 2442 (class 0 OID 0)
+-- TOC entry 2444 (class 0 OID 0)
 -- Dependencies: 189
 -- Name: paciente_id_paciente_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1798,7 +1838,7 @@ SELECT pg_catalog.setval('paciente_id_paciente_seq', 8, true);
 
 
 --
--- TOC entry 2361 (class 0 OID 32916)
+-- TOC entry 2363 (class 0 OID 32916)
 -- Dependencies: 188
 -- Data for Name: parentesco; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1812,7 +1852,7 @@ COPY parentesco (id_parentesco, parentesco, fecha_creacion, usuario_actualizacio
 
 
 --
--- TOC entry 2443 (class 0 OID 0)
+-- TOC entry 2445 (class 0 OID 0)
 -- Dependencies: 187
 -- Name: parentesco_id_parentesco_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1821,7 +1861,7 @@ SELECT pg_catalog.setval('parentesco_id_parentesco_seq', 4, true);
 
 
 --
--- TOC entry 2351 (class 0 OID 32811)
+-- TOC entry 2353 (class 0 OID 32811)
 -- Dependencies: 178
 -- Data for Name: parroquia; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1831,7 +1871,7 @@ COPY parroquia (id_parroquia, municipio, nombre, estatus, fecha_creacion, fecha_
 
 
 --
--- TOC entry 2444 (class 0 OID 0)
+-- TOC entry 2446 (class 0 OID 0)
 -- Dependencies: 177
 -- Name: parroquia_id_parroquia_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1840,7 +1880,7 @@ SELECT pg_catalog.setval('parroquia_id_parroquia_seq', 1, false);
 
 
 --
--- TOC entry 2371 (class 0 OID 40995)
+-- TOC entry 2373 (class 0 OID 40995)
 -- Dependencies: 198
 -- Data for Name: patologias; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1851,7 +1891,7 @@ COPY patologias (id_tipo_patologia, patologia, fecha_creacion, usuario_creacion,
 
 
 --
--- TOC entry 2445 (class 0 OID 0)
+-- TOC entry 2447 (class 0 OID 0)
 -- Dependencies: 197
 -- Name: patologias_id_tipo_patologia_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1860,7 +1900,7 @@ SELECT pg_catalog.setval('patologias_id_tipo_patologia_seq', 1, true);
 
 
 --
--- TOC entry 2365 (class 0 OID 32987)
+-- TOC entry 2367 (class 0 OID 32987)
 -- Dependencies: 192
 -- Data for Name: reposo; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1870,7 +1910,7 @@ COPY reposo (id_reposo, paciente, tiempo_reposo, medida_reposo, observacion, est
 
 
 --
--- TOC entry 2446 (class 0 OID 0)
+-- TOC entry 2448 (class 0 OID 0)
 -- Dependencies: 191
 -- Name: reposo_id_reposo_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1879,7 +1919,7 @@ SELECT pg_catalog.setval('reposo_id_reposo_seq', 1, false);
 
 
 --
--- TOC entry 2376 (class 0 OID 41395)
+-- TOC entry 2378 (class 0 OID 41395)
 -- Dependencies: 203
 -- Data for Name: sede; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1887,11 +1927,14 @@ SELECT pg_catalog.setval('reposo_id_reposo_seq', 1, false);
 COPY sede (id_sede, sede, direccion, estado, foto_sede, horario_entrada, horario_salida, contacto, correo_sede, nombre_responsable, cedula_responsable, es_activo, fecha_creacion, fecha_actualizacion, fk_usuario_creacion, fk_usuario_actualizacion, telefono_1, telefono_2, telefono_3) FROM stdin;
 1	Servicio Médico "Lic. Pedro Torres"	Final avenida Panteón, edificio Sede Administrativa Biblioteca Nacional, Complejo Cultural Foro Libertador. Parroquia Altagracia	10	bn.jpg	7:00 AM	4:00 PM	04142368578	servicio.medico@bnv.gob.ve	Pablo Torres	5523612	t	2016-09-13 05:04:25.298516	2016-09-13 00:00:00	1	1	(0212)-505-9345		
 2	Servicio Médico "Las Torres"	Avenida Baralt	10	bn.jpg	6:00 AM	5:00 PM	0212-5050000	casa.artista@gmail.com	Juan Perez	\N	t	2016-09-14 04:08:11.304085	2016-09-14 00:00:00	1	1	(0212)-000-0000		
+3	Servicio Médico "De Los Artistas"	Bulevar Amador Bendayán, Edificio Fundación Casa del Artista. Piso 2 Quebrada Honda	10	bn.jpg	7:00 AM	5:00 PM	pablo.torres@bnv.gob.ve	contacto@contacto.com	Dr. Pablo Torres	\N	t	2016-11-07 11:00:48.403011	2016-11-07 11:00:48.403011	1	\N	(0212)-576-1403		
+4	Teatro Teresa Carreño	Final Av. Paseo Colon. Complejo Cultural Teatro Teresa Carreno	10	bn.jpg	7:00 AM	5:00 PM	pablo.torres@bnv.gob.ve	info@teatroteresacarreno.gob.ve	Dr. Pablo Torres	\N	t	2016-11-07 11:16:35.770259	2016-11-07 11:16:35.770259	1	\N	(0212)-574-9122		
+5	Imprenta de la Cultura	Guarenas	15		8:00 AM	1:00 PM	pablo.torres@bnv.gob.ve	contacto@contacto.com	Dr. Pablo Torres	\N	t	2016-11-07 11:25:22.624545	2016-11-22 00:00:00	1	1	(0212)-365-0270		
 \.
 
 
 --
--- TOC entry 2378 (class 0 OID 41438)
+-- TOC entry 2380 (class 0 OID 41438)
 -- Dependencies: 205
 -- Data for Name: sede_foto; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1901,7 +1944,7 @@ COPY sede_foto (id_sede_foto, fk_sede, foto, descripcion_foto, es_activo, fecha_
 
 
 --
--- TOC entry 2447 (class 0 OID 0)
+-- TOC entry 2449 (class 0 OID 0)
 -- Dependencies: 204
 -- Name: sede_foto_id_sede_foto_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1910,26 +1953,26 @@ SELECT pg_catalog.setval('sede_foto_id_sede_foto_seq', 1, false);
 
 
 --
--- TOC entry 2448 (class 0 OID 0)
+-- TOC entry 2450 (class 0 OID 0)
 -- Dependencies: 202
 -- Name: sede_id_sede_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('sede_id_sede_seq', 2, true);
+SELECT pg_catalog.setval('sede_id_sede_seq', 5, true);
 
 
 --
--- TOC entry 2390 (class 0 OID 41623)
+-- TOC entry 2392 (class 0 OID 41623)
 -- Dependencies: 217
 -- Data for Name: solicitud; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY solicitud (id_solicitud, fk_paciente, fk_sede, fk_especialidad, fecha_solicitud, hora, motivo_consulta, medico_referido, fecha_creacion, usuario_creacion, es_activo) FROM stdin;
+COPY solicitud (id_solicitud, fk_paciente, fk_sede, fk_especialidad, fecha_solicitud, hora, motivo_consulta, medico_referido, fecha_creacion, usuario_creacion, es_activo, fk_medico) FROM stdin;
 \.
 
 
 --
--- TOC entry 2449 (class 0 OID 0)
+-- TOC entry 2451 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: solicitud_id_solicitud_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1938,7 +1981,7 @@ SELECT pg_catalog.setval('solicitud_id_solicitud_seq', 1, false);
 
 
 --
--- TOC entry 2357 (class 0 OID 32876)
+-- TOC entry 2359 (class 0 OID 32876)
 -- Dependencies: 184
 -- Data for Name: tipo_persona; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1951,7 +1994,7 @@ COPY tipo_persona (id_tipo_persona, tipo_persona, fecha_creacion, usuario_actual
 
 
 --
--- TOC entry 2450 (class 0 OID 0)
+-- TOC entry 2452 (class 0 OID 0)
 -- Dependencies: 183
 -- Name: tipo_persona_id_tipo_persona_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1960,7 +2003,7 @@ SELECT pg_catalog.setval('tipo_persona_id_tipo_persona_seq', 3, true);
 
 
 --
--- TOC entry 2359 (class 0 OID 32896)
+-- TOC entry 2361 (class 0 OID 32896)
 -- Dependencies: 186
 -- Data for Name: tipo_trabajador; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1972,7 +2015,7 @@ COPY tipo_trabajador (id_tipo_trabajador, tipo_trabajador, fecha_creacion, usuar
 
 
 --
--- TOC entry 2451 (class 0 OID 0)
+-- TOC entry 2453 (class 0 OID 0)
 -- Dependencies: 185
 -- Name: tipo_trabajador_id_tipo_trabajador_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1981,7 +2024,7 @@ SELECT pg_catalog.setval('tipo_trabajador_id_tipo_trabajador_seq', 2, true);
 
 
 --
--- TOC entry 2353 (class 0 OID 32835)
+-- TOC entry 2355 (class 0 OID 32835)
 -- Dependencies: 180
 -- Data for Name: usuario; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1992,7 +2035,7 @@ COPY usuario (id_usuario, usuario, clave, nombre, apellido, telefono_oficina, te
 
 
 --
--- TOC entry 2452 (class 0 OID 0)
+-- TOC entry 2454 (class 0 OID 0)
 -- Dependencies: 179
 -- Name: usuario_id_usuario_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -2262,6 +2305,15 @@ ALTER TABLE ONLY medicos
 
 
 --
+-- TOC entry 2236 (class 2606 OID 49889)
+-- Name: fk_especialidad; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY solicitud
+    ADD CONSTRAINT fk_especialidad FOREIGN KEY (fk_especialidad) REFERENCES especialidad(id_especialidad);
+
+
+--
 -- TOC entry 2195 (class 2606 OID 32955)
 -- Name: fk_estado; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
@@ -2286,6 +2338,15 @@ ALTER TABLE ONLY sede
 
 ALTER TABLE ONLY paciente
     ADD CONSTRAINT fk_institucion FOREIGN KEY (institucion) REFERENCES institucion(id_institucion);
+
+
+--
+-- TOC entry 2235 (class 2606 OID 49884)
+-- Name: fk_medico; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY solicitud
+    ADD CONSTRAINT fk_medico FOREIGN KEY (fk_medico) REFERENCES medicos(id_medico) MATCH FULL;
 
 
 --
@@ -2334,7 +2395,7 @@ ALTER TABLE ONLY solicitud
 
 
 --
--- TOC entry 2235 (class 2606 OID 49859)
+-- TOC entry 2237 (class 2606 OID 49859)
 -- Name: fk_paciente; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2343,7 +2404,7 @@ ALTER TABLE ONLY historia_clinica_psiquiatrica
 
 
 --
--- TOC entry 2236 (class 2606 OID 49879)
+-- TOC entry 2238 (class 2606 OID 49879)
 -- Name: fk_paciente; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2766,7 +2827,7 @@ ALTER TABLE ONLY especialidad
 
 
 --
--- TOC entry 2401 (class 0 OID 0)
+-- TOC entry 2403 (class 0 OID 0)
 -- Dependencies: 6
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
@@ -2777,7 +2838,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2016-11-03 11:27:32 VET
+-- Completed on 2016-11-22 13:06:49 VET
 
 --
 -- PostgreSQL database dump complete

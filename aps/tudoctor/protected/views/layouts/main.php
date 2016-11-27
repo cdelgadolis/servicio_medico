@@ -59,7 +59,7 @@ if(!Yii::app()->user->isGuest){
 'label' => 'Solicitud',
 'url' => '#',
 'items' => array(
-array('label' => 'Generar Solicitud', 'url' => array('/solicitud/create')),
+array('label' => 'Generar Solicitud', 'url' => array('/paciente/home')),
 '---',
 //array('label' => 'NAV HEADER'),
 array('label' => 'Consultar', 'url' => array('/solicitud/admin'),'visible' => $admin),

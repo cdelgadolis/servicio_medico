@@ -157,7 +157,7 @@ $this->breadcrumbs=array(
     </div>
     <div id="collapse22" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading22">
       <div class="panel-body">
-      <p class="textooo">Sólo la 1era dosis.</p>
+      <p class="textooo">Sólo la 1era dosis en el <b>Servicio Médico "Lic. Pedro Torres"</b>.</p>
       </div>
     </div>
   </div>
@@ -203,6 +203,21 @@ $this->breadcrumbs=array(
       </div>
     </div>
   </div>
+     <div class="panel panel-info">
+    <div class="panel-heading" role="tab" id="heading8">
+      <h5 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
+          Dirección de FarmaPatria
+        </a>
+      </h5>
+    </div>
+    <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
+      <div class="panel-body">
+        <p class="textooo">Final avenida Panteón, edificio Sede Administrativa Biblioteca Nacional, Complejo Cultural Foro Libertador, Piso S1. Parroquia Altagracia. Distrito Capital, Caracas, Venezuela.</p>
+      </div>
+    </div>
+  </div>
+  
 <div class="panel panel-info">
     <div class="panel-heading" role="tab" id="heading23">
       <h5 class="panel-title">

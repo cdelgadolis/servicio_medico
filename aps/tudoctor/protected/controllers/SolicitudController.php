@@ -31,11 +31,11 @@ array('allow',  // allow all users to perform 'index' and 'view' actions
 'users'=>array('*'),
 ),
 array('allow', // allow authenticated user to perform 'create' and 'update' actions
-'actions'=>array('admin','update'),
+'actions'=>array('admin',),
 'users'=>array('@'),
 ),
 array('allow', // allow admin user to perform 'admin' and 'delete' actions
-'actions'=>array('index','delete'),
+'actions'=>array('index','update','delete'),
 'users'=>array('admin'),
 ),
 array('deny',  // deny all users
@@ -90,16 +90,49 @@ $model=new Solicitud;
 // Uncomment the following line if AJAX validation is needed
 // $this->performAjaxValidation($model);
 
+    if( is_numeric( $_GET['id'] ) && $_GET['id'] && isset( $_GET['id'] ) ){
+    //var_dump($_GET['id']);
+        #$sql = "SELECT * FROM paciente('" . $nacionalidad . "'," . $Cedula . ")";
+        #$data = Yii::app()->db1->createCommand( $sql )->queryRow();
+        $cedula = $_GET['id'];
+        $paciente = Paciente::model()->find("cedula='$cedula'");
+        if( !$paciente ){
+            $this->redirect(array('paciente/create'));
+        }
+   
+    }//fin si se envio parametro
+   
+// Uncomment the following line if AJAX validation is needed
+// $this->performAjaxValidation($model);
+
 if(isset($_POST['Solicitud']))
 {
 $model->attributes=$_POST['Solicitud'];
+$model->fk_paciente=$paciente->id_paciente;
 if($model->save())
 $this->redirect(array('view','id'=>$model->id_solicitud));
 }
 
-$this->render('create',array(
-'model'=>$model,
-));
+$consulta = Yii::app()->db->createCommand('select s.fecha_solicitud, count( s.fecha_solicitud) as cantidad_solicitud, m.cant_paciente_dia
+from solicitud s
+JOIN medicos m ON m.especialidad = s.fk_especialidad
+WHERE s.fecha_solicitud > now()
+GROUP BY s.fecha_solicitud, m.cant_paciente_dia')->queryAll();
+
+$fechasagotadas="[";
+
+foreach ( $consulta as $id => $fechasolicitud ){
+     if( $fechasolicitud["cantidad_solicitud"] >= $fechasolicitud["cant_paciente_dia"] ){
+		$fechasagotadas.= '"'.$fechasolicitud["fecha_solicitud"].'",' ;
+	 }
+}//fin foreach resultados consulta
+//$fechasagotadas = '["2016-11-30","2016-11-28","2016-11-18","2016-11-15"]';
+
+$fechasagotadas =  $fechasagotadas."]";
+//var_dump($fechasagotadass);
+
+
+$this->render('create',array( 'model'=>$model, 'paciente' => $paciente, 'fechasagotadas' => $fechasagotadas) );
 }
 
 /**

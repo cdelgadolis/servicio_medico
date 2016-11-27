@@ -6,7 +6,7 @@
       </div>
       
       <div class = "caption">
-         <h4 align="center"><b><?= strtoupper($data->sede) ?></b></h4>
+         <h4 align="center"><b><?= $data->sede; ?></b></h4>
          <p></p>
          
          <p align="center">

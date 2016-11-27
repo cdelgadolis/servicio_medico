@@ -8,7 +8,7 @@ $this->pageTitle=Yii::app()->name . ' - Iniciar Sesión';
 ?>
 
 <div class="page-header">
-  <h1>Tu Doctor - en Línea<small> </small></h1>
+  <h1 class="titulo">APS - <small>Centro de Citas en Línea</small></h1>
 </div>
 
 <div class="contenedor" style="widht:100%;">
@@ -21,8 +21,8 @@ $this->pageTitle=Yii::app()->name . ' - Iniciar Sesión';
 </div>
 <div class="list-group">
 	<?php echo CHtml::link('<h4 class="list-group-item-heading">
-	<span class="glyphicon glyphicon-file" aria-hidden="true" ></span>
-	Guía del Usuario</h4>',Yii::app()->baseUrl.'/images/guia.pdf', array('class'=>'list-group-item','target'=>'_blank') ) ?>
+	<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+	Ayuda! </h4>',array('site/index'), array('class'=>'list-group-item') ) ?>
 </div>
 <div class="list-group">
 	<?php echo CHtml::link('<h4 class="list-group-item-heading">
@@ -79,9 +79,12 @@ $this->widget(
 
  $this->endWidget();
 unset($form);
- ?><div align="right">
+ ?>
+<!--<div align="right">
 <button type="button" class="btn btn-sm btn-success" data-toggle="popover" data-placement="left" title="¿Cómo iniciar sesión?" data-content="Ejemplo: RIF V-012345678-9  en el campo de RIF o USUARIO se debe colocar 0123456789 (Sin letras, sin espaciones, ni guiones)."><b>Ayuda</b></button>
-</div> <br/>
+</div> -->
+<br/>
+<br/>
 <?php echo CHtml::link('¿Olvido Contraseña?',array('site/recuperarcontrasena')); ?>
 <!--<?php echo CHtml::imageButton(Yii::app()->baseUrl.'/images/registrarse.jpeg' ,array('submit' => array('/usuario/create')));?>-->
 </div><!-- form -->
