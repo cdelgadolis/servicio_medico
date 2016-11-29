@@ -13,7 +13,7 @@ array('label'=>'Manage Paciente','url'=>array('admin')),
 );
 ?>
 
-<h1>View Paciente #<?php echo $model->id_paciente; ?></h1>
+<h1>Paciente: <?php echo $model->nombre." ".$model->apellido; ?></h1>
 
 <?php $this->widget('booster.widgets.TbDetailView',array(
 'data'=>$model,
