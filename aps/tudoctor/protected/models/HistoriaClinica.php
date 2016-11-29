@@ -68,6 +68,8 @@
  *
  * The followings are the available model relations:
  * @property Paciente $paciente0
+ * @property Usuario $fkUsuarioCreacion
+ * @property Usuario $fkUsuarioActualizacion
  */
 class HistoriaClinica extends CActiveRecord
 {
@@ -87,14 +89,14 @@ class HistoriaClinica extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('paciente, observacion, comentarios, impresion_diagnostica, tratamiento, evolucion, laboratorio, examenes_otros, motivo_consulta, enfermedad_actual, antecedentes_personales', 'required'),
+			array('paciente, impresion_diagnostica, evolucion, motivo_consulta, enfermedad_actual, antecedentes_personales', 'required'),
 			array('paciente, fk_usuario_creacion, fk_usuario_actualizacion', 'numerical', 'integerOnly'=>true),
 			array('peso, talla', 'length', 'max'=>3),
 			array('frecuencia_cardiaca, frecuencia_respiratoria, tension_alta, pulso, circunferencia_cefalica, circunferencia_abdominal', 'length', 'max'=>10),
 			array('otros, FRS, FUR, PRS, CICLO, sinusorragia, orgasmos, maridos, infeccion_ur, dispareunia, libido, AVM, DIU, EIP, ACO, lactancia, puerperio', 'length', 'max'=>100),
 			array('alergico, medicacion', 'length', 'max'=>200),
 			array('fumar, alcohol, cafe, drogas, m_mejillas, m_labios, m_unas', 'length', 'max'=>50),
-			array('enfermedades, estatus, fecha_creacion, fecha_actualizacion, imageneologia, plan_tratamiento, examen_fisico, padre, madre, hermanos, otros_hp, otros_habitosp, gestas', 'safe'),
+			array('enfermedades, observacion, comentarios, tratamiento, laboratorio, examenes_otros, estatus, fecha_creacion, fecha_actualizacion, imageneologia, plan_tratamiento, examen_fisico, padre, madre, hermanos, otros_hp, otros_habitosp, gestas', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id_historia_clinica, paciente, peso, talla, frecuencia_cardiaca, frecuencia_respiratoria, tension_alta, pulso, circunferencia_cefalica, circunferencia_abdominal, otros, alergico, medicacion, enfermedades, observacion, comentarios, impresion_diagnostica, tratamiento, evolucion, laboratorio, examenes_otros, estatus, fecha_creacion, fecha_actualizacion, fk_usuario_creacion, fk_usuario_actualizacion, imageneologia, plan_tratamiento, examen_fisico, motivo_consulta, enfermedad_actual, antecedentes_personales, padre, madre, hermanos, otros_hp, fumar, alcohol, cafe, drogas, m_mejillas, m_labios, m_unas, otros_habitosp, FRS, FUR, PRS, CICLO, sinusorragia, orgasmos, maridos, infeccion_ur, dispareunia, libido, AVM, DIU, EIP, ACO, lactancia, puerperio, gestas', 'safe', 'on'=>'search'),
@@ -110,6 +112,8 @@ class HistoriaClinica extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'paciente0' => array(self::BELONGS_TO, 'Paciente', 'paciente'),
+			'fkUsuarioCreacion' => array(self::BELONGS_TO, 'Usuario', 'fk_usuario_creacion'),
+			'fkUsuarioActualizacion' => array(self::BELONGS_TO, 'Usuario', 'fk_usuario_actualizacion'),
 		);
 	}
 
@@ -169,7 +173,7 @@ class HistoriaClinica extends CActiveRecord
 			'CICLO' => 'Ciclo',
 			'sinusorragia' => 'Sinusorragia',
 			'orgasmos' => 'Orgasmos',
-			'maridos' => 'Maridos',
+			'maridos' => 'Parejas',
 			'infeccion_ur' => 'Infección Urinaria',
 			'dispareunia' => 'Dispareunia',
 			'libido' => 'Libido',
@@ -200,7 +204,6 @@ class HistoriaClinica extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-		$criteria->order = 'id_historia_clinica DESC';
 
 		$criteria->compare('id_historia_clinica',$this->id_historia_clinica);
 		$criteria->compare('paciente',$this->paciente);

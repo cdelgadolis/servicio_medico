@@ -3,6 +3,11 @@ $this->breadcrumbs=array(
 	'Historia Clinicas'=>array('admin'),
 );
 
+$this->menu=array(
+array('label'=>'List HistoriaClinica','url'=>array('index')),
+array('label'=>'Create HistoriaClinica','url'=>array('create')),
+);
+
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 $('.search-form').toggle();
@@ -19,14 +24,39 @@ return false;
 
 <h1 class="titulo">Historia Clinicas</h1>
 
+<div class="izquierda2">
+<?php $this->widget(
+'booster.widgets.TbButton', array(
+'buttonType' => 'link', 
+'size' => 'default',
+'icon' =>'glyphicon glyphicon-plus',
+'context' => 'primary',
+'url'=>Yii::app()->createUrl('historiaClinica/buscarpaciente'),
+// 'url' => '#',
+'label' => '  Crear Historia Clinica General' )
+ );
+ ?>
+ </div>
+ <br>
+
 <?php $this->widget('booster.widgets.TbGridView',array(
 'id'=>'historia-clinica-grid',
-'dataProvider'=>$model->search(),
 'type' => 'striped bordered condensed',
+'dataProvider'=>$model->search(),
 'filter'=>$model,
 'columns'=>array(
-		'id_historia_clinica',
-		'paciente',
+			'id_historia_clinica' => array(
+			'header' => 'N°',
+			'name' => 'id_historia_clinica',
+			'value' => '$data->id_historia_clinica',
+			'htmlOptions' => array('width' => '80', 'style' => 'text-align: center;'),
+			),
+		'paciente' => array(
+			'header' => 'Paciente',
+			'name' => 'paciente',
+			'value' => '$data->paciente0->nombre."  ". $data->paciente0->apellido',
+			'htmlOptions' => array('width' => '160','style' => 'text-align: center;'),
+			),
 		'peso',
 		'talla',
 		'frecuencia_cardiaca',

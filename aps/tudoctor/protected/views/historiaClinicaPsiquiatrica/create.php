@@ -12,4 +12,4 @@ array('label'=>'Manage HistoriaClinicaPsiquiatrica','url'=>array('admin')),
 
 <h1 class="titulo">Crear Historia Clinica Psiquiatrica</h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'paciente'=>$paciente)); ?>

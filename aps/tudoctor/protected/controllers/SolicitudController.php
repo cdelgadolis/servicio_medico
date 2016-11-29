@@ -31,11 +31,11 @@ array('allow',  // allow all users to perform 'index' and 'view' actions
 'users'=>array('*'),
 ),
 array('allow', // allow authenticated user to perform 'create' and 'update' actions
-'actions'=>array('admin',),
+'actions'=>array('admin'),
 'users'=>array('@'),
 ),
 array('allow', // allow admin user to perform 'admin' and 'delete' actions
-'actions'=>array('index','update','delete'),
+'actions'=>array('index','delete'),
 'users'=>array('admin'),
 ),
 array('deny',  // deny all users

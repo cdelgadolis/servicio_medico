@@ -10,6 +10,6 @@ array('label'=>'Manage HistoriaClinicaPsicologia','url'=>array('admin')),
 );
 ?>
 
-<h1 class="titulo">Crear Historia Clinica Psicologia</h1>
+<h1 class="titulo">Crear Historia Clinica Psicologica</h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'paciente'=>$paciente)); ?>

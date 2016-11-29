@@ -31,7 +31,7 @@ array('allow',  // allow all users to perform 'index' and 'view' actions
 'users'=>array('*'),
 ),
 array('allow', // allow authenticated user to perform 'create' and 'update' actions
-'actions'=>array('admin','create','update'),
+'actions'=>array('admin','create','update','buscarpaciente'),
 'users'=>array('@'),
 ),
 array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -63,19 +63,85 @@ public function actionCreate()
 {
 $model=new HistoriaClinicaPsicologia;
 
+if( is_numeric( $_GET['id'] ) && $_GET['id'] && isset( $_GET['id'] ) ){
+        $id = $_GET['id'];
+        $paciente = Paciente::model()->find("id_paciente='$id'");
+        if( !$paciente ){
+            $this->redirect(array('paciente/create'));
+        }
+   
+    }//fin si se envio parametro
+
 // Uncomment the following line if AJAX validation is needed
 // $this->performAjaxValidation($model);
 
 if(isset($_POST['HistoriaClinicaPsicologia']))
 {
 $model->attributes=$_POST['HistoriaClinicaPsicologia'];
+$model->paciente=$paciente->id_paciente;
+$model->fk_usuario_creacion=Yii::app()->user->id;
 if($model->save())
 $this->redirect(array('view','id'=>$model->id_hc_psicologia));
 }
 
-$this->render('create',array(
-'model'=>$model,
-));
+$this->render('create',array('model'=>$model, 'paciente' => $paciente));
+}
+
+public function actionBuscarPaciente()
+{
+	$model = new BuscarPaciente;
+	$msg = '';
+	
+		if (isset($_POST["BuscarPaciente"]))
+	{
+		$model->attributes = $_POST['BuscarPaciente'];
+		if(!$model->validate()){
+			echo "<script>alert('Ocurrio un error al enviar los Datos.');</script>";
+			//$msg = "<strong class='text-error'>Error al enviar los Datos</strong>";
+		}else{
+			//Verificar si el paciente existe
+		$consulta = "SELECT id_paciente FROM paciente WHERE cedula='".$model->cedula."'";
+		
+		$resultado = Yii::app()->db->createCommand($consulta);
+		$filas = $resultado->query();
+		$existe = false;
+		
+		foreach($filas as $fila)
+			{
+			$id = $fila["id_paciente"];
+			$existe = true;
+			}
+			
+		//si el paciente existe
+		if($existe == true) {
+			$consulta2 = "SELECT id_hc_psicologia FROM historia_clinica_psicologia WHERE paciente='".$id."' ";
+			
+			$resultado2 = Yii::app()->db->createCommand($consulta2);
+			$Filas = $resultado2->query();
+			$Existe = false;
+			
+			foreach($Filas as $Fila)
+				{
+				$Id = $Fila["id_hc_psicologia"];
+				$Existe = true;
+				}
+				if($Existe == true) {
+				echo "<script>alert('Importante: El paciente ya tiene una Historia Clinica General creada, por favor ingrese al Modulo Paciente => ADMIN.');</script>";
+				$msg = "<strong class='text-error'>Importante: El paciente ya tiene una Historia Clinica General creada, por favor ingrese al Modulo Paciente => ADMIN.<br><br></strong>";
+				$this->render('buscarpaciente', array('model' => $model));		
+			}else{
+				$this->redirect(array('historiaClinicaPsicologia/create', 'id'=>$id));
+				}
+			
+			}else{
+				 echo "<script>alert('Error: Disculpe, la cédula del paciente no se encuentra registrada en el sistema, por favor verifique la información e intente de nuevo. Si el error persiste envie un correo electrónico a: otisistemas@bnv.gob.ve');</script>";
+				//$msg = "<strong class='text-error'>Error: Disculpe, la cédula del paciente no se encuentra registrada en el sistema, por favor verifique la información e intente de nuevo. <br><br>Si el error persiste envie un correo electrónico a: <a href=\"otisistemas@bnv.gob.ve\">otisistemas@bnv.gob.ve</a><br></strong>";
+				$this->render('buscarpaciente', array('model' => $model));
+				}// fin si if $existe == true
+		return;
+		}
+	}
+$this->render('buscarpaciente', array('model' => $model));
 }
 
 /**
@@ -93,6 +159,8 @@ $model=$this->loadModel($id);
 if(isset($_POST['HistoriaClinicaPsicologia']))
 {
 $model->attributes=$_POST['HistoriaClinicaPsicologia'];
+$model->fecha_actualizacion=date('Y-m-d');
+$model->fk_usuario_actualizacion=Yii::app()->user->id;
 if($model->save())
 $this->redirect(array('view','id'=>$model->id_hc_psicologia));
 }

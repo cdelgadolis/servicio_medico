@@ -12,6 +12,6 @@ $this->breadcrumbs=array(
 	);
 	?>
 
-	<h1 class="titulo">Actualizar Historia Clinica Psicologia <?php echo $model->id_hc_psicologia; ?></h1>
+	<h1 class="titulo">Actualizar Historia Clinica Psicologica<br> Paciente: <?php echo $model->paciente0->nombre." ".$model->paciente0->apellido; ?></h1>
 
 <?php echo $this->renderPartial('form',array('model'=>$model)); ?>

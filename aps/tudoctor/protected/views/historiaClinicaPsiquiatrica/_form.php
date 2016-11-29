@@ -1,5 +1,8 @@
+<?php
+$anio=date('Y');
+?>
 <?php $form=$this->beginWidget('booster.widgets.TbActiveForm',array(
-	'id'=>'historia-clinica-psiquiatrica-form',
+	'id'=>'historia-clinica-psicologia-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -12,11 +15,55 @@
     <h3 class="panel-title">Datos Básicos</h3>
   </div>
   <div class="panel-body">
-	<?php echo $form->textFieldGroup($model,'paciente',array('widgetOptions'=>array('htmlOptions'=>array('class'=>'span5')))); ?>    
+		 <?php if( $paciente->foto ){ ?>
+          <div class="media">
+            <div class="media-left" style="float:left;">
+                <img class="media-object" src="images/pacientes/<?php echo $paciente->foto; ?> " width="196px" alt="Foto <?php echo $paciente->nombre." ".$paciente->apellido; ?>">
+            </div>
+      <?php } ?>
+	 <div class="paciente">
+     <b>Paciente</b>: <?php echo $paciente->nombre." ".$paciente->apellido; ?><br>
+     <b>C.I</b>: <?php echo $paciente->cedula; ?><br>
+     <b>N° Historia Clinica:</b> <?php echo $paciente->numero_historia; ?> <br/>
+     <b>Lugar y Fecha de Nacimiento:</b> <?php echo $paciente->lugar_nacimiento."<b> - </b>". $paciente->fecha_nacimiento=date('d-m-Y',strtotime($paciente->fecha_nacimiento)); ?> <br/>
+     <b>Edad:</b> <?php echo $paciente->sexo; ?> <br/>
+     <b>Sexo:</b> <?php echo $paciente->sexo; ?> <br/>
+     <b>Institución:</b> <?php echo $paciente->institucion0->nombre." / ".$paciente->departamento; ?> <br/>
+     <b>Dirección de Habitación:</b> <?php echo $paciente->direccion; ?> <br/>
+     <b>Teléfono:</b> <?php echo $paciente->telefono_celular; ?> <br/>
+      </div>
+      
+          </div>
 	
-	<?php echo $form->datePickerGroup($model,'fecha_ingreso',array('widgetOptions'=>array('options'=>array(),'htmlOptions'=>array('class'=>'span5')), 'prepend'=>'<i class="glyphicon glyphicon-calendar"></i>', 'append'=>'Click on Month/Year to select a different Month/Year.')); ?>
-
-	<?php echo $form->textFieldGroup($model,'hora',array('widgetOptions'=>array('htmlOptions'=>array('class'=>'span5')))); ?>
+<!--<?php echo $form->textFieldGroup($model,'paciente',array('widgetOptions'=>array('htmlOptions'=>array('class'=>'span5')))); ?>-->
+	<br>
+		 <div class="row">
+  <div class="col-xs-6 col-md-4">
+	 <?php echo $form->datePickerGroup($model,'fecha_ingreso',array('widgetOptions'=>array('options'=>array('format'=>'yyyy/mm/dd', 'language' => 'es', 'todayBtn'=>'true', 'startDate'=>'$anio/01/01', 'endDate'=>'$anio/12/31'),'htmlOptions'=>array('style' => 'width: 200px;' ) ), /*'hint' => 'Haga click en la caja de texto para seleccionar la fecha.',*/
+'prepend' => '<i class="glyphicon glyphicon-calendar"></i>')); ?>
+</div>
+	
+  <div class="col-xs-6 col-md-4">
+	 <?php echo $form->labelEx($model, 'hora'); ?>
+            <?php
+            $this->widget(
+                    'booster.widgets.TbTimePicker', array(
+                'model' => $model,
+                'id' => CHtml::activeId($model, 'hora'),
+                'attribute' => 'hora',
+                'options' => array(
+                    'showMeridian' => true,
+                    'minuteStep' => 60,
+                ),
+                'wrapperHtmlOptions' => array(
+                    'class' => 'col-md-3',
+                ),
+                )
+         );
+?>
+<br>
+</div>
+</div>
 
 	<?php echo $form->textFieldGroup($model,'nombre_padre',array('widgetOptions'=>array('htmlOptions'=>array('class'=>'span5','maxlength'=>30)))); ?>
 
@@ -144,7 +191,7 @@
 			'buttonType'=>'submit',
 			'icon' =>'glyphicon glyphicon-user',
 			'context'=>'success',
-			'label'=>'Crear Historia Clinica',
+			'label'=>'Crear Historia Clinica Psiquiatrica',
 		)); ?>
 </div>
 

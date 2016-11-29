@@ -12,7 +12,27 @@
     <h3 class="panel-title">Datos Básicos</h3>
   </div>
   <div class="panel-body">
-	<?php echo $form->textFieldGroup($model,'paciente',array('widgetOptions'=>array('htmlOptions'=>array('class'=>'span5')))); ?>     
+		 <?php if( $paciente->foto ){ ?>
+          <div class="media">
+            <div class="media-left" style="float:left;">
+                <img class="media-object" src="images/pacientes/<?php echo $paciente->foto; ?> " width="196px" alt="Foto <?php echo $paciente->nombre." ".$paciente->apellido; ?>">
+            </div>
+      <?php } ?>
+	 <div class="paciente">
+     <b>Paciente</b>: <?php echo $paciente->nombre." ".$paciente->apellido; ?><br>
+     <b>C.I</b>: <?php echo $paciente->cedula; ?><br>
+     <b>N° Historia Clinica:</b> <?php echo $paciente->numero_historia; ?> <br/>
+     <b>Lugar y Fecha de Nacimiento:</b> <?php echo $paciente->lugar_nacimiento."<b> - </b>". $paciente->fecha_nacimiento=date('d-m-Y',strtotime($paciente->fecha_nacimiento)); ?> <br/>
+     <b>Edad:</b> <?php echo $paciente->sexo; ?> <br/>
+     <b>Sexo:</b> <?php echo $paciente->sexo; ?> <br/>
+     <b>Institución:</b> <?php echo $paciente->institucion0->nombre." / ".$paciente->departamento; ?> <br/>
+     <b>Dirección de Habitación:</b> <?php echo $paciente->direccion; ?> <br/>
+     <b>Teléfono:</b> <?php echo $paciente->telefono_celular; ?> <br/>
+      </div>
+      
+          </div>
+	
+	<!--<?php echo $form->textFieldGroup($model,'paciente',array('widgetOptions'=>array('htmlOptions'=>array('class'=>'span5')))); ?>-->
   </div>
 </div>
 
@@ -29,6 +49,15 @@
 
 <div class="panel panel-primary">
   <div class="panel-heading">
+    <h3 class="panel-title">Antecedentes Personales</h3>
+  </div>
+  <div class="panel-body">
+    <?php echo $form->textAreaGroup($model,'antecedentes_personales', array('widgetOptions'=>array('htmlOptions'=>array('rows'=>6, 'cols'=>50, 'class'=>'span8')))); ?>
+  </div>
+</div>	
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
     <h3 class="panel-title">Enfermedades</h3>
   </div>
   <div class="panel-body">
@@ -42,16 +71,7 @@
 
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h3 class="panel-title">Antecedentes Personales</h3>
-  </div>
-  <div class="panel-body">
-    <?php echo $form->textAreaGroup($model,'antecedentes_personales', array('widgetOptions'=>array('htmlOptions'=>array('rows'=>6, 'cols'=>50, 'class'=>'span8')))); ?>
-  </div>
-</div>	
-
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">Menarquía</h3>
+    <h3 class="panel-title">Datos Ginecologicos</h3>
   </div>
   <div class="panel-body">
 	<?php echo $form->textFieldGroup($model,'FUR',array('widgetOptions'=>array('htmlOptions'=>array('class'=>'span5','maxlength'=>100)))); ?>

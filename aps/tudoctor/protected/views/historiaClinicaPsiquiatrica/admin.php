@@ -31,7 +31,7 @@ return false;
 'size' => 'default',
 'icon' =>'glyphicon glyphicon-plus',
 'context' => 'primary',
-'url'=>Yii::app()->createUrl('historiaClinicaPsiquiatrica/create'),
+'url'=>Yii::app()->createUrl('historiaClinicaPsiquiatrica/buscarpaciente'),
 // 'url' => '#',
 'label' => '  Crear Historia Clinica Psiquiatrica' )
  );
@@ -45,16 +45,36 @@ return false;
 'dataProvider'=>$model->search(),
 'filter'=>$model,
 'columns'=>array(
-		'id_hc_psiquiatrica',
-		'paciente',
-		'fecha_ingreso',
-		'hora',
+		'id_hc_psiquiatrica' => array(
+			'header' => 'N°',
+			'name' => 'id_hc_psiquiatrica',
+			'value' => '$data->id_hc_psiquiatrica',
+			'htmlOptions' => array('width' => '80', 'style' => 'text-align: center;'),
+			),
+		'paciente' => array(
+			'header' => 'Paciente',
+			'name' => 'paciente',
+			'value' => '$data->paciente0->nombre."  ". $data->paciente0->apellido',
+			'htmlOptions' => array('width' => '160','style' => 'text-align: center;'),
+			),
+		'fecha_ingreso'=> array(
+			'header'=>'Fecha de Ingreso',
+			'name'=>'fecha_ingreso',
+			'value' => 'Yii::app()->dateFormatter->format("dd/MM/yyyy", strtotime($data->fecha_ingreso))' ,
+			'htmlOptions'=>array('width'=>'120px',  'style' => 'text-align: center;'),
+		),
+		'hora'=> array(
+			'header'=>'Hora',
+			'name'=>'hora',
+			'value' => '$data->hora',
+			'htmlOptions'=>array('width'=>'120px',  'style' => 'text-align: center;'),
+		),
 		'nombre_padre',
 		'nombre_madre',
+		'motivo_consulta',
 		/*
 		'nombre_conyugue',
 		'referido',
-		'motivo_consulta',
 		'enfermedad_actual',
 		'antecedentes_familiares',
 		'padre',

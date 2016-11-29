@@ -44,6 +44,8 @@
  *
  * The followings are the available model relations:
  * @property Paciente $paciente0
+ * @property Usuario $fkUsuarioCreacion
+ * @property Usuario $fkUsuarioActualizacion
  */
 class HistoriaClinicaPsicologia extends CActiveRecord
 {
@@ -85,6 +87,8 @@ class HistoriaClinicaPsicologia extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'paciente0' => array(self::BELONGS_TO, 'Paciente', 'paciente'),
+			'fkUsuarioCreacion' => array(self::BELONGS_TO, 'Usuario', 'fk_usuario_creacion'),
+			'fkUsuarioActualizacion' => array(self::BELONGS_TO, 'Usuario', 'fk_usuario_actualizacion'),
 		);
 	}
 
@@ -94,13 +98,13 @@ class HistoriaClinicaPsicologia extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_hc_psicologia' => 'Id Hc Psicologia',
+			'id_hc_psicologia' => 'N°',
 			'paciente' => 'Paciente',
 			'fecha_ingreso' => 'Fecha Ingreso',
 			'hora' => 'Hora',
-			'nombre_padre' => 'Nombre Padre',
-			'nombre_madre' => 'Nombre Madre',
-			'nombre_conyugue' => 'Nombre Conyugue',
+			'nombre_padre' => 'Nombre y Apellido del Padre',
+			'nombre_madre' => 'Nombre y Apellido de la Madre',
+			'nombre_conyugue' => 'Nombre y Apellido del Conyugue',
 			'referido' => 'Referido',
 			'motivo_consulta' => 'Motivo Consulta',
 			'enfermedad_actual' => 'Enfermedad Actual',
@@ -108,12 +112,12 @@ class HistoriaClinicaPsicologia extends CActiveRecord
 			'padre' => 'Padre',
 			'madre' => 'Madre',
 			'hermanos' => 'Hermanos',
-			'otros' => 'Otros',
+			'otros' => 'Otros Antecedentes Familiares',
 			'antecedentes_personales' => 'Antecedentes Personales',
 			'tabaco' => 'Tabaco',
 			'alcohol' => 'Alcohol',
 			'drogas' => 'Drogas',
-			'otros_hp' => 'Otros Hp',
+			'otros_hp' => 'Otros Hábitos Psicobiologicos',
 			'examen_fisico' => 'Examen Fisico',
 			'tension_alta' => 'Tension Alta',
 			'frecuencia_cardiaca' => 'Frecuencia Cardiaca',
@@ -122,15 +126,15 @@ class HistoriaClinicaPsicologia extends CActiveRecord
 			'peso' => 'Peso',
 			'pulso' => 'Pulso',
 			'examen_mental' => 'Examen Mental',
-			'impresion_diagnostica' => 'Impresion Diagnostica',
-			'plan_tratamiento' => 'Plan Tratamiento',
-			'observacion' => 'Observacion',
+			'impresion_diagnostica' => 'Impresión Diagnostica',
+			'plan_tratamiento' => 'Plan o Tratamiento',
+			'observacion' => 'Observación',
 			'comentarios' => 'Comentarios',
 			'estatus' => 'Estatus',
-			'fecha_creacion' => 'Fecha Creacion',
-			'fecha_actualizacion' => 'Fecha Actualizacion',
-			'fk_usuario_creacion' => 'Fk Usuario Creacion',
-			'fk_usuario_actualizacion' => 'Fk Usuario Actualizacion',
+			'fecha_creacion' => 'Fecha de Creación',
+			'fecha_actualizacion' => 'Fecha de Actualización',
+			'fk_usuario_creacion' => 'Usuario de Creación',
+			'fk_usuario_actualizacion' => 'Usuario de Actualización',
 		);
 	}
 
@@ -151,6 +155,7 @@ class HistoriaClinicaPsicologia extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
+		$criteria->order = 'id_hc_psicologia DESC';
 
 		$criteria->compare('id_hc_psicologia',$this->id_hc_psicologia);
 		$criteria->compare('paciente',$this->paciente);

@@ -50,7 +50,7 @@ return false;
 			'header' => 'Médico',
 			'name' => 'medico',
 			'value' => '$data->medico0->nombres." ". $data->medico0->apellidos',
-			'filter' =>  CHtml::listData(Medicos::model()->findAll(), 'id_medico', 'nombres'),
+			'filter' =>  CHtml::listData(Medicos::model()->findAll(), 'id_medico', 'concate'),
 			'htmlOptions' => array('width' => '280', 'style' => 'text-align: center;'),
 			),
 		'dia' => array(

@@ -4399,3 +4399,125 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/tudoctor/index.php?r=historiaClinica/cerate
 ---
+2016/11/28 14:27:26 [error] [php] require(/home/liseth/www/tudoctor/protected/controllers/HistoriaClinicaController.php): failed to open stream: Permission denied (/home/liseth/www/yii/framework/web/CWebApplication.php:354)
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#1 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/liseth/www/tudoctor/index.php(13): CWebApplication->run()
+REQUEST_URI=/tudoctor/index.php?r=historiaClinica/admin
+in /home/liseth/www/tudoctor/index.php (13)
+2016/11/28 15:42:11 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /home/liseth/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /home/liseth/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('update')
+#8 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/updat...')
+#9 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/tudoctor/index.php?r=solicitud/update&id=1
+HTTP_REFERER=http://localhost/tudoctor/index.php?r=solicitud/admin
+---
+2016/11/28 15:45:12 [error] [php] Undefined variable: paciente (/home/liseth/www/tudoctor/protected/views/solicitud/_form.php:20)
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/CController.php(869): SolicitudController->renderFile()
+#1 /home/liseth/www/tudoctor/protected/views/solicitud/update.php(18): SolicitudController->renderPartial()
+#2 /home/liseth/www/yii/framework/web/CBaseController.php(126): require()
+#3 /home/liseth/www/yii/framework/web/CBaseController.php(95): SolicitudController->renderInternal()
+#4 /home/liseth/www/yii/framework/web/CController.php(869): SolicitudController->renderFile()
+#5 /home/liseth/www/yii/framework/web/CController.php(782): SolicitudController->renderPartial()
+#6 /home/liseth/www/tudoctor/protected/controllers/SolicitudController.php(159): SolicitudController->render()
+#7 unknown(0): SolicitudController->actionUpdate()
+#8 /home/liseth/www/yii/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs()
+#9 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): SolicitudController->runAction()
+#12 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /home/liseth/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): SolicitudController->filterAccessControl()
+#15 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#17 /home/liseth/www/yii/framework/web/CController.php(265): SolicitudController->runActionWithFilters()
+#18 /home/liseth/www/yii/framework/web/CWebApplication.php(282): SolicitudController->run()
+#19 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#21 /home/liseth/www/tudoctor/index.php(13): CWebApplication->run()
+REQUEST_URI=/tudoctor/index.php?r=solicitud/update&id=1
+in /home/liseth/www/tudoctor/protected/views/solicitud/_form.php (20)
+in /home/liseth/www/tudoctor/protected/views/solicitud/update.php (18)
+in /home/liseth/www/tudoctor/protected/controllers/SolicitudController.php (159)
+2016/11/28 15:46:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /home/liseth/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /home/liseth/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('update')
+#8 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/updat...')
+#9 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/tudoctor/index.php?r=solicitud/update&id=1
+---
+2016/11/28 15:46:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /home/liseth/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /home/liseth/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('update')
+#8 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/updat...')
+#9 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/tudoctor/index.php?r=solicitud/update&id=1
+HTTP_REFERER=http://localhost/tudoctor/index.php?r=solicitud/admin
+---
+2016/11/28 16:24:49 [error] [exception.CException] exception 'CException' with message 'La propiedad "HistoriaClinica"."fecha_nacimiento" no se encuentra definida.' in /home/liseth/www/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('fecha_nacimient...')
+#1 /home/liseth/www/tudoctor/protected/controllers/HistoriaClinicaController.php(66): CActiveRecord->__get('fecha_nacimient...')
+#2 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): HistoriaClinicaController->actionCreate()
+#3 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#12 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('historiaClinica...')
+#13 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/tudoctor/index.php?r=historiaClinica/create&id=5
+HTTP_REFERER=http://localhost/tudoctor/index.php?r=historiaClinica/buscarpaciente
+---
+2016/11/28 16:25:18 [error] [php] Undefined variable: a (/home/liseth/www/tudoctor/protected/controllers/HistoriaClinicaController.php:66)
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): HistoriaClinicaController->runAction()
+#1 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /home/liseth/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): HistoriaClinicaController->filterAccessControl()
+#4 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/liseth/www/yii/framework/web/CController.php(265): HistoriaClinicaController->runActionWithFilters()
+#7 /home/liseth/www/yii/framework/web/CWebApplication.php(282): HistoriaClinicaController->run()
+#8 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/liseth/www/tudoctor/index.php(13): CWebApplication->run()
+REQUEST_URI=/tudoctor/index.php?r=historiaClinica/create&id=5
+in /home/liseth/www/tudoctor/protected/controllers/HistoriaClinicaController.php (66)
+in /home/liseth/www/tudoctor/index.php (13)

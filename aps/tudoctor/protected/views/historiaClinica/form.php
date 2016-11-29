@@ -12,14 +12,49 @@
     <h3 class="panel-title">Datos Básicos</h3>
   </div>
   <div class="panel-body">
-	<?php echo $form->textFieldGroup($model,'paciente',array('widgetOptions'=>array('htmlOptions'=>array('class'=>'span5')))); ?>     
+		 <?php if( $model->paciente0->foto ){ ?>
+          <div class="media">
+            <div class="media-left" style="float:left;">
+                <img class="media-object" src="images/pacientes/<?php echo $model->paciente0->foto; ?> " width="196px" alt="Foto <?php echo $model->paciente0->nombre." ".$model->paciente0->apellido; ?>">
+            </div>
+      <?php } ?>
+	 <div class="paciente">
+     <b>Paciente</b>: <?php echo $model->paciente0->nombre." ".$model->paciente0->apellido; ?><br>
+     <b>C.I</b>: <?php echo $model->paciente0->cedula; ?><br>
+     <b>N° Historia Clinica:</b> <?php echo $model->paciente0->numero_historia; ?> <br/>
+     <b>Lugar y Fecha de Nacimiento:</b> <?php echo $model->paciente0->lugar_nacimiento."<b> - </b>". $model->paciente0->fecha_nacimiento=date('d-m-Y',strtotime($model->paciente0->fecha_nacimiento)); ?> <br/>
+     <b>Edad:</b> <?php echo $model->paciente0->sexo; ?> <br/>
+     <b>Sexo:</b> <?php echo $model->paciente0->sexo; ?> <br/>
+     <b>Institución:</b> <?php echo $model->paciente0->institucion0->nombre." / ".$model->paciente0->departamento; ?> <br/>
+     <b>Dirección de Habitación:</b> <?php echo $model->paciente0->direccion; ?> <br/>
+     <b>Teléfono:</b> <?php echo $model->paciente0->telefono_celular; ?> <br/>
+      </div>
+      
+          </div>
 	
-	<?php echo $form->textAreaGroup($model,'motivo_consulta', array('widgetOptions'=>array('htmlOptions'=>array('rows'=>6, 'cols'=>50, 'class'=>'span8')))); ?>
-
-	<?php echo $form->textAreaGroup($model,'enfermedad_actual', array('widgetOptions'=>array('htmlOptions'=>array('rows'=>6, 'cols'=>50, 'class'=>'span8')))); ?>
-
+	<!--<?php echo $form->textFieldGroup($model,'paciente',array('widgetOptions'=>array('htmlOptions'=>array('class'=>'span5')))); ?>-->
   </div>
 </div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Datos Clinicos</h3>
+  </div>
+  <div class="panel-body">
+    <?php echo $form->textAreaGroup($model,'motivo_consulta', array('widgetOptions'=>array('htmlOptions'=>array('rows'=>6, 'cols'=>50, 'class'=>'span8')))); ?>
+
+	<?php echo $form->textAreaGroup($model,'enfermedad_actual', array('widgetOptions'=>array('htmlOptions'=>array('rows'=>6, 'cols'=>50, 'class'=>'span8')))); ?>   
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Antecedentes Personales</h3>
+  </div>
+  <div class="panel-body">
+    <?php echo $form->textAreaGroup($model,'antecedentes_personales', array('widgetOptions'=>array('htmlOptions'=>array('rows'=>6, 'cols'=>50, 'class'=>'span8')))); ?>
+  </div>
+</div>	
 
 <div class="panel panel-primary">
   <div class="panel-heading">
@@ -36,16 +71,7 @@
 
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h3 class="panel-title">Antecedentes Personales</h3>
-  </div>
-  <div class="panel-body">
-    <?php echo $form->textAreaGroup($model,'antecedentes_personales', array('widgetOptions'=>array('htmlOptions'=>array('rows'=>6, 'cols'=>50, 'class'=>'span8')))); ?>
-  </div>
-</div>	
-
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">Menarquía</h3>
+    <h3 class="panel-title">Datos Ginecologicos</h3>
   </div>
   <div class="panel-body">
 	<?php echo $form->textFieldGroup($model,'FUR',array('widgetOptions'=>array('htmlOptions'=>array('class'=>'span5','maxlength'=>100)))); ?>
@@ -213,8 +239,8 @@
 <div class="form-actions">
 	<?php $this->widget('booster.widgets.TbButton', array(
 			'buttonType'=>'submit',
-			'icon' =>'glyphicon glyphicon-refresh',
-			'context'=>'info',
+			'icon' =>'glyphicon glyphicon-user',
+			'context'=>'primary',
 			'label'=>'Actualizar Historia Clinica',
 		)); ?>
 </div>
