@@ -103,7 +103,7 @@ $form=$this->beginWidget('booster.widgets.TbActiveForm',array(
 			'startDate'=> '$today', 
 			'endDate'  => '$anio/12/31',
 		
-			//'daysOfWeekDisabled' => '0,6',
+			'daysOfWeekDisabled' => '0,6',
 		
 		    //'beforeShowDay'=>'js:editDays',
 		    
