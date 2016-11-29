@@ -36,7 +36,13 @@ return false;
 		'apellido',
 		'cedula',
 		'sexo',
-		'fecha_nacimiento',
+		//'fecha_nacimiento',
+		'fecha_nacimiento' => array(
+			'header' => 'Edad',
+			'name' => 'fecha_nacimiento',
+			'value' => '$data->calcularEdad($data->fecha_nacimiento)',
+			'htmlOptions' => array('width' => '80', 'style' => 'text-align: center;'),
+			),		
 		'foto',
 		/*
 		'estado_civil',

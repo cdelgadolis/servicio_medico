@@ -13,7 +13,7 @@ array('label'=>'Manage Paciente','url'=>array('admin')),
 );
 ?>
 
-<h1>Paciente: <?php echo $model->nombre." ".$model->apellido; ?></h1>
+<h1>Paciente: <?php echo $model->nombre." ".$model->apellido; echo $model->calcularEdad( $model->fecha_nacimiento );?></h1>
 
 <?php $this->widget('booster.widgets.TbDetailView',array(
 'data'=>$model,
@@ -24,6 +24,11 @@ array('label'=>'Manage Paciente','url'=>array('admin')),
 		'nombre',
 		'apellido',
 		'fecha_nacimiento',
+        array(
+            'label'=>'Edad',
+            'type'=>'raw',
+            'value' => $model->calcularEdad( $model->fecha_nacimiento )
+        ),		
 		'sexo',
 		'estado_civil',
 		'tipo_persona',

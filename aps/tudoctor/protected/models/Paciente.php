@@ -204,6 +204,22 @@ array('foto', 'file', 'types' => 'jpg,jpeg,gif,png', 'maxSize' => 1024 * 1024 * 
 			'criteria'=>$criteria,
 		));
 	}
+	
+	
+	
+	public function calcularEdad( $fechanaciomiento ){
+	
+		if( !empty( $fechanaciomiento ) ){
+			
+			$birthdate = new DateTime( date( "Y-m-d", strtotime( $fechanaciomiento ) ) );
+			$today   = new DateTime('today');
+			$edad = $birthdate->diff($today)->y;
+			return $edad;
+		}else{
+			return 0;
+		}		
+		//return $edad;
+	}	
 
 	/**
 	 * Returns the static model of the specified AR class.
