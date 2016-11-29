@@ -99,6 +99,7 @@ class MedicoHorario extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
+		$criteria->order = 'id_medico_horario DESC';
 
 		$criteria->compare('id_medico_horario',$this->id_medico_horario);
 		$criteria->compare('medico',$this->medico);

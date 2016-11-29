@@ -128,6 +128,7 @@ $form=$this->beginWidget('booster.widgets.TbActiveForm',array(
 </div>
 	 
 	 <div class="row">
+		 <!--
   <div class="col-xs-6 col-md-4"><?php echo $form->labelEx($model, 'hora'); ?>
             <?php
             $this->widget(
@@ -146,10 +147,10 @@ $form=$this->beginWidget('booster.widgets.TbActiveForm',array(
          );
 ?>
 <br>
-</div>
-  <div class="col-xs-6 col-md-4"><?php echo $form->textFieldGroup($model,'motivo_consulta',array('widgetOptions'=>array('htmlOptions'=>array('style' => 'width: 300px; ','class'=>'span5','maxlength'=>300)))); ?>
+</div>-->
+  <div class="col-md-6"><?php echo $form->textFieldGroup($model,'motivo_consulta',array('widgetOptions'=>array('htmlOptions'=>array('style' => 'width: 300px; ','class'=>'span5','maxlength'=>300)))); ?>
   </div>
-  <div class="col-xs-6 col-md-4"><?php echo $form->textFieldGroup($model,'medico_referido',array('widgetOptions'=>array('htmlOptions'=>array('style' => 'width: 300px; ','class'=>'span5','maxlength'=>200)))); ?>
+  <div class="col-md-6"><?php echo $form->textFieldGroup($model,'medico_referido',array('widgetOptions'=>array('htmlOptions'=>array('style' => 'width: 300px; ','class'=>'span5','maxlength'=>200)))); ?>
   </div>
 </div>
 

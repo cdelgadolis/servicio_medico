@@ -115,6 +115,7 @@ array('label' => 'Consultar', 'url' => array('/solicitud/admin'),'visible' => $a
     'url' => '#',
     'items' => array(
     array('label' => 'Pacientes', 'url' => array('/paciente/admin'),'visible' => $admin),
+    array('label' => 'Citas', 'url' => array('/solicitud/admin'),'visible' => $admin),
     array('label' => 'Historia Clinica General', 'url' => array('/historiaClinica/admin'),'visible' => $admin),
     array('label' => 'Historia Clinica Psicologia', 'url' => array('/historiaClinicaPsicologia/admin'),'visible' => $admin),
     array('label' => 'Historia Clinica Psiquiatria', 'url' => array('/historiaClinicaPsiquiatrica/admin'),'visible' => $admin),

@@ -4335,3 +4335,67 @@ Stack trace:
 REQUEST_URI=/tudoctor/index.php?r=solicitud/create
 in /home/liseth/www/tudoctor/protected/controllers/SolicitudController.php (93)
 in /home/liseth/www/tudoctor/index.php (13)
+2016/11/25 09:59:22 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() falló: SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es válida para integer: «Rehabilitación»
+LINE 1: ...UNT(*) FROM "solicitud" "t" WHERE fk_especialidad='Rehabilit...
+                                                             ^. La sentencia SQL ejecutada fue: SELECT COUNT(*) FROM "solicitud" "t" WHERE fk_especialidad=:ycp0.
+in /home/liseth/www/tudoctor/protected/extensions/booster/widgets/TbGridView.php (68)
+in /home/liseth/www/tudoctor/protected/views/solicitud/admin.php (94)
+in /home/liseth/www/tudoctor/protected/controllers/SolicitudController.php (205)
+2016/11/25 09:59:22 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es válida para integer: «Rehabilitación»
+LINE 1: ...UNT(*) FROM "solicitud" "t" WHERE fk_especialidad='Rehabilit...
+                                                             ^. The SQL statement executed was: SELECT COUNT(*) FROM "solicitud" "t" WHERE fk_especialidad=:ycp0' in /home/liseth/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/liseth/www/yii/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /home/liseth/www/yii/framework/db/ar/CActiveRecord.php(1606): CDbCommand->queryScalar()
+#2 /home/liseth/www/yii/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 /home/liseth/www/yii/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 /home/liseth/www/yii/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 /home/liseth/www/yii/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 /home/liseth/www/yii/framework/zii/widgets/CBaseListView.php(125): CDataProvider->getData()
+#7 /home/liseth/www/yii/framework/zii/widgets/grid/CGridView.php(339): CBaseListView->init()
+#8 /home/liseth/www/tudoctor/protected/extensions/booster/widgets/TbGridView.php(68): CGridView->init()
+#9 /home/liseth/www/yii/framework/web/CBaseController.php(147): TbGridView->init()
+#10 /home/liseth/www/yii/framework/web/CBaseController.php(180): CBaseController->createWidget('booster.widgets...', Array)
+#11 /home/liseth/www/tudoctor/protected/views/solicitud/admin.php(94): CBaseController->widget('booster.widgets...', Array)
+#12 /home/liseth/www/yii/framework/web/CBaseController.php(126): require('/home/liseth/ww...')
+#13 /home/liseth/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/liseth/ww...', Array, true)
+#14 /home/liseth/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/home/liseth/ww...', Array, true)
+#15 /home/liseth/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#16 /home/liseth/www/tudoctor/protected/controllers/SolicitudController.php(205): CController->render('admin', Array)
+#17 /home/liseth/www/yii/framework/web/actions/CInlineAction.php(49): SolicitudController->actionAdmin()
+#18 /home/liseth/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#19 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 /home/liseth/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#21 /home/liseth/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 /home/liseth/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 /home/liseth/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 /home/liseth/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#25 /home/liseth/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#27 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/admin')
+#28 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#29 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/tudoctor/index.php?Solicitud%5Bid_solicitud%5D=&Solicitud%5Bfk_paciente%5D=&Solicitud%5Bfk_sede%5D=&Solicitud%5Bfk_especialidad%5D=Rehabilitaci%C3%B3n&Solicitud%5Bfk_medico%5D=&Solicitud%5Bfecha_solicitud%5D=&Solicitud%5Bmotivo_consulta%5D=&Solicitud_page=1&ajax=solicitud-grid&r=solicitud%2Fadmin
+HTTP_REFERER=http://172.16.1.61/tudoctor/index.php?r=solicitud/admin
+---
+2016/11/25 10:13:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "crrate" solicitada.' in /home/liseth/www/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/CController.php(270): CController->missingAction('crrate')
+#1 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('crrate')
+#2 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('historiaClinica...')
+#3 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/tudoctor/index.php?r=historiaClinica/crrate
+---
+2016/11/25 10:13:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "cerate" solicitada.' in /home/liseth/www/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/liseth/www/yii/framework/web/CController.php(270): CController->missingAction('cerate')
+#1 /home/liseth/www/yii/framework/web/CWebApplication.php(282): CController->run('cerate')
+#2 /home/liseth/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('historiaClinica...')
+#3 /home/liseth/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /home/liseth/www/tudoctor/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/tudoctor/index.php?r=historiaClinica/cerate
+---

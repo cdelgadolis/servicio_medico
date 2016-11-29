@@ -45,7 +45,7 @@ array('label'=>'Manage Solicitud','url'=>array('admin')),
 			'name'=>'fecha_solicitud',
 			'value' => Yii::app()->dateFormatter->format("dd/MM/yyyy", strtotime($model->fecha_solicitud)),
 		),
-		'hora',
+		/*'hora',*/
 		'motivo_consulta',
 		'medico_referido',
 		array(
@@ -61,3 +61,17 @@ array('label'=>'Manage Solicitud','url'=>array('admin')),
 			),
 ),
 )); ?>
+<br>
+<div class="izquierda2">
+<?php
+$this->widget(
+		'booster.widgets.TbButton', array(
+		'buttonType' => 'link', 
+		'size' => 'btn-lg',
+		'icon' =>'glyphicon glyphicon-chevron-left',
+		'context' => 'danger',
+		'url'=>Yii::app()->createUrl('paciente/home'),
+		'label' => '  Regresar' )
+		);
+?>
+</div>

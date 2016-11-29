@@ -105,6 +105,7 @@ class Solicitud extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
+		$criteria->order = 'id_solicitud DESC';
 
 		$criteria->compare('id_solicitud',$this->id_solicitud);
 		$criteria->compare('fk_paciente',$this->fk_paciente);
